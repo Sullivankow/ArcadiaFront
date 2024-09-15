@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="scss/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="scss/main.css"/>
     <title>Zoo Arcadia</title>
   </head>
 
   <body>
-	<header>
-    <nav class="navbar">
-      <div class="container-logo">
-        <a class="navbar-brand" type="button"><img src="/Front/Images/logo_noir.png" alt="logo"/></a>
-      </div>
 	
-	<div class="navbar-menu">
+		<nav>
+		<div>
+    <img src="Images/logo_noir.png" alt="logo" width="80px" height="80px" />
+		</div>
 
-<ul>
+
+	<ul class="nav-link">
 	<li class="nav-item"><a class="nav-link" href="/Front/pages/aPropos.html">À propos</a></li>
-	<li class="nav-item"><a class="nav-link" href="Front\pages\home.html">Accueil</a></li>
+	<li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
 	<li class="nav-item"><a class="nav-link" href="/Front/pages/service.html">Services</a></li>
 	<li class="nav-item"><a class="nav-link" href="/Front/pages/habitat.html">Habitats</a></li>
 	<li class="nav-item"><a class="nav-link" href="/Front/pages/contact.html">Contact</a></li>
 	<li class="nav-item"><a class="nav-link" href="/Front/pages/auth/signin.html">Connexion</a></li>
 </ul>
-</div>
-</div>
-    </nav>
-    </header>
+</nav>
 
-    <main>
+
+
+    <main id="main-page">
 	<!--Le contenu de la page sera affiché ici--> 
     </main>
   
 
-  <footer>
-	<div class="horaire">
+
+
+  <footer class="dark text-white text-center footer">
+	<div>
 		<h3 class="title-article"> Nos horaires </h3>
 		<p>Du lundi au dimanche    9:00 - 18:00</p>
 	</div>
@@ -49,6 +49,7 @@
 		<p>Arcadia@mail.com</p>
 	</div>
 </footer>
+<script type="module" src="Router/router.js"></script>
 
 </body>
 
