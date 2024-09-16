@@ -1,0 +1,105 @@
+
+
+/*Rendre le site responsive*/
+@media screen and (max-width:767px){
+    /*Inclure les règles css*/
+
+    .nav-link{
+        display: none; /* Cache les liens par défaut*/
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+/*Paramètres CSS*/
+
+
+html {
+    min-height: 100%;
+    position: relative;
+    
+   
+
+    
+}
+
+main {
+    margin-bottom: 270px;
+}
+
+/*Réglage du header*/
+nav {
+    background-color: #2A2B2E;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 15vh;
+    padding: 0;
+    
+   
+}
+
+/*Réglage du menu de navigation*/
+
+ ul {
+     list-style-type: none;
+     display:flex;
+     justify-content: center;
+     padding:20px;
+     flex: wrap;
+    
+     
+     }
+
+     ul li {
+        margin: 0 10px;
+    }
+     .nav-link {
+        text-decoration: none;
+        color: white;
+     }
+
+
+/*Réglage du body*/
+body {
+    
+    flex-direction: column;
+    margin: 0;
+    
+    
+    
+}
+
+    
+
+
+
+/*Réglage du footer*/
+footer{
+    background-color: #2A2B2E;
+    text-align: center;
+    color: white;
+    display: flex;
+   justify-content: space-around;
+   
+    
+
+    
+    position: absolute;
+    padding: 0px;
+   bottom: 0px;
+    margin: 0px;
+    width: 100%;
+    
+
+}
