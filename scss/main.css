@@ -45,8 +45,9 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    height: 15vh;
+    height: 18vh;
     padding: 0;
+    font-family: "Oufit", sans-serif;
     
    
 }
@@ -193,7 +194,8 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: space-between;
-    padding: 0px;
+    padding: 0%;
+    margin-bottom: 20px;
     width: 100%;
     height: 100%;
 
@@ -208,13 +210,14 @@ width: 50%;
 
 }
 
-.image {
+.image-aPropos {
    max-width: 30%;
     height: auto;
-    border: 2px solid #000;
     justify-content: center;
     margin-left: 50px;
     border-radius: 40px;
+    padding: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     
 }
 
@@ -237,18 +240,251 @@ width: 50%;
 .animals {
     background-color: #E0E4EB;
     
-.title-animals {
+.title-animals, .title{
+    display: flex;
+    justify-content: center;
+}
+
+.animal-card {
+    display:flex;
+    justify-content: space-between;
+    padding: 50px;
+    
+}
+
+    }
+
+    /*Mise en place carousel*/
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    height: 250px;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -22px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 3px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+
+
+/*Bouton je découvre "nos espèces"*/
+
+.btn-animals {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+
+/*Section Leur habitat*/
+.habitat {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ .title-habitat {
+    width: 45%;
+    padding: 40px;
+ }
+
+ .image-habitat {
+border-radius: 40px;
+    padding: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+   margin-left: 25%;
+    }
+
+    .btn-habitat {
+        display: flex; 
+        justify-content: center;
+        padding: 50px;
+    }
+
+}
+
+
+/*Section nos Services*/
+.container-service {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    background-color:#52B207;
+}
+
+
+
+.service {
+    display: flex;
+    justify-content: space-around;
+}
+
+.image-circle {
+    border-radius: 50%;
+    
+}
+
+.title-white{
+    font-family: "Indie Flower", system-ui;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+.title-service {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    margin-top: 0px;
+   font-family: "Outfit", sans-serif;
+}
+
+
+
+.train {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lien {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.link {
+    text-decoration: none;
+        color: white;
+        font-family: "Outfit", sans-serif;
+}
+
+
+/*Section avis*/
+
+.container-review {
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+}
+
+.title-review {
+    display: flex;
+    justify-content: center;
+    
+   
+    
+}
+
+.second-title-review {
+    display: flex;
+    justify-content: center; 
+    font-family: "Outfit", sens-serif;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.card-grid{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+   
+}
+.card-review {
+    
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    
+    
+}
+
+.pic-profil {
+    border-radius: 50%;
+}
+
+.stars {
+    color:#52B207;
+    display: flex;
+    justify-content: center;
+    
+}
+
+h3, .text-review{
+    display: flex;
+    justify-content: center;
+    font-family: "Outfit", sans-serif;
+}
+
+.date {
+    color:#2A2B2E;
+    font-size: 12px;
     display: flex;
     justify-content: center;
 }
 
 
-    
-
-
-
-
-
-
-
+/*Section du formmulaire d'avis*/
+.container-form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    justify-content: center;
+    border: solid black;
 }
+.review-form {
+    display: flex;
+}
+
+.name-form {
+    display: fl
+}
+

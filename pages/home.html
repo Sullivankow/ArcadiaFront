@@ -4,218 +4,259 @@
         <h2 class="title-green">Bienvenue dans la faune!</h2>
         <h1 class="title-cover">Vivez une expérience incroyable à travers la faune sauvage</h1>
         <p class="text-cover">Bienvenue au Zoo Arcadia, un lieu exceptionnel où la nature et la faune
-sauvage se rencontrent dans un cadre unique et sécurisé. Découvrez une
-incroyable diversité d'animaux venant des quatre coins du monde, de
-majestueux félins aux créatures aquatiques fascinantes. En famille ou
-entre amis, venez explorer nos habitats immersifs, participer à nos
-activités éducatives, et soutenir nos efforts de conservation. Plongez
-dans une aventure captivante où chaque visite est une opportunité
-d'apprendre, de s'émerveiller et de contribuer à la protection de la
-biodiversité.</p>
-            
-            <div class="btn-cover">
-        
-        <button type="button" class="btn">Tarifs</button>
+            sauvage se rencontrent dans un cadre unique et sécurisé. Découvrez une
+            incroyable diversité d'animaux venant des quatre coins du monde, de
+            majestueux félins aux créatures aquatiques fascinantes. En famille ou
+            entre amis, venez explorer nos habitats immersifs, participer à nos
+            activités éducatives, et soutenir nos efforts de conservation. Plongez
+            dans une aventure captivante où chaque visite est une opportunité
+            d'apprendre, de s'émerveiller et de contribuer à la protection de la
+            biodiversité.</p>
+
+        <div class="btn-cover">
+
+            <button type="button" class="btn">Tarifs</button>
         </div>
     </div>
-    </div>
-    
+</div>
 
 
 
 
-    <section>
 
-        <!--Bloc à propos-->
-        <article>
-            <div class="container-aboutUs">
+<section>
+
+    <!--Bloc à propos-->
+    <article>
+        <div class="container-aboutUs">
 
             <div class="text-content-white">
                 <h2 class="title-green"> À propos de nous</h2>
                 <h1 class="title">Explorez un monde naturel merveilleux</h1>
                 <div>
-                    <p class="paragraphe">Notre zoo met la santé et le bien-être des animaux au cœur de ses priorités. Chaque espèce bénéficie de soins vétérinaires réguliers et spécialisés pour assurer une excellente condition physique et mentale. Nous offrons des environnements adaptés à leurs besoins, en recréant au mieux leurs habitats naturels, afin qu'ils puissent exprimer leur comportement instinctif dans des conditions optimales.</p>
+                    <p class="paragraphe">Notre zoo met la santé et le bien-être des animaux au cœur de ses priorités.
+                        Chaque espèce bénéficie de soins vétérinaires réguliers et spécialisés pour assurer une
+                        excellente condition physique et mentale. Nous offrons des environnements adaptés à leurs
+                        besoins, en recréant au mieux leurs habitats naturels, afin qu'ils puissent exprimer leur
+                        comportement instinctif dans des conditions optimales.</p>
                 </div>
                 <div class="btn-article">
                     <button type="button" class="btn">Je découvre</button>
                 </div>
-</div>
-                
-                    <img class="image" src="Images\Accueil_body.jpg" alt="cameleon" >
-                
             </div>
 
-</article>
+            <img class="image-aPropos" src="Images\Accueil_body.jpg" alt="cameleon">
 
-
-
-<!--Bloc Nos espèces-->
-<article>
-    <div class="animals">
-        <div class="title-animals">
-            
-        <h2 class="title-green">Nos espèces</h2>
-</div>
-        <h1 class="title">Plus de 150 espèces sont répertoriées, venant des quatres coins du monde</h1>
-        
-
-        <div>
-            <img src="Images\singe.jpg" alt="singe" class="card" width="150px" height="150px">
-            <img src="Images\aigle.jpg" alt="aigle" class="card" width="150px" height="150px">
-            <img src="Images\zebre.jpg" alt="zebre" class="card" width="150px" height="150px">
-            <img src="Images\flamant_rose.jpg" alt="flamant-rose" class="card" width="150px" height="150px">
         </div>
 
-        <div>
-            <button class="btn btn-primary">Je découvre</button>
-        </div>
-    </div>
-</article>
+    </article>
 
 
-<!--Bloc habitats-->
-<article>
-    <div>
-        <h2 class="title-green">Leurs habitats</h2>
-        <h1 class="title">Découvrez vos animaux préférés dans leur habitat naturel</h1>
 
+    <!--Bloc Nos espèces-->
+    <article>
+        <div class="animals">
+            <div class="title-animals">
 
-        <div>
-            <div>
-                <p class="paragraphe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut aliquid unde officia, asperiores enim
-                    facere nam beatae repudiandae minus soluta. At quibusdam dolores veritatis explicabo recusandae in
-                    suscipit voluptatum commodi.</p>
+                <h2 class="title-green">Nos espèces</h2>
             </div>
-            <div>
-                <img src="Front\Images\Habitat_naturel.jpg" alt="habitat">
+            <h1 class="title">Plus de 150 espèces sont répertoriées, venant des quatres coins du monde</h1>
+
+
+            <!--Mise en place carousel-->
+            <div class="carousel-container">
+                <div class="animal-card">
+                    <div class="carousel-slide">
+                        <img src="Images\singe.jpg" alt="singe" class="card" width="250px" height="200px">
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="Images\aigle.jpg" alt="aigle" class="card" width="250px" height="200px">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images\zebre.jpg" alt="zebre" class="card" width="250px" height="200px">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images\flamant_rose.jpg" alt="flamant-rose" class="card" width="200px" height="200px">
+                    </div>
+
+
+                </div>
+
+                <!--Bouton de navigation carousel-->
+                <a class="prev" oneclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" oneclick="changeSlide(1)">&#10095;</a>
             </div>
-            <div>
+
+
+            <div class="btn-animals">
                 <button class="btn btn-primary">Je découvre</button>
             </div>
         </div>
-</article>
+    </article>
 
-<!--Bloc nos services-->
-<article>
-    <div>
-        <div>
-            <h2 class="title-green">Nos services</h2>
-            <h1 class="title">Notre zoo vous propose différents services</h1>
+
+
+
+    <!--Bloc habitats-->
+    <article>
+        <div class="habitat">
+            <div class="title-habitat">
+                <h2 class="title-green">Leurs habitats</h2>
+                <h1 class="title">Découvrez vos animaux préférés dans leur habitat naturel</h1>
+
+                <div>
+                    <p class="paragraphe">Au cœur de notre zoo, nous recréons les habitats naturels de chaque espèce
+                        pour leur offrir un environnement adapté, tout en vous permettant de les observer dans des
+                        conditions proches de leur milieu d'origine.
+                    </p>
+                </div>
+
+                <div class="btn-habitat">
+                    <button class="btn btn-primary">Je découvre</button>
+                </div>
+            </div>
+            <div>
+                <img class="image-habitat" src="Images\Habitat_naturel.jpg" alt="habitat" width="400px" height="350px">
+            </div>
+
         </div>
+    </article>
 
 
-        <div>
-            <img class="image-circle" src="Front\Images\visite_family.png" alt="family">
-            <p><a href="/">visite guidée</a></p>
-            <img class="Front\Images\Food.png" alt="food">
-            <p><a href="/">Restauration</a></p>
-            <img class="image-circle" src="Front\Images\petit_train.png" alt="train">
-            <p><a href="/">Visite en petit train</a></p>
+
+
+    <!--Bloc nos services-->
+    <article>
+        <div class="container-service">
+            <div class="title-service">
+                <h2 class="title-white">Nos services</h2>
+            </div>
+            <h1 class="title-service">Notre zoo vous propose différents services</h1>
+
+
+
+            <div class="service">
+                <div class="family">
+                    <img class="image-circle" src="Images\Famille.png" alt="family" width="250px" height="250 px">
+                    <div class="lien">
+                        <p><a class="link" href="/">Visite guidée</a></p>
+                    </div>
+                </div>
+                <div class="food">
+                    <img class="Image-circle" src="Images\Food.png" alt="food" width="250px" height="250 px">
+                    <div class="lien">
+                        <p><a class="link" href="/">Restauration</a></p>
+                    </div>
+                </div>
+                <div class="train">
+                    <img class="image-circle" src="Images\petit_train.png" alt="train" width="250px" height="250 px">
+                    <div class="lien">
+                        <p><a class="link" href="/">Visite en petit train</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</article>
+    </article>
 
 
-<!--Bloc avis client-->
-<article>
-    <div class="container-review">
-        <h2 class="title-green">Vos avis</h2>
-        <h1 class="title">Ils partagent leur expériences, et vous, racontez-nous!</h1>
-        <div class="card-grid">
+    <!--Bloc avis client-->
+    
+        <div class="container-review">
+            <div class="title-review">
+            <h2 class="title-green">Vos avis</h2>
+            </div>
+            <h1 class="second-title-review">Ils partagent leur expériences, et vous, racontez-nous!</h1>
+            
 
+<div class="card-grid">
+ <!--Carte d'avis-->
+                <div class="card-review">
+                    <img class="pic-profil" src="https://via.placeholder.com/80" alt="a">
+                    <h3>Isabelle Dupont</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
+                    <div class="date">13 Septembre 2024</div>
+                </div>
 
-
-            <!--Carte d'avis-->
-            <div class="card">
-                <img src="https://via.placeholder.com/80" alt="photo1">
-                <h3>Isabelle Dupont</h3>
+                <div class="card-review">
+                <img class="pic-profil" src="https://via.placeholder.com/80" alt="b">
+                <h3>Benjamin Samat</h3>
                 <div class="stars">★★★★★</div>
                 <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
                 <div class="date">13 Septembre 2024</div>
-            </div>
+                </div>
+            
 
-            <div class="card"></div>
-            <img src="https://via.placeholder.com/80" alt="photo2">
-            <h3>Isabelle Dupont</h3>
+
+            <div class="card-review">
+            <img class="pic-profil" src="https://via.placeholder.com/80" alt="c">
+            <h3>François Ribet</h3>
+            <div class="stars">★★★★★</div>
+            <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
+            <div class="date">13 Septembre 2024</div>
+            </div>
+        
+
+
+
+        <div class="card-review">
+        <img class="pic-profil" src="https://via.placeholder.com/80" alt="d">
+        <h3>David Doullet</h3>
+        <div class="stars">★★★★★</div>
+        <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
+        <div class="date">13 Septembre 2024</div>
+        </div>
+        
+
+
+        <div class="card-review">
+            <img class="pic-profil" src="https://via.placeholder.com/80" alt="e">
+            <h3>Ines Pataki</h3>
             <div class="stars">★★★★★</div>
             <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
             <div class="date">13 Septembre 2024</div>
         </div>
-
-
-        <div class="card"></div>
-        <img src="https://via.placeholder.com/80" alt="photo3">
-        <h3>Isabelle Dupont</h3>
-        <div class="stars">★★★★★</div>
-        <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
-        <div class="date">13 Septembre 2024</div>
-    </div>
+</div>
+         </div>
 
 
 
-    <div class="card"></div>
-    <img src="https://via.placeholder.com/80" alt="photo4">
-    <h3>Isabelle Dupont</h3>
-    <div class="stars">★★★★★</div>
-    <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
-    <div class="date">13 Septembre 2024</div>
-    </div>
+         <!--Formulaire d'avis client-->
+        <div class="container-form">
+            <h2 class="title-green">Laisser un avis</h2>
+            <form id="review-form">
+                <div class="name-form">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" placeholder="votre nom" required>
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Votre description ici"></textarea>
 
 
-    <div class="card">
-        <img src="https://via.placeholder.com/80" alt="photo5">
-        <h3>Isabelle Dupont</h3>
-        <div class="stars">★★★★★</div>
-        <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
-        <div class="date">13 Septembre 2024</div>
-    </div>
-
-
-    <div class="card"></div>
-    <img src="https://via.placeholder.com/80" alt="photo6">
-    <h3>Isabelle Dupont</h3>
-    <div class="stars">★★★★★</div>
-    <p class="text-review">J'ai adoré mon expérience au zoo, il est incroyable.</p>
-    <div class="date">13 Septembre 2024</div>
-    </div>
-    </div>
-    </div>
-
-
-    <div class="container-form">
-        <h2 class="title-green">Laisser un avis</h2>
-        <form id="review-form">
-            <div class="name-form">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" placeholder="votre nom" required>
-                <label for="description">Description</label>
-                <textarea id="description" placeholder="Votre description ici"></textarea>
-
-
-                <!--Bloc laiser un avis-->
-                <div class="container-form">
-                    <label for="note">Note :</label>
-                    <div class="stars">
-                        <input type="radio" id="stars5" name="rating" value="5">
-                        <label for="star5">★★★★★</label>
-                        <input type="radio" id="stars4" name="rating" value="4">
-                        <label for="star4">★★★★</label>
-                        <input type="radio" id="stars3" name="rating" value="3">
-                        <label for="star3">★★★</label>
-                        <input type="radio" id="stars2" name="rating" value="2">
-                        <label for="star2">★★</label>
-                        <input type="radio" id="stars1" name="rating" value="1">
-                        <label for="star1">★</label>
+                    <!--Bloc laiser un avis-->
+                    <div class="container-form-note">
+                        <label for="note">Note :</label>
+                        <div class="stars-form">
+                            <input type="radio" id="stars5" name="rating" value="5">
+                            <label for="star5">★★★★★</label>
+                            <input type="radio" id="stars4" name="rating" value="4">
+                            <label for="star4">★★★★</label>
+                            <input type="radio" id="stars3" name="rating" value="3">
+                            <label for="star3">★★★</label>
+                            <input type="radio" id="stars2" name="rating" value="2">
+                            <label for="star2">★★</label>
+                            <input type="radio" id="stars1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
                     </div>
+
+                    <button class="btn btn-primary" type="submit">Soumettre</button>
+
                 </div>
+            </form>
+        </div>
 
-                <button class="btn btn-primary" type="submit">Soumettre</button>
-
-            </div>
-        </form>
-    </div>
-
-</article>
+    </article>
 
 
 </section>
