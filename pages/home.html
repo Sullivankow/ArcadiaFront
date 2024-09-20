@@ -57,41 +57,24 @@
     <article>
         <div class="animals">
             <div class="title-animals">
-
-                <h2 class="title-green">Nos espèces</h2>
+ <h2 class="title-green">Nos espèces</h2>
             </div>
-            <h1 class="title">Plus de 150 espèces sont répertoriées, venant des quatres coins du monde</h1>
-
-
-            <!--Mise en place carousel-->
-            <div class="carousel-container">
-                <div class="animal-card">
-                    <div class="carousel-slide">
+            <div class="title">
+            <h1>Plus de 150 espèces sont répertoriées, venant des quatres coins du monde</h1>
+            </div>
+<div class="animal-card">
+                    <div class="image-animals">
                         <img src="Images\singe.jpg" alt="singe" class="card" width="250px" height="200px">
+                     <img src="Images\aigle.jpg" alt="aigle" class="card" width="250px" height="200px">
+                     <img src="Images\zebre.jpg" alt="zebre" class="card" width="250px" height="200px">
+                     <img src="Images\flamant_rose.jpg" alt="flamant-rose" class="card" width="250px" height="200px">
                     </div>
-
-                    <div class="carousel-slide">
-                        <img src="Images\aigle.jpg" alt="aigle" class="card" width="250px" height="200px">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="Images\zebre.jpg" alt="zebre" class="card" width="250px" height="200px">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="Images\flamant_rose.jpg" alt="flamant-rose" class="card" width="200px" height="200px">
-                    </div>
-
-
-                </div>
-
-                <!--Bouton de navigation carousel-->
-                <a class="prev" oneclick="changeSlide(-1)">&#10094;</a>
-                <a class="next" oneclick="changeSlide(1)">&#10095;</a>
-            </div>
-
+</div>
 
             <div class="btn-animals">
                 <button class="btn btn-primary">Je découvre</button>
             </div>
+        
         </div>
     </article>
 
@@ -225,17 +208,21 @@
          <!--Formulaire d'avis client-->
         <div class="container-form">
             <h2 class="title-green">Laisser un avis</h2>
+            
+            
             <form id="review-form">
                 <div class="name-form">
                     <label for="name">Nom :</label>
+                    
                     <input type="text" id="name" placeholder="votre nom" required>
+                
                     <label for="description">Description</label>
                     <textarea id="description" placeholder="Votre description ici"></textarea>
 
 
                     <!--Bloc laiser un avis-->
                     <div class="container-form-note">
-                        <label for="note">Note :</label>
+                        <label for="note"></label>
                         <div class="stars-form">
                             <input type="radio" id="stars5" name="rating" value="5">
                             <label for="star5">★★★★★</label>
@@ -249,9 +236,9 @@
                             <label for="star1">★</label>
                         </div>
                     </div>
-
+<div class="button-form">
                     <button class="btn btn-primary" type="submit">Soumettre</button>
-
+</div>
                 </div>
             </form>
         </div>
