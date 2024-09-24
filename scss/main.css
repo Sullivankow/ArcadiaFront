@@ -119,7 +119,7 @@ footer{
         position: relative;
         margin-bottom: 20px;
         padding:0px;
-        width: auto;
+        width: 100%;
         height: 90vh;
         display: flex;
         flex-wrap: wrap;
@@ -148,7 +148,7 @@ footer{
 
 /*Paramètre du contenant de la cover*/
 .hero-scene-content{
-    width: 50%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -177,6 +177,8 @@ footer{
     border-radius: 40px;
     width: 90px;
     height: 25px;
+    border: none;
+    cursor: pointer;
 }
 
 
@@ -477,8 +479,11 @@ h3, .text-review{
     display: flex;
     width: 100%;
     height: auto;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
     
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     background-color:#E0E4EB;
@@ -488,12 +493,20 @@ h3, .text-review{
 .review-form {
     display: flex;
     
+    width: 100%;
+    height: auto;
+    
+    
+    
     }
 
 .name-form {
     display: flex;
     flex-direction: column;
-    padding: 20px
+    padding: 20px;
+    flex-wrap: wrap;
+    border: solid #52B207;
+    border-radius: 40px;
 }
 
 textarea {
@@ -565,11 +578,17 @@ li {
 
     .title-green {
         font-size: 20px;
+        display: flex;
+        justify-content: center;
 
     }
 
     .title-cover {
         font-size: 25px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
     }
 
     .text-cover {
@@ -679,32 +698,53 @@ li {
     display:flex;
     justify-content: space-around;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
     
 }
 .image-circle{
     
-   width: 90px;
+   width: 100px;
     height: auto;
-    margin: 0 10px;
+    
+   
     
 }
 
 .train, .food, .family{
+    position: relative;
+    padding: 10px;
     width: 100px;
     height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 .lien{
     text-align: center;
 }
 
+/*Formulaire avis*/
+.container-form{
+    width: 100%;
+    height:420px;
+    margin-bottom: 180px;
+    
+   
+}
+.name-form{
+    display: flex;
+    width: 80%;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    height: auto;
+   justify-content: center;
+}
 
-
-
+textarea{
+    width: 250px;
+}
 
 
 
