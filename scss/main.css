@@ -11,7 +11,7 @@ html {
    }
 
 main {
-    margin-bottom: 90px;
+    margin-bottom: 170px;
     margin-top: 0px;
 
     
@@ -242,9 +242,9 @@ width: 50%;
    max-width: 30%;
     height: auto;
     justify-content: center;
-    margin-left: 10px;
+    margin-left: 40px;
     border-radius: 40px;
-    padding: 20px;
+    padding: 0px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     
 }
@@ -328,7 +328,7 @@ width: 50%;
    width: -20%;
    height: auto;
 border-radius: 40px;
-    padding: 20px;
+    padding: 0px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
    margin-left: 0;
     }
@@ -521,10 +521,229 @@ textarea {
 }
 
 
+/*Page à propos*/
+
+.aProposDeNous{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    
+    }
+
+    .titre-aPropos{
+        display: flex;
+        width: 40%;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align:justify;
+        margin-bottom: 50px;
+    }
 
 
 
-/*MEDIA QUERIES*/
+.koalaApropos{
+    width: 600px;
+    height:auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    border-radius: 40px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+
+   
+    
+}
+.text-aPropos{
+    font-family: "Outfit", sans-serif;
+    color:  black;
+}
+
+
+
+
+/*Page de connexion*/
+.big-title-login{
+    font-family: "Indie Flower", sans-serif;
+    font-size: 32px;
+    color:#52B207;
+    display: flex;
+    justify-content: center;
+}
+.title-login{
+    font-family:"Outfit", sans-serif;
+    font-size: 34px;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+}
+.login-form{
+    
+    display:flex;
+    width: 550px;
+    height: 400px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    background:#E0E4EB;
+    margin-left: 30%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+.container-login{
+   position: relative;
+    width: 550px;
+    height:400px;
+   display: flex;
+   flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+     border-radius: 40px;
+    
+}
+
+/*Conteneur gauche*/
+.content-left{
+    position:absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    padding-bottom: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.title-login{
+    text-align: center;
+    padding: 30px;
+}
+
+.box{
+   width: 95%; 
+   height: 60px;
+   margin: 10px;
+
+}
+.box input{
+    width: 90%;
+    height: 100%;
+    border: 0;
+    color: white;
+    border-bottom: 2px solid #52B207;
+    background: transparent;
+    outline: 0;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 60px;
+    background:#52B207;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+
+/*Conteneur Droite*/
+.content-right{
+    position: absolute;
+    width:50%;
+    height: 100%;
+    right: 0;
+    background: #52B207;
+   border-start-start-radius: 35%;
+   border-end-start-radius: 35%;
+   display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----Media queries page À propos de nous-----*/
+
+@media (max-width: 768px) {
+
+.aProposDeNous{
+    width: 100%;
+    height: auto;
+    display: flex;
+       
+}
+.titre-aPropos{
+    width: 100%;
+    height: auto;
+    text-align:start;
+   padding: 50px;
+}
+
+.koala{
+    display:none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------MEDIA QUERIES------*/
 
 /* Mobile styles - Menu burger */
 @media (max-width: 768px) {
@@ -539,7 +758,7 @@ textarea {
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-color:rgba(253, 253, 253, 0.33);
+    background-color:rgba(87, 87, 87, 0.33);
     backdrop-filter: blur(7px);
     width: 100%;
     height: 100vh;
@@ -566,7 +785,7 @@ li {
 
 
 
-/*Hero-scene-content responive*/
+/*------Hero-scene-content responive------*/
 @media (max-width: 768px) {
     .hero-scene {
         flex-direction: row;
