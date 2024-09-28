@@ -222,8 +222,8 @@ font-size: 3vw;
     display: flex;
     flex-direction: column;
     align-items: space-between;
-    padding: 0%;
-    margin-bottom: 20px;
+    padding-bottom: 40px;
+    padding-top:30px;
     width: 100%;
     height: auto;
 
@@ -337,7 +337,7 @@ border-radius: 40px;
         display: flex; 
         justify-content: center;
         flex-wrap: wrap;
-        padding: 50px;
+        padding: 30px;
     }
 
 }
@@ -581,6 +581,10 @@ textarea {
     color: white;
     display: flex;
     justify-content: center;
+    text-align: center;
+        padding: 30px;
+    flex-wrap: wrap;
+    
 
 }
 .login-form{
@@ -620,10 +624,7 @@ textarea {
     
 }
 
-.title-login{
-    text-align: center;
-    padding: 30px;
-}
+
 
 .box{
    width: 95%; 
@@ -667,6 +668,110 @@ align-items: center;
 justify-content: center;
 gap: 10px;
 
+
+
+}
+
+
+
+
+/*----PAGE DE CONTACT----*/
+
+
+.contact-formulaire{
+    display: flex;
+    width: 70%;
+    height: auto;
+    flex-direction: row;
+    margin-left: 15%;
+    padding-top: 25px;
+    flex-wrap: wrap;
+}
+   
+/*----Partie gauche----*/
+.formulaire-left{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    background:#E0E4EB;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.title-green-contact{
+    font-family: "Indie Flower", sans-serif;
+    color: #52B207;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+.name-group{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+    padding: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.icon-formulaire{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:flex-start;
+}
+
+.bouton-formulaire{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20px;
+
+}
+.text-form{
+    font-family: "Outfit", sans-serif;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+   
+   
+   
+    
+}
+
+
+
+
+/*----partie droite----*/
+.formulaire-right{
+    position: relative;
+    width: 50%;
+    right: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background:#E0E4EB;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+.map{
+    width: 100%;
+    height:auto;
+    border-top-right-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.icon-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
 }
 
 
@@ -675,17 +780,32 @@ gap: 10px;
 
 
 
+/*----MEDIA QUERIES FORMULAIRE DE CONTACT----*/
+@media(max-width: 768px) {
+    .contact-formulaire{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        margin-left: 11%;
+        
+    }
+    .formulaire-left{
+        width: 100%;
+        border-radius: 25px;
+    }
 
-
-
-
-
-
-
-
-
-
-
+    .formulaire-right{
+        width: 100%;
+        border-radius: 25px;
+    }
+        .title-green-contact{
+            text-align: center;
+        }
+        .map{
+            border-radius: 25px;
+        }
+}
 
 
 
@@ -718,6 +838,17 @@ gap: 10px;
 
 
 
+/*----MEDIA QUERIES PAGE CONNEXION----*/
+@media (max-width: 768px) {
+   .login-form{
+    width: 350px;
+    height: auto;
+    margin-left: 12px;
+   }
+.title-login {
+      font-size: 20px;
+  }
+}
 
 
 
