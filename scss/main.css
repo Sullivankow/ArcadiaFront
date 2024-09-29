@@ -776,6 +776,167 @@ gap: 10px;
 
 
 
+/*---PAGE NOS SERVICES---*/
+.nosServices{
+    width: 100%;
+    height: auto;
+    display: flex;
+    
+    
+}
+
+.title-green-service{
+    font-family: "Indie Flower", sans-serif;
+    color:#52B207;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.card-restaurant{
+    width: 35%;
+    height: auto;
+    background: #E0E4EB;
+    text-align: center;
+   margin: 20px;
+   border-radius: 20px;
+box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+
+
+.card-family{
+width: 35%;
+height: auto;
+text-align: center;
+margin: 20px;
+border-radius: 20px;
+    background: #E0E4EB;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+}
+
+
+.card-train{
+    width: 35%;
+    height: auto;
+    text-align: center;
+    margin: 20px;
+    border-radius: 20px;
+    background: #E0E4EB;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+}
+
+
+
+.text-service{
+    font-family: "Outfit", sans-serif;
+    text-align: justify;
+    padding: 10px;
+    display: flex;
+        flex-wrap: wrap;
+}
+
+
+
+
+
+/*----PAGE HABITAT----*/
+.title-green-habitat{
+    font-family: "Indie Flower", sans-serif;
+    font-size: 30px;
+    color:#52B207;
+    text-align: center;
+   
+}
+.habitat{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    
+    }
+
+.savane, .aquatique, .montagne{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.title-savane, .title-aquatique, .title-montagne{
+    padding: 20px;
+}
+
+.imageArticleHabitat{
+    width: 450px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.tropicale, .desertique{
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----MEDIA QUERIES PAGE DE SERVICE----*/
+@media(max-width: 768px) {
+.nosServices{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.card-restaurant, .card-family, .card-train{
+width:80%;
+height: auto;
+
+}
+}
+
+
+
+
+
 
 
 
