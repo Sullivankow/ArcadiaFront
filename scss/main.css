@@ -86,6 +86,9 @@ nav {
         color: white;
      }
 
+     .link404{
+        color:#52B207;
+     }
 
 
 /*Réglage du body*/
@@ -307,7 +310,7 @@ width: 50%;
 
 
 /*Section Leur habitat*/
-.habitat {
+.habitat-home {
     display: flex;
     width: 100%;
     height: auto;
@@ -316,7 +319,7 @@ width: 50%;
     margin-bottom: 0px;
     
 
- .title-habitat {
+ .title-habitat-home {
     width: 45%;
     height: auto;
     padding: 60px;
@@ -339,6 +342,9 @@ border-radius: 40px;
         flex-wrap: wrap;
         padding: 30px;
     }
+        .title-habitat-accueil{
+            font-family: "Outfit", sans-serif;
+        }
 
 }
 
@@ -858,11 +864,17 @@ border-radius: 20px;
     text-align: center;
    
 }
+
+.text-habitat{
+    font-family: "Outfit", sans-serif;
+    text-align: justify;
+}
 .habitat{
     display: flex;
     width: 100%;
     height: auto;
     flex-direction: column;
+    
     
     }
 
@@ -891,6 +903,9 @@ border-radius: 20px;
 
 }
 
+.title-tropicale, .title-desertique{
+    padding: 20px;
+}
 
 
 
@@ -905,17 +920,12 @@ border-radius: 20px;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+/*---MEDIA QUERIES PAGE HABITAT----*/
+@media(max-width: 768px){
+    .imageArticleHabitat{
+        display: none;
+    }
+}
 
 /*----MEDIA QUERIES PAGE DE SERVICE----*/
 @media(max-width: 768px) {
@@ -932,14 +942,6 @@ height: auto;
 
 }
 }
-
-
-
-
-
-
-
-
 
 /*----MEDIA QUERIES FORMULAIRE DE CONTACT----*/
 @media(max-width: 768px) {
@@ -967,11 +969,6 @@ height: auto;
             border-radius: 25px;
         }
 }
-
-
-
-
-
 
 
 /*-----Media queries page À propos de nous-----*/
@@ -1012,30 +1009,6 @@ height: auto;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*------MEDIA QUERIES------*/
 
 /* Mobile styles - Menu burger */
 @media (max-width: 768px) {
@@ -1078,6 +1051,7 @@ li {
 
 
 /*------Hero-scene-content responive------*/
+/*Page accueil*/
 @media (max-width: 768px) {
     .hero-scene {
         flex-direction: row;
@@ -1114,86 +1088,82 @@ li {
     .container-aboutUs {
         display: flex;
         width: 100%;
-        height: auto;
-        
+        height: 150px;
+        margin-top: -40px;
+         }
 
-    }
+         
 
-    .title-green,
-    .title {
-        margin: 0;
+  .title-green,
+  .title {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      
+      }
+      .text-content-white{
         display: flex;
-        margin-left: 15px;
-
-    }
+        justify-content: center;
+      left:25%;
+      }
 
     .btn-article {
         position: absolute;
-        top: 40px;
+        top: 95px;
         margin-left: 50px;
        
     }
+ .paragraphe {
+            display: none;
+        }
 
-
-    .text-content-white {
-        margin-right: 0;
-    }
-
-    .paragraphe {
-        display: none;
-    }
-
-
+.image-aPropos{
+    display: none;
+}
 
     /*Nos espèces*/
     .card{
-        width: 10px;
-        height: 10px;
-        display:flex;
-        margin: 10px;
-        justify-content: center;
-        align-items: center;
-    }
+        display:none;
+      }
+      .title-animal, .title{
+        text-align: center;
+      }
+    
 
 
     /*Leur habitat*/
-.habitat{
-    display:flex;
+
+.habitat-home{
+    display: flex;
     width: 100%;
     height: auto;
-     margin: 0px;
-    padding: 0;
-    
-   
-}
-
-.title-habitat{
-    width: 50%;
-    height: auto;
-    padding: 0px;
-    margin-left: -70px;
-    margin-right: -50px;
-    margin-bottom: -70px;
-    display: flex;
     justify-content: center;
-    flex-direction: column;
-    text-align:left;
     
 }
 
-.image-habitat{
-    width: 180px;
-    height: 100px;
-    margin-top: 60px;
-    display:flex;
+.title-habitat-home{
+    width: 100%;
+    height: auto;
+    margin: -100px;
+   text-align:center;
+    
+    
 }
-.imageH{
-    margin-left: -20px;
+
+.image-habitat, .imageH{
+  display:none;
 }
+
 
 .btn-habitat{
-    display: flex;
-    margin: -30px;
+    padding: 0px;
+    margin-top: -30px;
+    
+    }
+
+    .title-habitat-accueil{
+        width: 100%;
     }
 
 
