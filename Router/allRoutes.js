@@ -11,6 +11,7 @@ export const allRoutes = [
     new Route("/aPropos", "À propos", "/pages/aPropos.html"),
     new Route("/habitat", "Les habitats", "/pages/habitat.html"),
     new Route("/signin", "Connexion", "/pages/auth/signin.html"),
+    new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html"),
 
 
 

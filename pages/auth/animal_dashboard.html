@@ -1,0 +1,50 @@
+
+<body>
+
+<section id="dashboard"></section>
+
+<h1>Bienvenue dans l'inteface utilisateur du zoo</h1>
+<div class="stats">
+    <div class="stat-box">
+        <h2>Nombre d'animaux</h2>
+        <p id="animal-count">34</p>
+    </div>
+    <div class="stat-box">
+        <h2>Habitat</h2>
+        <p id="habitat-count">12</p>
+    </div>
+</div>
+</section>
+
+
+<!--Formulaire animaux-->
+<section id="animal">
+
+<h2>Ajouter un nouvel animal</h2>
+<form id="animal-form">
+<label for="name">Nom de l'animal :</label>
+<input type="text" id="name-animal" name="name-animal" required>
+
+<label for="species">Espèces :</label>
+<input type="text" id="espece" name="espece" required>
+
+<label for="habitat">Habitat :</label>
+<select id="habitat-espece" name="habitat-espece" required>
+<option value="savane">Savane</option>
+<option value="tropicale">Tropicale</option>
+<option value="aquatique">Aquatique</option>
+<option value="desertique">Désertique</option>
+<option value="montagne">Montagne</option>
+</select>
+
+
+<label for="image" name="image">Image de l'animal :</label>
+<input type="file" id="image-pets" name="image-pets">
+
+<label for="description">Description de l'animal :</label>
+<textarea id="description-animal" name="description-animal" required></textarea>
+
+<button type="submit">Ajouter l'animal</button>
+</form>
+</section>
+</body>

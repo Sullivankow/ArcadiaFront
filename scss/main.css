@@ -1029,6 +1029,135 @@ border-radius: 20px;
 
 
 
+/*----MENU DASHBOARD----*/
+.title-menu-dash{
+    font-family: "Indie Flower", sans-serif;
+    color: white;
+    font-size: 3vw;
+}
+.interface-user{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #52B207;
+}
+
+.dash-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 28%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.menu-interface{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    
+}
+ 
+.list-interface{
+    font-family: "Outfit", sans-serif;
+    font-size: 2vw;
+    list-style: none;
+    margin: 10px;
+    display: flex;
+    
+   
+}
+
+.list-interface a{
+    transition: background-color 0.3s;
+   padding: 10px;
+}
+
+.list-interface a:hover{
+    background-color: #575757;
+    
+    border-radius: 5px;
+}
+
+
+
+.div-btn-deconnexion{
+    display: flex;
+    justify-content: center;
+    padding:15px;
+    margin-top: 15px;
+}
+.btn-deconnexion{
+    font-family: "Outfit", sans-serif;
+    border:none;
+    border-radius: 20px;
+    display:flex;
+justify-content: center;
+align-items: center;
+    width: 70%;
+    height: 50px;
+}
+.link-deconnexion{
+    color:#2A2B2E;
+    font-size: 1.5vw;
+}
+
+
+
+/*----MEDIA QUERIES MENU DASHBOARD---*/
+@media (max-width: 768px){
+.dash-menu{
+    width: 60%;
+    height: auto;
+}
+.list-interface{
+    margin: 0;
+    padding: 15px;
+    font-size: 3vw;
+}
+
+.link-deconnexion {
+    font-size: 3vw;
+}
+.title-menu-dash{
+    font-size: 4vw;
+}
+
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
