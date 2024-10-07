@@ -1,0 +1,97 @@
+<body>
+
+    
+   
+    <section class="section-animal-table">
+         <div class="table-responsive">
+        <h2 class="table-title-animal"> Nos animaux</h2>
+
+        <table id="table-animal" border="1">
+            <caption class="caption-table-animal">Informations sur les animaux</caption>
+            <thread>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Race</th>
+                    <th>Etat</th>
+                    <th>Habitat</th>
+                    <th>Image</th>
+                    <th>Nombre de consultation</th>
+                    <th>Action</th>
+                </tr>
+            </thread>
+
+
+            <tbody>
+
+                <!---La liste se trouve ici-->
+
+
+            </tbody>
+        </table>
+    </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!--Formulaire animaux-->
+    <section id="animal-section">
+
+        <h2 class="title-form-animal">Ajouter un nouvel animal</h2>
+        <form id="animal-form">
+            <div class="animal-formulaire">
+                <label for="name">Nom de l'animal :</label>
+                <input type="text" id="name-animal" name="name-animal" required>
+            </div>
+
+
+            <div class="animal-formulaire">
+                <label for="species">Espèces :</label>
+                <input type="text" id="espece" name="espece" required>
+            </div>
+
+            <div class="animal-formulaire">
+                <label for="habitat">Habitat :</label>
+                <select id="habitat-espece" name="habitat-espece" required>
+                    <option value="savane">Savane</option>
+                    <option value="tropicale">Tropicale</option>
+                    <option value="aquatique">Aquatique</option>
+                    <option value="desertique">Désertique</option>
+                    <option value="montagne">Montagne</option>
+            </div>
+            </select>
+
+            <div class="animal-formulaire">
+                <label for="image" name="image">Image de l'animal :</label>
+                <input type="file" id="image-pets" name="image-pets">
+            </div>
+
+            <div class="animal-formulaire">
+                <label for="description">Description de l'animal :</label>
+                <textarea id="description-animal" name="description-animal" required></textarea>
+            </div>
+
+            <div class="animal-formulaire">
+                <button class="btn-animal-form" type="submit">Enregistrer</button>
+                
+            </div>
+            
+            <div class="animal-retour-accueil">
+               <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu gestion</button></a>
+            </div>
+            
+        </form>
+         
+    </section>
+
+
+
+
+
+
+
+</body>

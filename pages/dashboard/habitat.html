@@ -1,0 +1,76 @@
+<body>
+<section class="section-habitat-table">
+         <div class="table-responsive">
+        <h2 class="table-title-habitat"> Nos habitats</h2>
+
+        <table id="table-habitat" border="1">
+            <caption class="caption-table-habitat">Informations sur les habitats</caption>
+            <thread>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Images</th>
+                    <th>Liste d'animaux</th>
+                    <th>Action</th>
+                </tr>
+            </thread>
+
+
+            <tbody>
+
+                <!---La liste se trouve ici-->
+
+
+            </tbody>
+        </table>
+    </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!--Formulaire animaux-->
+    <section id="habitat-section">
+
+        <h2 class="title-form-habitat">Ajouter un nouvel habitat</h2>
+        <form id="habitat-form">
+            <div class="habitat-formulaire">
+                <label for="name">Nom de l'habitat :</label>
+                <input type="text" id="name-habitat" name="name-habitat" required>
+            </div>
+
+
+            <div class="habitat-formulaire">
+                <label for="image" name="image">Image de l'habitat :</label>
+                <input type="file" id="image-pets" name="image-pets">
+            </div>
+
+            <div class="habitat-formulaire">
+                <label for="description">Description de l'habitat :</label>
+                <textarea id="description-habitat" name="description-habitat" required></textarea>
+            </div>
+
+            <div class="habitat-formulaire">
+                <button class="btn-habitat-form" type="submit">Enregistrer</button>
+                
+            </div>
+            
+            <div class="habitat-retour-accueil">
+               <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu gestion</button></a>
+            </div>
+            
+        </form>
+         
+    </section>
+
+
+
+
+
+
+
+</body>
