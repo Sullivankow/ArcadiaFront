@@ -1,0 +1,44 @@
+<body>
+
+    <div class="dash-title-user">
+        <h2> Nos utilisateurs</h2>
+        <ul id="user-list"><!--LA LISTE SERA ICI--></ul>
+    </div>
+
+    <!--Formulaire  Users-->
+    <section id="user-section">
+        <div class="table responsive">
+            <h2 class="title-form-user">Ajouter un nouvel utilisateur</h2>
+            <form id="user-form">
+                <div class="user-formulaire">
+                    <label for="username">Nom de l'utilisateur :</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+
+                <div class="user-formulaire">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="user-formulaire">
+                    <label for="role">Rôle :</label>
+                    <select id="role" name="role" required>
+                        <option value="employe">Employé</option>
+                        <option value="veterinaire">Vétérinaire</option>
+                </div>
+                </select>
+                <div class="user-formulaire">
+                    <button class="btn-user-form" type="submit">Enregistrer</button>
+
+                </div>
+
+                <div class="animal-retour-accueil">
+                    <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu
+                            gestion</button></a>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</body>

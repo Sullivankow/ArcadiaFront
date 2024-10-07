@@ -1111,10 +1111,10 @@ align-items: center;
 
 
 
-/*PAGE GESTION DES ANIMAUX*/
+/*PAGE GESTION DES ANIMAUX/HABITAT/USERS*/
 
-/*Formulaire ajout animal*/
-#animal-section, #habitat-section{
+/*Formulaire ajout animal/habitat/Users*/
+#animal-section, #habitat-section, #user-section{
   display: flex;  
   width: 100%;
   flex-wrap: wrap;
@@ -1123,21 +1123,21 @@ align-items: center;
   background: #52B207;
   justify-content: center;
 }
-.title-form-animal, .title-form-habitat {
+.title-form-animal, .title-form-habitat, .title-form-user {
     font-family: "Indie Flower", sans-serif;
     color: white;
     padding: 20px;
     
 }
 
-.animal-formulaire, .habitat-formulaire{
+.animal-formulaire, .habitat-formulaire, .user-formulaire{
     display: flex;
     flex-direction: column;
     margin: 10px;
     font-family: "Outfit", sans-serif;
     color: white;
     }
-.btn-animal-form, .btn-habitat-form{
+.btn-animal-form, .btn-habitat-form, .btn-user-form{
     
     border-radius: 20px;
     border: none;
@@ -1153,7 +1153,7 @@ align-items: center;
    
 }
 
-/*La liste des animaux dans le zoo*/
+/*La liste des animaux/habitat dans le zoo/Users*/
 .table-responsive{
     overflow-x: auto;
     display: flex;
@@ -1202,6 +1202,12 @@ th{
     cursor: pointer;
 }
 
+.dash-title-user{
+    display: flex; 
+    justify-content: center;
+    font-family: "Indie Flower", sans-serif;
+    color:#52B207;
+}
 
 
 
@@ -1214,7 +1220,8 @@ th{
 
 
 
-/*----MEDIA QUERIES TABLEAU LISTE ANIMAUX PAGE GESTION*/
+
+/*----MEDIA QUERIES TABLEAU LISTE ANIMAUX/HABITAT PAGE GESTION*/
 @media (max-width: 768px) {
     .section-animal-table, .section-habitat-table{
 width:100%;

@@ -14,6 +14,8 @@ export const allRoutes = [
     new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html"),
     new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html"),
     new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html"),
+    new Route("/dash-users", "Les utilisateurs", "/pages/dashboard/users.html"),
+    new Route("/horaires", "les horaires", "/pages/dashboard/horaires.html"),
 
 
 
