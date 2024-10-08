@@ -1,25 +1,29 @@
 <body>
   <div class="div-horaires">
-  <h1>Gestion des horaires du zoo</h1>
+    <h1>Horaires</h1>
   </div>
   <div class="table-responsive">
-  <form id="horaires-formulaire">
-    <table>
-      <thead>
-        <tr>
-          <th>Jour</th>
-          <th>Heure d'ouverture</th>
-          <th>Heure de fermeture</th>
-        </tr>
-      </thead>
-      <tbody id="horaires-table">
-        <!-- Les horaires seront chargés ici -->
-      </tbody>
-    </table>
-    <button type="submit">Enregistrer les horaires</button>
-      <div class="animal-retour-accueil">
-                    <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu
-                            gestion</button></a>
-                </div>
-  </form>
-</div>
+    <form id="horaires-formulaire">
+      <table id="horaires-table">
+        <thead>
+          <tr>
+            <th>Jour</th>
+            <th>Heure d'ouverture</th>
+            <th>Heure de fermeture</th>
+            <th>Saison</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="horaires-table">
+          <!-- Les horaires seront chargés ici -->
+        </tbody>
+      </table>
+      <div class="horaires-button">
+        <button type="submit">Enregistrer les horaires</button>
+      </div>
+      <div class="horaires-retour-accueil">
+        <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu
+            gestion</button></a>
+      </div>
+    </form>
+  </div>

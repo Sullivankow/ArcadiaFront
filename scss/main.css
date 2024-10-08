@@ -1209,10 +1209,45 @@ th{
     color:#52B207;
 }
 
+/*PAGE GESTION DES HORAIRES*/
+
+.div-horaires{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    font-family: "Indie Flower", sans-serif;
+    color:#52B207;
+}
 
 
+#horaires-formulaire{
+    background-color:#52B207;
+}
+#horaires-table{
+    color:white;
+}
 
+.horaires-button, .horaires-retour-accueil{
+    display: flex;
+    justify-content:center;
+}
 
+/*PAGE GESTION DES AVIS*/
+.title-reviews{
+    display: flex;
+    justify-content: center;
+    font-family: "Indie Flower", sans-serif;
+    color:#52B207;
+}
+#table-review{
+display: flex;
+width: 100%;
+height: auto;
+justify-content: center;
+background-color:#52B207;
+color: white;
+}
 
 
 
