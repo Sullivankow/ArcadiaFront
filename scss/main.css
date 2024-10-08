@@ -63,6 +63,7 @@ nav {
 
 }
 
+/*Réglage du hover*/
 .nav-links a:hover {
     background-color: #575757;
     border-radius: 5px;
@@ -72,6 +73,7 @@ nav {
      list-style-type: none;
      display:flex;
      justify-content: center;
+     align-items:center;
      padding:20px;
      flex: wrap;
     
@@ -1090,8 +1092,8 @@ border-radius: 20px;
 .div-btn-deconnexion{
     display: flex;
     justify-content: center;
-    padding:15px;
-    margin-top: 15px;
+    
+    
 }
 .btn-deconnexion{
     font-family: "Outfit", sans-serif;
@@ -1100,8 +1102,9 @@ border-radius: 20px;
     display:flex;
 justify-content: center;
 align-items: center;
-    width: 70%;
-    height: 50px;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
 }
 .link-deconnexion{
     color:#2A2B2E;

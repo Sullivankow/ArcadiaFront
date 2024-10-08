@@ -12,6 +12,18 @@
 
 
 const tokenCookieName ="accesstoken";
+const signoutBtn = document.getElementById("signout-btn");
+
+signoutBtn.addEventListener("click", signout);
+
+
+
+function signout(){
+    eraseCookie(tokenCookieName);
+    window.location.replace("/");
+}
+
+
 
 function setToken(token){
 setCookie(tokenCookieName, token, 7);
@@ -53,13 +65,7 @@ function eraseCookie(name) {
 
 //Savoir si l'utilisateur est conecté ou non//
 function isConnected(){
- if(getToken() == null || getToken == undefined){
-
-        return false;
-
-    } else{
-        return true;
-    }
+ return !(getToken() == null || getToken == undefined);
 }
 
 if(isConnected()){
