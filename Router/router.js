@@ -47,7 +47,7 @@ const LoadContentPage = async () => {
 
 
 //Afficher et masquer les éléments en fonction du rôle
-showAndHideForRoles();
+showAndHideElementsForRoles();
 };
 
 
