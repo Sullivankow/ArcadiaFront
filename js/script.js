@@ -12,13 +12,18 @@
 
 
 const tokenCookieName ="accesstoken";
+const RoleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
 
 signoutBtn.addEventListener("click", signout);
 
-
+function getRole(){
+    return getCookie(RoleCookieName);
+}
 
 function signout(){
+
+    eraseCookie(RoleCookieName);
     eraseCookie(tokenCookieName);
     window.location.replace("/");
 }
@@ -63,13 +68,45 @@ function eraseCookie(name) {
 
 
 
-//Savoir si l'utilisateur est conecté ou non//
+/*Savoir si l'utilisateur est conecté ou non*/
+
 function isConnected(){
- return !(getToken() == null || getToken == undefined);
+    return !(getToken() == null || getToken == undefined);
 }
 
-if(isConnected()){
-   alert("je suis connecté");
-} else {
-   alert("je ne suis pas connecté");
+// if(isConnected()){
+//     alert("je suis connecté");
+// } else {
+//     alert("je ne suis as connecté");
+// }
+
+
+
+
+
+
+/* LES RÔLES
+disconnected
+connected (admin, vétérinaire, employé)
+-admin
+-vétérinaire
+-employé
+*/
+
+
+
+//FONCTION POUR MASQUER LES ELEMENTS EN FONCTION DU ROLE//
+function showAndHideForRoles(){
+    const userConnected = isConnected();
+    const role = getRole();
+    const loginButton = document.getElementById("signin-btn");
+    const logoutButton = document.getElementById("signout-btn");
+    
+    if(userConnected || role == "admin"){
+        loginButton.style.display = 'none';
+        logoutButton.style.display = 'inline-block';
+    } else {
+        loginButton.style.display = 'inline-block';
+        logoutButton.style.display = 'none';
+    }
 }
