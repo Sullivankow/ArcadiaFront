@@ -5,18 +5,18 @@ import Route from "./Route.js";
 
 export const allRoutes = [
 
-    new Route("/", "Accueil", "/pages/home.html" ),
-    new Route("/contact", "Contact", "/pages/contact.html"),
-    new Route("/service", "Nos services", "/pages/service.html"),
-    new Route("/aPropos", "À propos", "/pages/aPropos.html"),
-    new Route("/habitat", "Les habitats", "/pages/habitat.html"),
-    new Route("/signin", "Connexion", "/pages/auth/signin.html", "/js/auth/signin.js"),
-    new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html"),
-    new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html"),
-    new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html"),
-    new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html"),
-    new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html"),
-    new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html"),
+    new Route("/", "Accueil", "/pages/home.html", [] ),
+    new Route("/contact", "Contact", "/pages/contact.html", []),
+    new Route("/service", "Nos services", "/pages/service.html", []),
+    new Route("/aPropos", "À propos", "/pages/aPropos.html", []),
+    new Route("/habitat", "Les habitats", "/pages/habitat.html", []),
+    new Route("/signin", "Connexion", "/pages/auth/signin.html",  ["disconnected"], "/js/auth/signin.js"),
+    new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html", ["admin", "veterinaire", "employe"]),
+    new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", ["veterinaire", "employe"]),
+    new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html",  ["admin", "veterinaire", "employe"]),
+    new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html",  ["admin", "veterinaire", "employe"]),
+    new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  ["admin", "veterinaire", "employe"]),
+    new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html",  ["admin", "veterinaire", "employe"]),
 
 
 

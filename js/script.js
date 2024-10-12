@@ -104,9 +104,11 @@ function showAndHideElementsForRoles() {
     const dataShowEmp = document.querySelectorAll("[data-show]");
 
     //Parcours les éléments data-show pour les masquer une fois le rôle employé est connecté//
+    
+    if(role == "employe"){
     dataShowEmp.forEach(element => {
         element.style.display = "none";
-    })
+    })}
 
 
     if (userConnected || role == "admin" || role == "veterinaire" || role == "employe") {
@@ -124,7 +126,7 @@ function showAndHideElementsForRoles() {
 
             case "employe":
 alert("Bienvenue employé");
-                empValue.style.display = "none";
+                
 break;
 
             default:
