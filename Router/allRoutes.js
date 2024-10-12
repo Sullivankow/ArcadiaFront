@@ -13,10 +13,11 @@ export const allRoutes = [
     new Route("/signin", "Connexion", "/pages/auth/signin.html",  ["disconnected"], "/js/auth/signin.js"),
     new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html", ["admin", "veterinaire", "employe"]),
     new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", ["veterinaire", "employe"]),
-    new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html",  ["admin", "veterinaire", "employe"]),
+    new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html",  ["admin", "veterinaire",]),
     new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html",  ["admin", "veterinaire", "employe"]),
-    new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  ["admin", "veterinaire", "employe"]),
-    new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html",  ["admin", "veterinaire", "employe"]),
+    new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  ["admin"]),
+    new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html",  ["admin", "employe"]),
+    new Route("/authorize", "Autorisation", "/pages/authorize.html", []),
 
 
 

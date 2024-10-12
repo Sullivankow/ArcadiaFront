@@ -38,7 +38,7 @@ if(allRolesArray.length > 0){
   }else{
     const roleUser = getRole();
     if(!allRolesArray.includes(roleUser)){
-window.location.replace("/");
+window.location.replace("/authorize");
     }
   }
 }

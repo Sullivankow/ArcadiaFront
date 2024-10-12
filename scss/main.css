@@ -1252,7 +1252,24 @@ background-color:#52B207;
 color: white;
 }
 
-
+.authorize-page{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title-auth{
+    font-family: "Indie Flower", sans-serif;
+    color:#52B207;
+}
+.btn-auth {
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+    background-color:#52B207;
+    }
+   
 
 
 
