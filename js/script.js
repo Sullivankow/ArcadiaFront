@@ -103,7 +103,7 @@ function showAndHideElementsForRoles() {
     const logoutButton = document.getElementById("signout-btn");
     const dataShowEmp = document.querySelectorAll("[data-show]");
 
-    //Parcours les éléments data-show pour les masquer une fois le rôle employé est connecté//
+   
     
 
 

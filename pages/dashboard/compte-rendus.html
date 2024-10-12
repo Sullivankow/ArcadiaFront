@@ -1,12 +1,44 @@
 <body>
+    <h1>Compte rendu vétérinaire</h1>
+
+    <form id="vetFormReport">
+        <div>
+            <label for="animalName"> Nom de l'animal </label>
+            <input type="text" id="animalName" name="animalName" required>
+        </div>
+
+        <div>
+            <label for="etatAnimal">Etat de l'animal :</label>
+            <textarea id="etatAnimal" name="etatAnimal" rows="4" required></textarea>
+        </div>
+
+        <div>
+            <label for="nourriture">Nourriture proposée :</label>
+            <input type="text" id="nourriture" name="nourriture" required>
+        </div>
+
+        <div>
+            <label for="quantite">Quantité (en gramme) :</label>
+            <input type="number" id="quantite" name="quantite" required>
+        </div>
+
+        <div>
+            <label for="visiteDate">Date de passage :</label>
+            <input type="date" id="visiteDate" name="visiteDate" required>
+        </div>
+
+        <div>
+            <button type="submit">Enregister</button>
+        </div>
 
 
+        <section id="section-compte-rendu">
+            <h2>Dernier Compte rendu</h2>
+            <div id="compteRendu">
 
 
-
-
-
-
-
-    
+                <!---LE COMPTE RENDU SERA Là-->
+            </div>
+        </section>
+    </form>
 </body>

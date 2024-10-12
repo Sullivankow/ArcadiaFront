@@ -12,6 +12,7 @@ export const allRoutes = [
     new Route("/habitat", "Les habitats", "/pages/habitat.html", []),
     new Route("/signin", "Connexion", "/pages/auth/signin.html",  ["disconnected"], "/js/auth/signin.js"),
     new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html", ["admin", "veterinaire", "employe"]),
+    new Route("/compte-rendus", "Compte rendu vétérinaire", "/pages/dashboard/compte-rendus.html", ["veterinaire"]),
     new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", ["veterinaire", "employe"]),
     new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html",  ["admin", "veterinaire",]),
     new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html",  ["admin", "veterinaire", "employe"]),
