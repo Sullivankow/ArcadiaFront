@@ -1,44 +1,65 @@
+<head>
+<style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            cursor: pointer;
+        }
+        input {
+            margin: 5px;
+        }
+        h2{
+            font-family: "Indie Flower", sans-serif;
+            color: #52B207;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+
 <body>
-    <h1>Compte rendu vétérinaire</h1>
+    <h2>Compte Rendu Vétérinaire</h2>
 
-    <form id="vetFormReport">
-        <div>
-            <label for="animalName"> Nom de l'animal </label>
-            <input type="text" id="animalName" name="animalName" required>
-        </div>
+    <!---FORMULAIRE DE FILTRAGE-->
+    <form method="" action="">
+        <label for="cherche-nom">Filtrer par nom d'animal :</label>
+        <input type="text" id="cherche-nom" name="chercher-nom" onkeyup="filterTable()">
 
-        <div>
-            <label for="etatAnimal">Etat de l'animal :</label>
-            <textarea id="etatAnimal" name="etatAnimal" rows="4" required></textarea>
-        </div>
-
-        <div>
-            <label for="nourriture">Nourriture proposée :</label>
-            <input type="text" id="nourriture" name="nourriture" required>
-        </div>
-
-        <div>
-            <label for="quantite">Quantité (en gramme) :</label>
-            <input type="number" id="quantite" name="quantite" required>
-        </div>
-
-        <div>
-            <label for="visiteDate">Date de passage :</label>
-            <input type="date" id="visiteDate" name="visiteDate" required>
-        </div>
-
-        <div>
-            <button type="submit">Enregister</button>
-        </div>
+        <label for="cherche-date">Filtrer par date :</label>
+        <input type="date" id="cherche-date" onchange="filterTable">
 
 
-        <section id="section-compte-rendu">
-            <h2>Dernier Compte rendu</h2>
-            <div id="compteRendu">
 
 
-                <!---LE COMPTE RENDU SERA Là-->
+
+        <!---TABLEAU COMPTES RENDUS-->
+        <table id="tableauCompteRendu">
+            <thread>
+                <tr id="trVet">
+                    <th onclick="sortTable(0)">Nom de l'animal &#x25B2;&#x25BC;</th>
+                    <th>Etat</th>
+                    <th>Nourriture (gramme)</th>
+                    <th onclick="sortTable(3)">Date de passage &#x25B2;&#x25BC;</th>
+                </tr>
+            </thread>
+
+            <tbody id="tableauVet">
+
+                <!----Le tableau sera ici-->
+
+            </tbody>
+        </table>
+<div class="habitat-retour-accueil">
+               <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu gestion</button></a>
             </div>
-        </section>
+
     </form>
 </body>
