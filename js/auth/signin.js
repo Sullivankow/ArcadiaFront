@@ -23,7 +23,7 @@ setToken(token);
 
 //Placer ce token en cookie//
 
-setCookie(RoleCookieName, "veterinaire", 7);
+setCookie(RoleCookieName, "admin", 7);
         window.location.replace("/menu-dashboard");
 
     }

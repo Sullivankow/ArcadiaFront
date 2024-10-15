@@ -9,7 +9,7 @@ export const allRoutes = [
     new Route("/contact", "Contact", "/pages/contact.html", []),
     new Route("/service", "Nos services", "/pages/service.html", []),
     new Route("/aPropos", "À propos", "/pages/aPropos.html", []),
-    new Route("/habitat", "Les habitats", "/pages/habitat.html", []),
+    new Route("/habitat", "Les habitats", "/pages/lesHabitats.html", []),
     new Route("/signin", "Connexion", "/pages/auth/signin.html",  ["disconnected"], "/js/auth/signin.js"),
     new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html", ["admin", "veterinaire", "employe"]),
     new Route("/compte-rendus", "Compte rendu vétérinaire", "/pages/dashboard/compte-rendus.html", ["veterinaire"]),
@@ -19,6 +19,7 @@ export const allRoutes = [
     new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  ["admin"]),
     new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html",  ["admin", "employe"]),
     new Route("/authorize", "Autorisation", "/pages/authorize.html", []),
+    new Route("/users", "Les utilisateurs", "/pages/auth/signupUsers.html", ["admin"]),
 
 
 

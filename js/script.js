@@ -101,6 +101,7 @@ function showAndHideElementsForRoles() {
     const role = getRole();
     const loginButton = document.getElementById("signin-btn");
     const logoutButton = document.getElementById("signout-btn");
+    const gestionButton = document.getElementById("gestion-btn");
     /*const dataShowEmp = document.querySelectorAll("[data-show]");*/
 
    
@@ -110,6 +111,8 @@ function showAndHideElementsForRoles() {
     if (userConnected || role == "admin" || role == "veterinaire" || role == "employe") {
         loginButton.style.display = 'none';
         logoutButton.style.display = 'inline-block';
+        gestionButton.style.display = 'inline-block';
+        
 
         switch (role) {
             case "admin":
@@ -132,6 +135,7 @@ break;
     } else {
         loginButton.style.display = 'inline-block';
         logoutButton.style.display = 'none';
+        gestionButton.style.display = 'none';
     }
 }
 
