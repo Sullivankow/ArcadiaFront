@@ -1325,8 +1325,9 @@ th {
     background-color: #52B207;
 }
 
+/*Couleur des champs requis selon si c'st valide ou invalide*/
 .is-valid{
-    border-color:green;
+    border-color:rgb(5, 255, 43);
     /*Style pour changer les champs valides*/
 }
 .is-invalid{
@@ -1334,8 +1335,14 @@ th {
     /*Style pour changer les champs invalides*/
 }
 
-
-
+.invalid-feedback {
+    color: red;
+    font-size: 15px;
+    margin-top: 0px;
+}
+.feedback-email{
+    margin:0;
+}
 
 
 
