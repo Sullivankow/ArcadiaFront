@@ -1,22 +1,19 @@
-
-
-
 /*Paramètres CSS de la page d'accueil*/
 
 
 html {
     min-height: 100%;
     position: relative;
-    
-   }
+
+}
 
 main {
     margin-bottom: 170px;
     margin-top: 0px;
 
-    
-    
-    
+
+
+
 }
 
 /*Réglage du header*/
@@ -31,10 +28,10 @@ nav {
     margin-bottom: 20px;
     font-family: "Oufit", sans-serif;
     box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.7);
-    
+
 }
 
-.logo{
+.logo {
     width: 80px;
     height: 80px;
 }
@@ -44,7 +41,7 @@ nav {
     display: none;
     position: absolute;
     right: 30px;
-    top:0px;
+    top: 0px;
     font-size: 40px;
     color: white;
     cursor: pointer;
@@ -67,111 +64,113 @@ nav {
 .nav-links a:hover {
     background-color: #575757;
     border-radius: 5px;
-} 
+}
 
-  ul {
-     list-style-type: none;
-     display:flex;
-     justify-content: center;
-     align-items:center;
-     padding:10px;
-     flex: wrap;
-    
-     
-     }
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex: wrap;
 
-     ul li {
-        margin: 0 10px;
-    }
-     a {
-        text-decoration: none;
-        color: white;
-     }
 
-     .link404{
-        color:#52B207;
-     }
+}
+
+ul li {
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.link404 {
+    color: #52B207;
+}
 
 
 /*Réglage du body*/
 body {
-    
+
     flex-direction: column;
     margin: 0;
 }
 
-    
+
 
 
 
 /*Réglage du footer*/
-footer{
+footer {
     background-color: #2A2B2E;
     text-align: center;
     color: white;
     display: flex;
-   justify-content: space-around;
-      position: absolute;
+    justify-content: space-around;
+    position: absolute;
     padding: 0px;
-   bottom: 0px;
+    bottom: 0px;
     margin: 0px;
     width: 100%;
+}
+
+
+/*Réglage du hero scène*/
+.hero-scene {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 0px;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../Images/HEAD_ZEBRE.jpg);
+        background-position: center;
+        background-size: cover;
+        filter: brightness(0.3);
+
+
+
     }
 
-
-    /*Réglage du hero scène*/
-    .hero-scene{
+    * {
+        /*Positionner les éléments devant le ::before*/
         position: relative;
-        margin-bottom: 20px;
-        padding:0px;
+
+    }
+
+    /*Paramètre du contenant de la cover*/
+    .hero-scene-content {
         width: 100%;
-        height: 90vh;
+        height: auto;
         display: flex;
-        flex-wrap: wrap;
-        
-        
-        &::before{
-            content:"";
-            position: absolute;
-            top: 0px;
-            left:0;
-            width: 100%;
-            height: 100%;
-            background-image: url(../Images/HEAD_ZEBRE.jpg);
-            background-position:center;
-            background-size: cover;
-            filter: brightness(0.3);
-            
-           
-            
-        }
-*{
-    /*Positionner les éléments devant le ::before*/
-    position: relative;
-    
-}
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        padding: 20px;
 
-/*Paramètre du contenant de la cover*/
-.hero-scene-content{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    padding: 20px;
-    
-  
-}
 
-.btn-cover{
-    display: flex;
-    justify-content: center;
-    padding: 0px;
-    margin-top: 0px;
-    
-    
-}
+    }
+
+    .btn-cover {
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+        margin-top: 0px;
+
+
+    }
 }
 
 
@@ -195,28 +194,28 @@ footer{
     font-style: normal;
     font-size: 3vw;
     color: #52B207;
-   
-    
-    
-    
+
+
+
+
 }
 
-.title-cover{
-   font-family: "Outfit", sans-serif;
-font-size: 3vw;
-   font-optical-sizing: auto;
-   font-weight: weight;
-   font-style: normal; 
-   color: white;
+.title-cover {
+    font-family: "Outfit", sans-serif;
+    font-size: 3vw;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    color: white;
 }
 
-.text-cover{
+.text-cover {
     font-family: "Hind Madurai", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 1.2vw;
     color: white;
-   
+
 }
 
 
@@ -228,44 +227,45 @@ font-size: 3vw;
     flex-direction: column;
     align-items: space-between;
     padding-bottom: 40px;
-    padding-top:30px;
+    padding-top: 30px;
     width: 100%;
     height: auto;
 
 
-.text-content-white {
-display: flex;
-flex-direction: column;
-position: absolute;
-margin-right: 10px;
-right: 0;
-width: 50%;
+    .text-content-white {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin-right: 10px;
+        right: 0;
+        width: 50%;
 
-}
+    }
 
-.image-aPropos {
-   max-width: 30%;
-    height: auto;
-    justify-content: center;
-    margin-left: 40px;
-    border-radius: 40px;
-    padding: 0px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    
-}
+    .image-aPropos {
+        max-width: 30%;
+        height: auto;
+        justify-content: center;
+        margin-left: 40px;
+        border-radius: 40px;
+        padding: 0px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 
-.btn-article {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
+    }
+
+    .btn-article {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
 }
 
 /*paramètrage des textes articles*/
 
-.title, .paragraphe {
+.title,
+.paragraphe {
     font-family: "Oufit", sans-serif;
-    
+
 }
 
 
@@ -274,34 +274,35 @@ width: 50%;
     background-color: #E0E4EB;
     display: flex;
     flex-direction: column;
-    
-   
-    
-.title-animals, .title{
-    display: flex;
-    justify-content: center;
-   
-    
-}
 
-.animal-card {
-    display:flex;
-    justify-content: center;
-    padding: 20px;
-    
-}
 
-.card{
-  width:250px; 
-  height:200px;
-  border-radius: 40px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 
-}
+    .title-animals,
+    .title {
+        display: flex;
+        justify-content: center;
+
 
     }
 
-  /*Bouton je découvre "nos espèces"*/
+    .animal-card {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+
+    }
+
+    .card {
+        width: 250px;
+        height: 200px;
+        border-radius: 40px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+
+    }
+
+}
+
+/*Bouton je découvre "nos espèces"*/
 
 .btn-animals {
     display: flex;
@@ -319,34 +320,35 @@ width: 50%;
     padding: 0px;
     margin-top: 50px;
     margin-bottom: 0px;
-    
 
- .title-habitat-home {
-    width: 45%;
-    height: auto;
-    padding: 60px;
- }
 
- .image-habitat {
-    display:flex;
-    flex-wrap: wrap;
-   width: -20%;
-   height: auto;
-border-radius: 40px;
-    padding: 0px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-   margin-left: 0;
+    .title-habitat-home {
+        width: 45%;
+        height: auto;
+        padding: 60px;
+    }
+
+    .image-habitat {
+        display: flex;
+        flex-wrap: wrap;
+        width: -20%;
+        height: auto;
+        border-radius: 40px;
+        padding: 0px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        margin-left: 0;
     }
 
     .btn-habitat {
-        display: flex; 
+        display: flex;
         justify-content: center;
         flex-wrap: wrap;
         padding: 30px;
     }
-        .title-habitat-accueil{
-            font-family: "Outfit", sans-serif;
-        }
+
+    .title-habitat-accueil {
+        font-family: "Outfit", sans-serif;
+    }
 
 }
 
@@ -357,9 +359,9 @@ border-radius: 40px;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin-top: 20px; 
+    margin-top: 20px;
     margin-bottom: 20px;
-    background-color:#52B207;
+    background-color: #52B207;
 }
 
 
@@ -371,19 +373,19 @@ border-radius: 40px;
 
 .image-circle {
     border-radius: 50%;
-   width: 250px;
-   height: auto;
-    
-    
+    width: 250px;
+    height: auto;
+
+
 }
 
-.title-white{
+.title-white {
     font-family: "Indie Flower", system-ui;
     color: white;
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    
+
 }
 
 .title-service {
@@ -391,7 +393,7 @@ border-radius: 40px;
     justify-content: center;
     padding: 0px;
     margin-top: 0px;
-   font-family: "Outfit", sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 
 
@@ -405,13 +407,13 @@ border-radius: 40px;
 .lien {
     display: flex;
     justify-content: center;
-    
+
 }
 
 .link {
     text-decoration: none;
-        color: white;
-        font-family: "Outfit", sans-serif;
+    color: white;
+    font-family: "Outfit", sans-serif;
 }
 
 
@@ -427,34 +429,35 @@ border-radius: 40px;
 .title-review {
     display: flex;
     justify-content: center;
-    
-   
-    
+
+
+
 }
 
 .second-title-review {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     font-family: "Outfit", sans-serif;
     padding: 0px;
     margin-top: 0px;
 }
 
-.card-grid{
+.card-grid {
     display: flex;
     padding: 20px;
     align-items: center;
     justify-content: space-around;
-    
-   
+
+
 }
+
 .card-review {
-    
+
     border-radius: 20px;
     padding: 20px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    
-    
+
+
 }
 
 .pic-profil {
@@ -462,20 +465,21 @@ border-radius: 40px;
 }
 
 .stars {
-    color:#52B207;
+    color: #52B207;
     display: flex;
     justify-content: center;
-    
+
 }
 
-h3, .text-review{
+h3,
+.text-review {
     display: flex;
     justify-content: center;
     font-family: "Outfit", sans-serif;
 }
 
 .date {
-    color:#2A2B2E;
+    color: #2A2B2E;
     font-size: 12px;
     display: flex;
     justify-content: center;
@@ -490,23 +494,23 @@ h3, .text-review{
     flex-wrap: wrap;
     padding-top: 30px;
     padding-bottom: 30px;
-    
+
     justify-content: space-evenly;
     align-items: center;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    background-color:#E0E4EB;
-   
+    background-color: #E0E4EB;
+
 }
 
 .review-form {
     display: flex;
-    
+
     width: 100%;
     height: auto;
-    
-    
-    
-    }
+
+
+
+}
 
 .name-form {
     display: flex;
@@ -522,7 +526,7 @@ textarea {
     height: 100px;
 }
 
-.button-form{
+.button-form {
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -531,128 +535,132 @@ textarea {
 
 /*Page à propos*/
 
-.aProposDeNous{
+.aProposDeNous {
     width: 100%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    
-    
-    }
-
-    .titre-aPropos{
-        display: flex;
-        width: 40%;
-        height: auto;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align:justify;
-        margin-bottom: 50px;
-    }
 
 
+}
 
-.koalaApropos{
+.titre-aPropos {
+    display: flex;
+    width: 40%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+
+
+.koalaApropos {
     width: 600px;
-    height:auto;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     margin-top: 150px;
     border-radius: 40px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 
-   
-    
+
+
 }
-.text-aPropos{
+
+.text-aPropos {
     font-family: "Outfit", sans-serif;
-    color:  black;
+    color: black;
 }
 
 
 
 
 /*Page de connexion*/
-.big-title-login{
+.big-title-login {
     font-family: "Indie Flower", sans-serif;
     font-size: 32px;
-    color:#52B207;
+    color: #52B207;
     display: flex;
     justify-content: center;
 }
-.title-login{
-    font-family:"Outfit", sans-serif;
+
+.title-login {
+    font-family: "Outfit", sans-serif;
     font-size: 34px;
     color: white;
     display: flex;
     justify-content: center;
     text-align: center;
-        padding: 30px;
+    padding: 30px;
     flex-wrap: wrap;
-    
+
 
 }
-.login-form{
-    
-    display:flex;
+
+.login-form {
+
+    display: flex;
     width: 550px;
     height: 400px;
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 20px;
-    background:#E0E4EB;
+    background: #E0E4EB;
     margin-left: 30%;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-  }
+}
 
-.container-login{
-   position: relative;
+.container-login {
+    position: relative;
     width: 550px;
-    height:400px;
-   display: flex;
-   flex-wrap: wrap;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-     border-radius: 40px;
-    
+    border-radius: 40px;
+
 }
 
 /*Conteneur gauche*/
-.content-left{
-    position:absolute;
+.content-left {
+    position: absolute;
     width: 50%;
     height: 100%;
     left: 0;
     padding-bottom: 45px;
     display: flex;
     flex-wrap: wrap;
-    
-}
-
-
-
-.box{
-   width: 95%; 
-   height: 60px;
-   margin: 10px;
 
 }
-.box input{
+
+
+
+.box {
+    width: 95%;
+    height: 60px;
+    margin: 10px;
+
+}
+
+.box input {
     width: 90%;
     height: 100%;
     border: 0;
     border-bottom: 2px solid #52B207;
-    
+background: transparent;
     outline: 0;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     width: 100%;
     height: 60px;
-    background:#52B207;
+    background: #52B207;
     margin-top: 20px;
     border: 0;
     border-radius: 25px;
@@ -661,19 +669,19 @@ input[type="submit"]{
 
 
 /*Conteneur Droite*/
-.content-right{
+.content-right {
     position: absolute;
-    width:50%;
+    width: 50%;
     height: 100%;
     right: 0;
     background: #52B207;
-   border-start-start-radius: 35%;
-   border-end-start-radius: 35%;
-   display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-gap: 10px;
+    border-start-start-radius: 35%;
+    border-end-start-radius: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
 
 
@@ -685,7 +693,7 @@ gap: 10px;
 /*----PAGE DE CONTACT----*/
 
 
-.contact-formulaire{
+.contact-formulaire {
     display: flex;
     width: 70%;
     height: auto;
@@ -694,143 +702,134 @@ gap: 10px;
     padding-top: 25px;
     flex-wrap: wrap;
 }
-   
+
 /*----Partie gauche----*/
-.formulaire-left{
+.formulaire-left {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 50%;
     height: auto;
-    background:#E0E4EB;
+    background: #E0E4EB;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
 }
-.title-green-contact{
+
+.title-green-contact {
     font-family: "Indie Flower", sans-serif;
     color: #52B207;
     display: flex;
     justify-content: center;
-    flex-wrap:wrap;
-}
-.name-group{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:start;
-    padding: 10px;
     flex-wrap: wrap;
-    
 }
 
-.icon-formulaire{
+.name-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 10px;
+    flex-wrap: wrap;
+
+}
+
+.icon-formulaire {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items:flex-start;
+    align-items: flex-start;
 }
 
-.bouton-formulaire{
-    display: flex; 
+.bouton-formulaire {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 20px;
 
 }
-.text-form{
+
+.text-form {
     font-family: "Outfit", sans-serif;
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
-   
-   
-   
-    
+
+
+
+
 }
 
 
 
 
 /*----partie droite----*/
-.formulaire-right{
+.formulaire-right {
     position: relative;
     width: 50%;
     right: 0;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    background:#E0E4EB;
+    background: #E0E4EB;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
+
 }
-.map{
+
+.map {
     width: 100%;
-    height:auto;
+    height: auto;
     border-top-right-radius: 25px;
     display: flex;
     flex-wrap: wrap;
-   
+
 }
-.icon-form{
+
+.icon-form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    
+
 }
 
 
 
 /*---PAGE NOS SERVICES---*/
-.nosServices{
+.nosServices {
     width: 100%;
     height: auto;
     display: flex;
-    
-    
+
+
 }
 
-.title-green-service{
+.title-green-service {
     font-family: "Indie Flower", sans-serif;
-    color:#52B207;
+    color: #52B207;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     font-size: 35px;
 }
 
-.card-restaurant{
+.card-restaurant {
     width: 35%;
     height: auto;
     background: #E0E4EB;
     text-align: center;
-   margin: 20px;
-   border-radius: 20px;
-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-}
-
-
-
-.card-family{
-width: 35%;
-height: auto;
-text-align: center;
-margin: 20px;
-border-radius: 20px;
-    background: #E0E4EB;
+    margin: 20px;
+    border-radius: 20px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 
-.card-train{
+
+.card-family {
     width: 35%;
     height: auto;
     text-align: center;
@@ -839,18 +838,32 @@ border-radius: 20px;
     background: #E0E4EB;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+.card-train {
+    width: 35%;
+    height: auto;
+    text-align: center;
+    margin: 20px;
+    border-radius: 20px;
+    background: #E0E4EB;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 
 
-.text-service{
+.text-service {
     font-family: "Outfit", sans-serif;
     text-align: justify;
     padding: 10px;
     display: flex;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 
@@ -858,38 +871,44 @@ border-radius: 20px;
 
 
 /*----PAGE HABITAT----*/
-.title-green-habitat{
+.title-green-habitat {
     font-family: "Indie Flower", sans-serif;
     font-size: 30px;
-    color:#52B207;
+    color: #52B207;
     text-align: center;
-   
+
 }
 
-.text-habitat{
+.text-habitat {
     font-family: "Outfit", sans-serif;
     text-align: justify;
 }
-.habitat{
+
+.habitat {
     display: flex;
     width: 100%;
     height: auto;
     flex-direction: column;
-    
-    
-    }
 
-.savane, .aquatique, .montagne{
+
+}
+
+.savane,
+.aquatique,
+.montagne {
     width: 100%;
     height: 450px;
     display: flex;
     justify-content: space-between;
 }
-.title-savane, .title-aquatique, .title-montagne{
+
+.title-savane,
+.title-aquatique,
+.title-montagne {
     padding: 20px;
 }
 
-.imageArticleHabitat{
+.imageArticleHabitat {
     width: 450px;
     height: auto;
     margin-right: 10px;
@@ -897,23 +916,25 @@ border-radius: 20px;
     border-radius: 25px;
     transition: filter 0.3s ease;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    
+
 }
 
 
-.tropicale, .desertique{
+.tropicale,
+.desertique {
     display: flex;
     flex-direction: row-reverse;
 
 }
 
-.title-tropicale, .title-desertique{
+.title-tropicale,
+.title-desertique {
     padding: 20px;
 }
 
 /*Texte sur les images*/
 /*Savane*/
- .imageArticleSavane .text-image{
+.imageArticleSavane .text-image {
     position: relative;
     top: -35%;
     left: 50%;
@@ -927,37 +948,37 @@ border-radius: 20px;
 }
 
 /*Survol effet*/
-.imageArticleSavane:hover .imageArticleHabitat{
+.imageArticleSavane:hover .imageArticleHabitat {
     filter: brightness(70%);
 }
 
-.imageArticleSavane:hover .text-image{
+.imageArticleSavane:hover .text-image {
     opacity: 1;
 }
 
 
 /*Tropicale*/
 
- .imageArticleTropicale .text-image {
-     position: relative;
-     top: -45%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     color:white;
-     font-family: "Outfit", sans-serif;
-     font-size: 1.5em;
-     text-align: center;
-     opacity: 0;
-     transition: opacity 0.3s ease;
- }
+.imageArticleTropicale .text-image {
+    position: relative;
+    top: -45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
- .imageArticleTropicale:hover .imageArticleHabitat {
-     filter: brightness(70%);
- }
+.imageArticleTropicale:hover .imageArticleHabitat {
+    filter: brightness(70%);
+}
 
- .imageArticleTropicale:hover .text-image {
-     opacity: 1;
- }
+.imageArticleTropicale:hover .text-image {
+    opacity: 1;
+}
 
 /*Aquatique*/
 .imageArticleAquatique .text-image {
@@ -982,26 +1003,26 @@ border-radius: 20px;
 }
 
 /*Désertique*/
- .imageArticleDesertique .text-image {
-     position: relative;
-     top: -45%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     color: white;
-     font-family: "Outfit", sans-serif;
-     font-size: 1.5em;
-     text-align: center;
-     opacity: 0;
-     transition: opacity 0.3s ease;
- }
+.imageArticleDesertique .text-image {
+    position: relative;
+    top: -45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
- .imageArticleDesertique:hover .imageArticleHabitat {
-     filter: brightness(70%);
- }
+.imageArticleDesertique:hover .imageArticleHabitat {
+    filter: brightness(70%);
+}
 
- .imageArticleDesertique:hover .text-image {
-     opacity: 1;
- }
+.imageArticleDesertique:hover .text-image {
+    opacity: 1;
+}
 
 /*Montagne*/
 .imageArticleMontagne .text-image {
@@ -1031,12 +1052,13 @@ border-radius: 20px;
 
 
 /*----MENU DASHBOARD----*/
-.title-menu-dash{
+.title-menu-dash {
     font-family: "Indie Flower", sans-serif;
     color: white;
     font-size: 3vw;
 }
-.interface-user{
+
+.interface-user {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -1056,57 +1078,59 @@ border-radius: 20px;
     border-radius: 20px;
 }
 
-.menu-interface{
+.menu-interface {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    
-    
+
+
 }
- 
-.list-interface{
+
+.list-interface {
     font-family: "Outfit", sans-serif;
     font-size: 2vw;
     list-style: none;
     margin: 10px;
     display: flex;
-    
-   
+
+
 }
 
-.list-interface a{
+.list-interface a {
     transition: background-color 0.3s;
-   padding: 10px;
+    padding: 10px;
 }
 
-.list-interface a:hover{
+.list-interface a:hover {
     background-color: #575757;
-    
+
     border-radius: 5px;
 }
 
 
 
-.div-btn-deconnexion{
+.div-btn-deconnexion {
     display: flex;
     justify-content: center;
-    
-    
+
+
 }
-.btn-deconnexion{
+
+.btn-deconnexion {
     font-family: "Outfit", sans-serif;
-    border:none;
+    border: none;
     border-radius: 20px;
-    display:flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40%;
     height: 40px;
     cursor: pointer;
 }
-.link-deconnexion{
-    color:#2A2B2E;
+
+.link-deconnexion {
+    color: #2A2B2E;
     font-size: 1.5vw;
 }
 
@@ -1116,87 +1140,114 @@ align-items: center;
 /*PAGE GESTION DES ANIMAUX/HABITAT/USERS*/
 
 /*Formulaire ajout animal/habitat/Users*/
-#animal-section, #habitat-section, #user-section{
-  display: flex;  
-  width: 100%;
-  flex-wrap: wrap;
-  height: auto;
-  flex-direction: row;
-  background: #52B207;
-  justify-content: center;
+#animal-section,
+#habitat-section,
+#user-section {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    flex-direction: row;
+    background: #52B207;
+    justify-content: center;
 }
-.title-form-animal, .title-form-habitat, .title-form-user {
+
+.title-form-animal,
+.title-form-habitat,
+.title-form-user {
     font-family: "Indie Flower", sans-serif;
     color: white;
     padding: 20px;
-    
+
 }
 
-.animal-formulaire, .habitat-formulaire, .user-formulaire{
+.animal-formulaire,
+.habitat-formulaire,
+.user-formulaire {
     display: flex;
     flex-direction: column;
     margin: 10px;
     font-family: "Outfit", sans-serif;
     color: white;
-    }
-.btn-animal-form, .btn-habitat-form, .btn-user-form{
-    
+}
+
+.btn-animal-form,
+.btn-habitat-form
+{
+
     border-radius: 20px;
     border: none;
     height: 70px;
     font-family: "Outfit", sans-serif;
     cursor: pointer;
-    
 }
 
-.table-title-animal, .table-title-habitat{
+.btn-user-form{
+    border-radius: 20px;
+    border: none;
+    width: 100%;
+    height: 70px;
+    margin: 10px;
+    font-family: "Outfit", sans-serif;
+        cursor: pointer;
+}
+.table-title-animal,
+.table-title-habitat {
     font-family: "Indie Flower", sans-serif;
-    color:#52B207;
-   
+    color: #52B207;
+
 }
 
 /*La liste des animaux/habitat dans le zoo/Users*/
-.table-responsive{
+.table-responsive {
     overflow-x: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.section-animal-table, .section-habitat-table{
+
+.section-animal-table,
+.section-habitat-table {
     width: 100%;
     height: 250px;
-   
+
 }
 
 
-#table-animal, #table-habitat{
+#table-animal,
+#table-habitat {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: auto;
     justify-content: center;
     align-items: center;
-    background:#E0E4EB;
+    background: #E0E4EB;
     border-collapse: collapse;
     border: 1px solid #ddd;
 }
-th{
+
+th {
     font-family: "Outfit", sans-serif;
     padding: 10px 50px;
-    font-size:1.3vw;
+    font-size: 1.3vw;
 }
 
-.caption-table-animal, .caption-table-habitat{
+.caption-table-animal,
+.caption-table-habitat {
     font-family: "Outfit", sans-serif;
     padding: 5px;
-    color:#575757;
+    color: #575757;
 
 }
-.animal-retour-accueil, .habitat-retour-accueil{
+
+.animal-retour-accueil,
+.habitat-retour-accueil {
     display: flex;
     justify-content: center;
 }
-.btn-retour-accueil{
+
+.btn-retour-accueil {
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
@@ -1204,72 +1255,84 @@ th{
     cursor: pointer;
 }
 
-.dash-title-user{
-    display: flex; 
+.dash-title-user {
+    display: flex;
     justify-content: center;
     font-family: "Indie Flower", sans-serif;
-    color:#52B207;
+    color: #52B207;
 }
 
 /*PAGE GESTION DES HORAIRES*/
 
-.div-horaires{
+.div-horaires {
     display: flex;
     width: 100%;
     height: auto;
     justify-content: center;
     font-family: "Indie Flower", sans-serif;
-    color:#52B207;
+    color: #52B207;
 }
 
 
-#horaires-formulaire{
-    background-color:#52B207;
-}
-#horaires-table{
-    color:white;
+#horaires-formulaire {
+    background-color: #52B207;
 }
 
-.horaires-button, .horaires-retour-accueil{
+#horaires-table {
+    color: white;
+}
+
+.horaires-button,
+.horaires-retour-accueil {
     display: flex;
-    justify-content:center;
+    justify-content: center;
 }
 
 /*PAGE GESTION DES AVIS*/
-.title-reviews{
+.title-reviews {
     display: flex;
     justify-content: center;
     font-family: "Indie Flower", sans-serif;
-    color:#52B207;
-}
-#table-review{
-display: flex;
-width: 100%;
-height: auto;
-justify-content: center;
-background-color:#52B207;
-color: white;
+    color: #52B207;
 }
 
-.authorize-page{
+#table-review {
     display: flex;
-    width:100%;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    background-color: #52B207;
+    color: white;
+}
+
+.authorize-page {
+    display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.title-auth{
+
+.title-auth {
     font-family: "Indie Flower", sans-serif;
-    color:#52B207;
+    color: #52B207;
 }
+
 .btn-auth {
     border-radius: 20px;
     border: none;
     padding: 15px;
-    background-color:#52B207;
-    }
-   
+    background-color: #52B207;
+}
 
+.is-valid{
+    border-color:green;
+    /*Style pour changer les champs valides*/
+}
+.is-invalid{
+    border-color: red;
+    /*Style pour changer les champs invalides*/
+}
 
 
 
@@ -1307,29 +1370,36 @@ color: white;
 
 /*----MEDIA QUERIES TABLEAU LISTE ANIMAUX/HABITAT PAGE GESTION*/
 @media (max-width: 768px) {
-    .section-animal-table, .section-habitat-table{
-width:100%;
-height:300px;
+
+    .section-animal-table,
+    .section-habitat-table {
+        width: 100%;
+        height: 300px;
     }
-    #table-animal, #table-habitat {
+
+    #table-animal,
+    #table-habitat {
         display: flex;
         width: 100%;
         justify-content: left;
     }
+
     tr {
         width: 100%;
         display: flex;
         flex-direction: column;
-        text-align:left;
-        
+        text-align: left;
+
     }
 
-    th{
+    th {
         padding: 5px;
         font-size: 3.5vw;
     }
-    .caption-table-animal, .caption-table-habitat{
-        display:none;
+
+    .caption-table-animal,
+    .caption-table-habitat {
+        display: none;
     }
 }
 
@@ -1341,75 +1411,83 @@ height:300px;
 
 
 /*----MEDIA QUERIES MENU DASHBOARD---*/
-@media (max-width: 768px){
-.dash-menu{
-    width: 60%;
-    height: auto;
-}
-.list-interface{
-    margin: 0;
-    padding: 15px;
-    font-size: 3vw;
-}
+@media (max-width: 768px) {
+    .dash-menu {
+        width: 60%;
+        height: auto;
+    }
 
-.link-deconnexion {
-    font-size: 3vw;
-}
-.title-menu-dash{
-    font-size: 4vw;
-}
+    .list-interface {
+        margin: 0;
+        padding: 15px;
+        font-size: 3vw;
+    }
+
+    .link-deconnexion {
+        font-size: 3vw;
+    }
+
+    .title-menu-dash {
+        font-size: 4vw;
+    }
 
 }
 
 
 /*---MEDIA QUERIES PAGE HABITAT----*/
-@media(max-width: 768px){
-    .imageArticleHabitat{
+@media(max-width: 768px) {
+    .imageArticleHabitat {
         display: none;
     }
 }
 
 /*----MEDIA QUERIES PAGE DE SERVICE----*/
 @media(max-width: 768px) {
-.nosServices{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    padding-bottom: 20px;
-}
-.card-restaurant, .card-family, .card-train{
-width:80%;
-height: auto;
+    .nosServices {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding-bottom: 20px;
+    }
 
-}
+    .card-restaurant,
+    .card-family,
+    .card-train {
+        width: 80%;
+        height: auto;
+
+    }
 }
 
 /*----MEDIA QUERIES FORMULAIRE DE CONTACT----*/
 @media(max-width: 768px) {
-    .contact-formulaire{
+    .contact-formulaire {
         display: grid;
         justify-content: center;
         align-items: center;
         padding: 15px;
         margin-left: 11%;
-        
+
     }
-    .formulaire-left{
+
+    .formulaire-left {
         width: 100%;
         border-radius: 25px;
     }
 
-    .formulaire-right{
+    .formulaire-right {
         width: 100%;
         border-radius: 25px;
     }
-        .title-green-contact{
-            text-align: center;
-        }
-        .map{
-            border-radius: 25px;
-        }
+
+    .title-green-contact {
+        text-align: center;
+    }
+
+    .map {
+        border-radius: 25px;
+    }
 }
 
 
@@ -1417,22 +1495,23 @@ height: auto;
 
 @media (max-width: 768px) {
 
-.aProposDeNous{
-    width: 100%;
-    height: auto;
-    display: flex;
-       
-}
-.titre-aPropos{
-    width: 100%;
-    height: auto;
-    text-align:start;
-   padding: 50px;
-}
+    .aProposDeNous {
+        width: 100%;
+        height: auto;
+        display: flex;
 
-.koala{
-    display:none;
-  }
+    }
+
+    .titre-aPropos {
+        width: 100%;
+        height: auto;
+        text-align: start;
+        padding: 50px;
+    }
+
+    .koala {
+        display: none;
+    }
 
 }
 
@@ -1440,53 +1519,56 @@ height: auto;
 
 /*----MEDIA QUERIES PAGE CONNEXION----*/
 @media (max-width: 768px) {
-   .login-form{
-    width: 350px;
-    height: auto;
-    margin-left: 12px;
-   }
-.title-login {
-      font-size: 20px;
-  }
+    .login-form {
+        width: 350px;
+        height: auto;
+        margin-left: 12px;
+    }
+
+    .title-login {
+        font-size: 20px;
+    }
 }
 
 
 
 /* Mobile styles - Menu burger */
 @media (max-width: 768px) {
-.navbar .menu-hamburger {
-    display: block;
-    z-index: 110;
-   
-    
-    
-}
-.nav-links{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background-color:rgba(87, 87, 87, 0.33);
-    backdrop-filter: blur(7px);
-    width: 100%;
-    height: 100vh;
-    z-index:100;
-    padding: 0;
-    margin-top: 0;
- justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    margin-left: -100%;
+    .navbar .menu-hamburger {
+        display: block;
+        z-index: 110;
 
-    transition: all 0.5s ease;
+
+
     }
-.mobile-menu {
-    margin-left: 0;
-   
-}
 
-li {
-    padding: 20px;
-}
+    .nav-links {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(87, 87, 87, 0.33);
+        backdrop-filter: blur(7px);
+        width: 100%;
+        height: 100vh;
+        z-index: 100;
+        padding: 0;
+        margin-top: 0;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        margin-left: -100%;
+
+        transition: all 0.5s ease;
+    }
+
+    .mobile-menu {
+        margin-left: 0;
+
+    }
+
+    li {
+        padding: 20px;
+    }
 }
 
 
@@ -1532,142 +1614,152 @@ li {
         width: 100%;
         height: 150px;
         margin-top: -40px;
-         }
+    }
 
-         
 
-  .title-green,
-  .title {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-      
-      }
-      .text-content-white{
+
+    .title-green,
+    .title {
+        margin: 0;
         display: flex;
         justify-content: center;
-      left:25%;
-      }
+        padding: 10px;
+
+    }
+
+    .text-content-white {
+        display: flex;
+        justify-content: center;
+        left: 25%;
+    }
 
     .btn-article {
         position: absolute;
         top: 95px;
         margin-left: 50px;
-       
-    }
- .paragraphe {
-            display: none;
-        }
 
-.image-aPropos{
-    display: none;
-}
+    }
+
+    .paragraphe {
+        display: none;
+    }
+
+    .image-aPropos {
+        display: none;
+    }
 
     /*Nos espèces*/
-    .card{
-        display:none;
-      }
-      .title-animal, .title{
+    .card {
+        display: none;
+    }
+
+    .title-animal,
+    .title {
         text-align: center;
-      }
-    
+    }
+
 
 
     /*Leur habitat*/
 
-.habitat-home{
-    display: flex;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    
-}
+    .habitat-home {
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: center;
 
-.title-habitat-home{
-    width: 100%;
-    height: auto;
-    margin: -100px;
-   text-align:center;
-    
-    
-}
-
-.image-habitat, .imageH{
-  display:none;
-}
-
-
-.btn-habitat{
-    padding: 0px;
-    margin-top: -30px;
-    
     }
 
-    .title-habitat-accueil{
+    .title-habitat-home {
+        width: 100%;
+        height: auto;
+        margin: -100px;
+        text-align: center;
+
+
+    }
+
+    .image-habitat,
+    .imageH {
+        display: none;
+    }
+
+
+    .btn-habitat {
+        padding: 0px;
+        margin-top: -30px;
+
+    }
+
+    .title-habitat-accueil {
         width: 100%;
     }
 
 
-/*Nos services*/
-.container-service{
-    width: 100%;
-    height: auto;
-}
+    /*Nos services*/
+    .container-service {
+        width: 100%;
+        height: auto;
+    }
 
-.service{
-    width: 90%;
-    height: auto;
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
-    
-}
-.image-circle{
-    
-   width: 100px;
-    height: auto;
-    
-   
-    
-}
+    .service {
+        width: 90%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px;
 
-.train, .food, .family{
-    position: relative;
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-}
-.lien{
-    text-align: center;
-}
+    }
 
-/*Formulaire avis*/
-.container-form{
-    width: 100%;
-    height:420px;
-    margin-bottom: 180px;
-    
-   
-}
-.name-form{
-    display: flex;
-    width: 80%;
-    margin-left: 15px;
-    margin-bottom: 20px;
-    height: auto;
-   justify-content: center;
-}
+    .image-circle {
 
-textarea{
-    width: 250px;
-}
+        width: 100px;
+        height: auto;
+
+
+
+    }
+
+    .train,
+    .food,
+    .family {
+        position: relative;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .lien {
+        text-align: center;
+    }
+
+    /*Formulaire avis*/
+    .container-form {
+        width: 100%;
+        height: 420px;
+        margin-bottom: 180px;
+
+
+    }
+
+    .name-form {
+        display: flex;
+        width: 80%;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        height: auto;
+        justify-content: center;
+    }
+
+    textarea {
+        width: 250px;
+    }
 
 
 

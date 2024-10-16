@@ -19,7 +19,7 @@ export const allRoutes = [
     new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  ["admin"]),
     new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html",  ["admin", "employe"]),
     new Route("/authorize", "Autorisation", "/pages/authorize.html", []),
-    new Route("/users", "Les utilisateurs", "/pages/auth/signupUsers.html", ["admin"]),
+    new Route("/users", "Les utilisateurs", "/pages/auth/signupUsers.html", ["admin"], "/js/auth/signup.js"),
 
 
 
