@@ -3,12 +3,14 @@
 const inputMail = document.getElementById("EmailInput");
 const btnValidation = document.getElementById("btn-validation-inscription");
 const inputPassword = document.getElementById("PasswordInput");
+const inputValidationPassword = document.getElementById("ValidatePasswordInput");
 
 
 //Ecouteur d'évènement pour la validation de formulaire
 
 inputMail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
+inputValidationPassword.addEventListener("keyup",validateForm);
 
 
 
@@ -17,8 +19,9 @@ function validateForm() {
     
     const mailOk = validateMail(inputMail);
     const passwordOk = validatePassword(inputPassword);
+    const passwordConfirmOk = validateConfirmationPassword(inputPassword, inputValidationPassword);
 
-    if (mailOk && passwordOk) {
+    if (mailOk && passwordOk && passwordConfirmOk) {
         btnValidation.disabled = false;
         console.log("bouton activé");
     } else {
@@ -27,6 +30,33 @@ function validateForm() {
     }
 
 }
+
+//Fonction pour vérifier la confirmation du mot de passe
+
+function validateConfirmationPassword(inputPwd, inputConfirmPwd){
+    const message = document.getElementById("confirm-password-message");
+if(inputPwd.value == inputConfirmPwd.value){
+    inputConfirmPwd.classList.add("is-valid");
+    inputConfirmPwd.classList.remove("is-invalid");
+
+    //Message lorsque le mot de passe est identique 
+    message.textContent = "Le mot de passe est identique";
+    message.style.color = "green"; //Message en vert pour valider
+    console.log("identique");
+    return true;
+} else{
+    inputConfirmPwd.classList.add("is-invalid");
+    inputConfirmPwd.classList.remove("is-valid");
+
+    //Message lorsque le mot de passe n'est pas identique
+    message.textContent = "Le mot de passe n'est pas identique";
+    message.style.color = "red";
+    console.log("pas identique");
+    return false;
+}
+}
+
+
 
 //Vérification password avant soumission
 function validatePassword(input) {
