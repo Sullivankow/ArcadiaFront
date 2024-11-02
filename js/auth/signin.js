@@ -1,8 +1,9 @@
 
 /*Système de connexion*/
-const mailInput = document.getElementById("EmailInput");
-const passwordInput = document.getElementById("PasswordInput");
+const mailInput = document.getElementById("Email-Input");
+const passwordInput = document.getElementById("Password-Input");
 const btnSignin = document.getElementById("btnSignin");
+const signinForm = document.getElementById("signinForm");
 
 
 btnSignin.addEventListener("click", checkCredentials);
@@ -10,32 +11,46 @@ btnSignin.addEventListener("click", checkCredentials);
 
 
 //Vérifier mail et password//
-function checkCredentials() {
 
-    //Ici il faudra appeler l'api pour vérifier les credentials en BDD//
+function checkCredentials(){
+    let dataForm = new FormData(signinForm);
+    
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    if (mailInput.value == "test@mail.com" && passwordInput.value == "123") {
-        alert("Vous être connecté");
+    let raw = JSON.stringify({
+        "username": dataForm.get("Username"),
+        "password": dataForm.get("PassWord")
+    });
+    
 
-//Ici il faudra récupérer le vrai token//
-const token = "fejfoejfoiezjfoiejofijzeoifjeiozfji";
-setToken(token);
+    let requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
 
-//Placer ce token en cookie//
+    fetch("https://localhost:8000/api/login", requestOptions)
+    .then(response => {
+        console.log("Réponse de l'API :", response);
 
-setCookie(RoleCookieName, "admin", 7);
+        if(response.ok){
+            return response.json();
+        }
+        else{
+            mailInput.classList.add("is-invalid");
+            passwordInput.classList.add("is-invalid");
+        }
+    })
+    .then(result => {
+        console.log("Résultat de l'API :", result);
+        const token = result.apiToken;
+        setToken(token);
+        
+
+        setCookie(RoleCookieName, result.roles[0], 7);
         window.location.replace("/menu-dashboard");
-
-    }
-    else {
-        mailInput.classList.add("is-invalid");
-        passwordInput.classList.add("is-invalid");
-    }
+    })
+    .catch(error => console.log('error', error));
 }
-
-
-
-
-
-
-
