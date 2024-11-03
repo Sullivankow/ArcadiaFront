@@ -111,22 +111,22 @@ function showAndHideElementsForRoles() {
     
 
 
-    if (userConnected || role == "admin" || role == "veterinaire" || role == "employe") {
+    if (userConnected || role == "ROLE_ADMIN" || role == "ROLE_VETERINAIRE" || role == "ROLE_EMPLOYE") {
         loginButton.style.display = 'none';
         logoutButton.style.display = 'inline-block';
         gestionButton.style.display = 'inline-block';
         
 
         switch (role) {
-            case "admin":
+            case "ROLE_ADMIN":
                 alert("Bienvenue adminisitrateur");
 
                 break;
-            case "veterinaire":
+            case "ROLE_VETERINAIRE":
                 alert("Bienvenue vétérinaire");
                 break;
 
-            case "employe":
+            case "ROLE_EMPLOYE":
 alert("Bienvenue employé");
                 
 break;

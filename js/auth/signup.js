@@ -144,7 +144,9 @@ myHeaders.append("Content-Type", "application/json");
 let raw = JSON.stringify({
 
   "email": dataForm.get("Email"),
-  "password": dataForm.get("Password")
+  "password": dataForm.get("Password"),
+  "role": [dataForm.get("role")]
+  
   
 });
 // Configure les options de la requête HTTP

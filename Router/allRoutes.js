@@ -11,15 +11,15 @@ export const allRoutes = [
     new Route("/aPropos", "À propos", "/pages/aPropos.html", []),
     new Route("/habitat", "Les habitats", "/pages/lesHabitats.html", []),
     new Route("/signin", "Connexion", "/pages/auth/signin.html",  ["disconnected"], "/js/auth/signin.js"),
-    new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html", ["admin", "veterinaire", "employe"]),
-    new Route("/compte-rendus", "Compte rendu vétérinaire", "/pages/dashboard/compte-rendus.html", ["veterinaire"]),
-    new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", ["veterinaire", "employe"]),
-    new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html",  ["admin", "veterinaire",]),
-    new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html",  ["admin", "veterinaire", "employe"]),
-    new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  ["admin"]),
-    new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html",  ["admin", "employe"]),
+    new Route("/menu-dashboard", "Interface Utilisateur", "/pages/dashboard/menu-dashboard.html", ["ROLE_ADMIN", "ROLE_VETERINAIRE", "ROLE_EMPLOYE"]),
+    new Route("/compte-rendus", "Compte rendu vétérinaire", "/pages/dashboard/compte-rendus.html", ["ROLE_VETERINAIRE"]),
+    new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", ["ROLE_VETERINAIRE", "ROLE_EMPLOYE"]),
+    new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html",  ["ROLE_ADMIN", "ROLE_VETERINAIRE",]),
+    new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html",  ["ROLE_ADMIN", "ROLE_VETERINAIRE","ROLE_EMPLOYE"]),
+    new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  ["ROLE_ADMIN"]),
+    new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html",  ["ROLE_ADMIN", "ROLE_EMPLOYE"]),
     new Route("/authorize", "Autorisation", "/pages/authorize.html", []),
-    new Route("/users", "Les utilisateurs", "/pages/auth/signupUsers.html", ["admin"], "/js/auth/signup.js"),
+    new Route("/users", "Les utilisateurs", "/pages/auth/signupUsers.html", ["ROLE_ADMIN"], "/js/auth/signup.js"),
 
 
 
