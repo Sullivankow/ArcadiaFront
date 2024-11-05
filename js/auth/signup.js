@@ -145,7 +145,7 @@ let raw = JSON.stringify({
 
   "email": dataForm.get("Email"),
   "password": dataForm.get("Password"),
-  "role": [dataForm.get("role")]
+  "Roles": [dataForm.get("role")]
   
   
 });
