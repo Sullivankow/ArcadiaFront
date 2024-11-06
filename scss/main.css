@@ -8,7 +8,7 @@ html {
 }
 
 main {
-    margin-bottom: 170px;
+    margin-bottom: 220px;
     margin-top: 0px;
 
 
@@ -105,16 +105,40 @@ body {
 /*Réglage du footer*/
 footer {
     background-color: #2A2B2E;
-    text-align: center;
     color: white;
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
+     position: absolute;
     padding: 0px;
     bottom: 0px;
     margin: 0px;
     width: 100%;
 }
+.footerfooter{
+    display:flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+.footer-bottom{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footerbottom{
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    padding:10px;
+    
+    }
+.pfooter{
+    line-height: 0.5;
+    font-size: 1.3vw;
+  
+    margin: 8px;
+}
+
 
 
 /*Réglage du hero scène*/
@@ -1271,6 +1295,7 @@ th {
     justify-content: center;
     font-family: "Indie Flower", sans-serif;
     color: #52B207;
+    
 }
 
 
@@ -1287,6 +1312,15 @@ th {
     display: flex;
     justify-content: center;
 }
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+
 
 /*PAGE GESTION DES AVIS*/
 .title-reviews {
@@ -1345,7 +1379,13 @@ th {
 }
 
 
-
+/*ERREUR 404*/
+.erreur404{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 
@@ -1768,8 +1808,18 @@ th {
         width: 250px;
     }
 
+/*FOOTER*/ 
+@media (max-width: 768px){
+.title-article{
+    font-size: 2.8vw;
+}
+.pfooter{
+    font-size: 2.2vw;
+}
 
 
 
+
+}
 }
 
