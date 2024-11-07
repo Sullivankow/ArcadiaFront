@@ -2,7 +2,7 @@
   <div class="div-horaires">
     <h1>Horaires</h1>
   </div>
-  <div class="table-responsive">
+  <div class="table-responsiveH">
     <form id="horaires-formulaire">
       <table id="horaires-table">
         <thead>
@@ -17,62 +17,85 @@
         <tbody id="horaires-table">
           <!-- Les horaires seront chargés ici -->
            <tr>
-            <td>Lundi</td>
-            <td>09:00</td>
-            <td>18:00</td>
-            <td>Haute saison</td>
-            <td><button type="button">Modifier</button></td>
+            <td data-label="Jour">Lundi</td>
+            <td data-label="Heure d'ouverture">09:00</td>
+            <td data-label="Heure de fermeture">18:00</td>
+            <td data-label="Saison">Haute saison</td>
+            <td data-label="Action">
+               <div class="service-icons">
+                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
+                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
+            </div>
+          </td>
           </tr>
           <tr>
-            <td>Mardi</td>
-            <td>09:00</td>
-            <td>18:00</td>
-            <td>Haute saison</td>
-            <td><button type="button">Modifier</button></td>
+            <td data-label="Jour">Mardi</td>
+            <td data-label="Heure d'ouverture">09:00</td>
+            <td data-label="Heure de fermeture">18:00</td>
+            <td data-label="Saison">Haute saison</td>
+            <td data-label="Action"> <div class="service-icons">
+                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
+                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
+            </div></td>
           </tr>
           <tr>
-            <td>Mercredi</td>
-            <td>09:00</td>
-            <td>18:00</td>
-            <td>Haute saison</td>
-            <td><button type="button">Modifier</button></td>
+            <td data-label="Jour">Mercredi</td>
+            <td data-label="Heure d'ouverture">09:00</td>
+            <td data-label="Heure de fermeture">18:00</td>
+            <td data-label="Saison">Haute saison</td>
+            <td data-label="Action"> <div class="service-icons">
+                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
+                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
+            </div></td>
           </tr>
           <tr>
-            <td>Jeudi</td>
-            <td>09:00</td>
-            <td>18:00</td>
-            <td>Haute saison</td>
-            <td><button type="button">Modifier</button></td>
+            <td data-label="Jour">Jeudi</td>
+            <td data-label="Heure d'ouverture">09:00</td>
+            <td data-label="Heure de fermeture">18:00</td>
+            <td data-label="Saison">Haute saison</td>
+            <td data-label="Action"> <div class="service-icons">
+                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
+                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
+            </div></td>
           </tr>
           <tr>
-            <td>Vendredi</td>
-            <td>09:00</td>
-            <td>18:00</td>
-            <td>Haute saison</td>
-            <td><button type="button">Modifier</button></td>
+            <td data-label="Jour">Vendredi</td>
+            <td data-label="Heure d'ouverture">09:00</td>
+            <td data-label="Heure de fermeture">18:00</td>
+            <td data-label="Saison">Haute saison</td>
+            <td data-label="Action"> <div class="service-icons">
+                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
+                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
+            </div></td>
           </tr>
           <tr>
-            <td>Samedi</td>
-            <td>10:00</td>
-            <td>20:00</td>
-            <td>Haute saison</td>
-            <td><button type="button">Modifier</button></td>
+            <td data-label="Jour">Samedi</td>
+            <td data-label="Heure d'ouverture">10:00</td>
+            <td data-label="Heure de fermeture">20:00</td>
+            <td data-label="Saison">Haute saison</td>
+            <td data-label="Action"> <div class="service-icons">
+                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
+                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
+            </div></td>
           </tr>
           <tr>
-            <td>Dimanche</td>
-            <td>10:00</td>
-            <td>20:00</td>
-            <td>Haute saison</td>
-            <td><button type="button">Modifier</button></td>
+            <td data-label="Jour">Dimanche</td>
+            <td data-label="Heure d'ouverture">10:00</td>
+            <td data-label="Heure de fermeture">20:00</td>
+            <td data-label="Saison">Haute saison</td>
+            <td data-label="Action"> <div class="service-icons">
+                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
+                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
+            </div></td>
           </tr>
         </tbody>
       </table>
-      <div class="horaires-button">
-        <button type="submit">Enregistrer les horaires</button>
-      </div>
+      
       <div class="horaires-retour-accueil">
-        <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu
+        <button class="btn-horaires" type="submit">Ajouter</button>
+        <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Menu
             gestion</button></a>
+            <button class="btn-horaires" type="submit">Enregistrer</button>
       </div>
     </form>
   </div>

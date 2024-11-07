@@ -2,6 +2,7 @@
 
 
 
+
 //Mise en place du menu burger 
 const menuHamburger = document.querySelector(".menu-hamburger")
 const navLinks = document.querySelector(".nav-links")
