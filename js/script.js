@@ -1,7 +1,5 @@
 
 
-
-
 //Mise en place du menu burger 
 const menuHamburger = document.querySelector(".menu-hamburger")
 const navLinks = document.querySelector(".nav-links")
@@ -149,6 +147,7 @@ break;
 
 //Fonction pour récupérer les informations utilisateur 
 function getInfosUser(){
+    console.log("récupération des infos de l'utilisateur");
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
 
@@ -168,12 +167,15 @@ function getInfosUser(){
         }
     })
     .then(result => {
-        return result;
+        if (result) {
+                console.log("Informations utilisateur :", result); //Renvoie les infos utilisateurs dans la console
+            }
     })
     .catch(error =>{
         console.error("erreur lors de la récupération des données utilisateur", error);
     });
 }
+
 
 
 
