@@ -15,6 +15,8 @@ menuHamburger.addEventListener('click', () => {
 const tokenCookieName = "accesstoken";
 const RoleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
+//URL à changer lors du déploiement 
+const apiUrl = "https://127.0.0.1:8000/api/";
 
 signoutBtn.addEventListener("click", signout);
 getInfosUser();
@@ -157,7 +159,7 @@ function getInfosUser(){
         redirect: 'follow'
     };
 
-    fetch("https://127.0.0.1:8000/api/account/me", requestOptions)
+    fetch(apiUrl + "account/me", requestOptions)
     .then(response =>{
         if(response.ok){
             return response.json();
