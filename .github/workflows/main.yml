@@ -12,13 +12,13 @@ jobs:
     - name: 📂 Install dependencies
       uses: actions/setup-node@v2
       with:
-        node-version: '20.18.0'  
+        node-version: '14'  
 
     - name: 📂 Install npm dependencies
       run: npm install
    
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65
       with:
         server: ftp-parcarcadia.alwaysdata.net
         username: parcarcadia
