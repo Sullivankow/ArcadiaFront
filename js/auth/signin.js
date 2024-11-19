@@ -31,7 +31,7 @@ function checkCredentials(){
         redirect: 'follow'
     };
 
-    fetch("https://127.0.0.1:8000/api/login", requestOptions)
+    fetch("http://127.0.0.1:8000/api/login", requestOptions)
     .then(response => {
         console.log("Réponse de l'API :", response);
 
