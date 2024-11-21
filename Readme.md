@@ -1,4 +1,4 @@
-Application Web du Zoo Arcadia
+Application Web du Zoo Arcadia, mode d'emploi pour le déploiement en local 
 
 Description
 Cette application web est conçue pour le Zoo Arcadia, situé en Bretagne près de la forêt de Brocéliande. Elle permet aux visiteurs de découvrir les habitats, animaux et services proposés, tout en reflétant les valeurs écologiques du zoo. Les employés, vétérinaires et administrateurs disposent également d’outils pour gérer leurs tâches quotidiennes.
@@ -26,85 +26,43 @@ Gérer les utilisateurs (employés et vétérinaires).
 Administrer les données du zoo : services, habitats, animaux.
 Visualiser des statistiques sur la popularité des animaux.
 
-Installation locale
-Prérequis
-PHP >= 8.0
-Composer
-Node.js et npm
-Serveur MySQL
-MongoDB pour les statistiques
-Serveur web (Apache, Nginx, ou intégré à Symfony)
-
-Clonez le dépôt GitHub :
-
-bash
-Copier le code
-git clone https://github.com/votre-utilisateur/zoo-arcadia.git
-cd zoo-arcadia
 
 
-Installez les dépendances backend :
+Déployer le frontend en local (La procédure du déploiement du Backend se trouve dans son repository)
+1.Cloner le dépôt du frontend pésent sur github : https://github.com/Sullivankow/ArcadiaFront.git
 
-bash
-Copier le code
-composer install
+Récupère le projet dans un terminal de commande : 
+git clone <URL_DU_DEPOT_FRONTEND> frontend
+Installe les dépendances nécessaires avec les commandes:
 
+npm install
 
-Configurez les fichiers .env :
-
-Renommez le fichier .env.example en .env.
-Configurez les variables comme suit :
-env
-Copier le code
-DATABASE_URL="mysql://arcadia:Arcadia123@127.0.0.1:3306/zoo_arcadia"
-MONGODB_URL="mongodb://localhost:27017"
-CORS_ALLOW_ORIGIN="http://localhost:8000"
-
-Créez la base de données et appliquez les migrations :
-
-bash
-Copier le code
-php bin/console doctrine:database:create
-php bin/console doctrine:migrations:migrate
+ou pour Yarn :
+yarn install
 
 
+2.Configurer l’environnement
+Modifie le fichier de configuration pour pointer vers l’API backend dans le fichier script.js. 
 
-(Optionnel) Importez les données initiales avec les fixtures :
-
-bash
-Copier le code
-php bin/console doctrine:fixtures:load
+cont apiUrl = http://127.0.0.1:8000/api/doc
 
 
-Démarrez le serveur Symfony :
-
-bash
-Copier le code
-symfony serve
+3.Téléchargez l'extension Vs Code : Php Server par brapifra
+Lancer le serveur frontend enn faisant clique droit sur l'index.html puis php serve
+ou démarre le serveur de développement :
 
 
-Déploiement
-Pour déployer l’application :
-
-Configurez un serveur avec PHP 8, MySQL et MongoDB.
-Copiez les fichiers du projet sur le serveur.
-Configurez le fichier .env pour correspondre à l’environnement de production.
-Exécutez les migrations et construisez les assets :
-bash
-Copier le code
-php bin/console doctrine:migrations:migrate
-npm run build
-Configurez un domaine ou une URL publique.
+npm start
+ou
+yarn start
 
 
+Par défaut, le frontend sera accessible sur http://localhost:3000.
+L’application frontend devrait maintenant fonctionner.
 
-Technologies utilisées
-Frontend : HTML5, CSS3, JavaScript.
-Backend : PHP avec Symfony.
-Base de données :
-Relationnelle : MySQL.
-NoSQL : MongoDB.
-Déploiement : Compatible avec Fly.io, Heroku, ou autres.
-Contributeurs
-Développeur principal : Sullivan KOWALSKI
-Supervisé par : DevSoft
+4.Résolution des problèmes courants
+Erreur de connexion avec le backend : Vérifie que l’URL configurée dans const apiUrl du fichier script.js pointe bien vers le backend.
+
+Problème de dépendances : Mets à jour Node.js et les modules avec :
+
+npm update
