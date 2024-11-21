@@ -26,62 +26,85 @@ Gérer les utilisateurs (employés et vétérinaires).
 Administrer les données du zoo : services, habitats, animaux.
 Visualiser des statistiques sur la popularité des animaux.
 
+Installation locale
+Prérequis
+PHP >= 8.0
+Composer
+Node.js et npm
+Serveur MySQL
+MongoDB pour les statistiques
+Serveur web (Apache, Nginx, ou intégré à Symfony)
+
+Clonez le dépôt GitHub :
+
+bash
+Copier le code
+git clone https://github.com/votre-utilisateur/zoo-arcadia.git
+cd zoo-arcadia
 
 
- Préparer la partie frontend (Pour le Backend, se référer au Readme du de la partie backend)
-Cloner la partie frontend : https://github.com/Sullivankow/ArcadiaFront.git
-Cloner le dépôt du frontend dans un dossier.
+Installez les dépendances backend :
+
+bash
+Copier le code
+composer install
 
 
-Dans un terminal de commande entrez : 
-git clone <URL_DU_DEPOT_FRONTEND> nom_du_projet_frontend
-cd nom_du_projet_frontend 
+Configurez les fichiers .env :
 
+Renommez le fichier .env.example en .env.
+Configurez les variables comme suit :
+env
+Copier le code
+DATABASE_URL="mysql://arcadia:Arcadia123@127.0.0.1:3306/zoo_arcadia"
+MONGODB_URL="mongodb://localhost:27017"
+CORS_ALLOW_ORIGIN="http://localhost:8000"
 
-Installer les dépendances frontend :
-Si ton frontend utilise npm ou Yarn, installe les dépendances :
+Créez la base de données et appliquez les migrations :
 
-
-npm install
-# ou
-yarn install
-
-
-
-Configurer l’URL du backend :
-Dans les fichiers de configuration du frontend (script.js) , remplace l’URL de l’API (dans apiUrl) par l’adresse locale du backend :
-http://127.0.0.1:8000/api/doc
-
-Lancer le serveur frontend :
-Télécharge l'extension Php server de brapifra 
-Démarre le serveur de développement frontend en faisant clique droit sur l'index.html puis php serve
-
-
-Le frontend sera accessible sur http://localhost:3000 par défaut.
+bash
+Copier le code
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
 
 
 
+(Optionnel) Importez les données initiales avec les fixtures :
+
+bash
+Copier le code
+php bin/console doctrine:fixtures:load
+
+
+Démarrez le serveur Symfony :
+
+bash
+Copier le code
+symfony serve
+
+
+Déploiement
+Pour déployer l’application :
+
+Configurez un serveur avec PHP 8, MySQL et MongoDB.
+Copiez les fichiers du projet sur le serveur.
+Configurez le fichier .env pour correspondre à l’environnement de production.
+Exécutez les migrations et construisez les assets :
+bash
+Copier le code
+php bin/console doctrine:migrations:migrate
+npm run build
+Configurez un domaine ou une URL publique.
 
 
 
-Tester l’intégration frontend-backend (Le backend doit déjà être installé)
-
-Connexion et rôles :
-Connecte-toi avec un compte administrateur depuis le frontend. (Envoyer un message pour l'obtention des informations de connections)
-Vérifie que la gestion des rôles (admin, vétérinaire, employé) fonctionne correctement via showAndHideElementsForRoles.
-
-
-API et CORS :
-Assure-toi que les requêtes frontend au backend passent correctement.
-Si des erreurs de CORS apparaissent, vérifie que la configuration de nelmio_cors.yaml inclut :
-
-allow_origin: ['http://localhost:3000']
-ou
-allow_origin: ['*']
-ou
-allow_origin: ['%env(CORS_ALLOW_ORIGIN)%']
-
-
-Responsivité :
-Teste l’affichage du tableau des horaires pour les petits écrans et assure-toi que tout reste accessible et lisible.
-Possibilité de tester directement dans le navigateur en appuyant sur F12
+Technologies utilisées
+Frontend : HTML5, CSS3, JavaScript.
+Backend : PHP avec Symfony.
+Base de données :
+Relationnelle : MySQL.
+NoSQL : MongoDB.
+Déploiement : Compatible avec Fly.io, Heroku, ou autres.
+Contributeurs
+Développeur principal : Sullivan KOWALSKI
+Supervisé par : DevSoft
