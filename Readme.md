@@ -44,7 +44,7 @@ Installez les dépendances nécessaires :
 
 Dans un terminal de commande entrez : 
 npm install
-# ou si vous utilisez Yarn :
+ou si vous utilisez Yarn :
 yarn install
 
 3 : Configurer l’environnement
@@ -64,7 +64,7 @@ Option 2 : Avec un serveur de développement
 Démarrez un serveur local :
 
 npm start
-# ou
+ou
 yarn start
 
 
