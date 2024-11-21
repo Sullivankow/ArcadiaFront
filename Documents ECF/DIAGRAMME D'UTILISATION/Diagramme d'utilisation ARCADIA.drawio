@@ -1,0 +1,142 @@
+<mxfile host="app.diagrams.net" modified="2024-09-11T09:40:24.944Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" etag="DLBEFrfHS_pe899zH3iJ" version="24.6.4" type="device">
+  <diagram name="Page-1" id="6aCgyru7cNgRkSYVJTwk">
+    <mxGraphModel dx="1750" dy="2257" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cuSOUS0rzmTnLPeve96p-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="130" y="-170" width="1020" height="1620" as="geometry" />
+        </mxCell>
+        <mxCell id="cuSOUS0rzmTnLPeve96p-2" value="&lt;div&gt;Zoo Arcadia&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="590" y="-150" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cuSOUS0rzmTnLPeve96p-4" target="whG_Te-PLRlS3KKALJXu-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cuSOUS0rzmTnLPeve96p-4" value="&lt;div&gt;Administrateur&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="270" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cuSOUS0rzmTnLPeve96p-6" target="whG_Te-PLRlS3KKALJXu-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cuSOUS0rzmTnLPeve96p-6" value="Employé" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="50" y="820" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cuSOUS0rzmTnLPeve96p-7" target="whG_Te-PLRlS3KKALJXu-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cuSOUS0rzmTnLPeve96p-7" target="whG_Te-PLRlS3KKALJXu-80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cuSOUS0rzmTnLPeve96p-7" value="Visiteur&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="430" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-1" target="whG_Te-PLRlS3KKALJXu-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-1" value="Vétérinaire" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1160" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-8" value="Peut créer un compte employé" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="474" y="370" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-9" value="Peut modifier les services&lt;div&gt;CRUD&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="474" y="-90" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-10" value="Peut valider ou non un avis" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="720" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-11" value="Ajout nourriture animal depuis son espace" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="810" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-12" value="Remplir les comptes rendus par animaux" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1060" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-13" value="Commenter les habitats sur leur état" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-14" value="Voit alimentation animal via saisie de l&#39;employé" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-24" value="Peut contacter le zoo via la page contact" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="360" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-31" value="Peut modifier les horaires&lt;div&gt;CRUD&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="474" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-35" value="Peut modifier les habitats&lt;div&gt;CRUD&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="474" y="90" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-37" value="Peut modifier les animaux&lt;div&gt;CRUD&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="474" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-38" value="Peut créer un compte vétérinaire" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="474" y="270" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-43" value="Trier et filtrer les comptes rendus" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="474" y="470" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-49" target="whG_Te-PLRlS3KKALJXu-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-49" target="whG_Te-PLRlS3KKALJXu-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-49" target="whG_Te-PLRlS3KKALJXu-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-49" target="whG_Te-PLRlS3KKALJXu-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-49" target="whG_Te-PLRlS3KKALJXu-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-49" target="whG_Te-PLRlS3KKALJXu-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-49" target="whG_Te-PLRlS3KKALJXu-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-49" target="whG_Te-PLRlS3KKALJXu-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-49" value="Connexion&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="260" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-53" target="whG_Te-PLRlS3KKALJXu-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-53" target="whG_Te-PLRlS3KKALJXu-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-53" target="whG_Te-PLRlS3KKALJXu-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-53" value="Connexion&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="810" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-54" value="Trier et filtrer les comptes rendus&lt;div&gt;vétérinaire&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="570" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-68" value="Modifier les services" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="900" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-73" target="whG_Te-PLRlS3KKALJXu-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-73" target="whG_Te-PLRlS3KKALJXu-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="whG_Te-PLRlS3KKALJXu-73" target="whG_Te-PLRlS3KKALJXu-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-73" value="Connexion&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="1150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="whG_Te-PLRlS3KKALJXu-80" value="Peut se connecter via son mail et son password" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="520" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
