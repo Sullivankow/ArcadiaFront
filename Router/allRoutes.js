@@ -16,7 +16,7 @@ export const allRoutes = [
     new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", ["ROLE_VETERINAIRE", "ROLE_EMPLOYE"]),
     new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html",  ["ROLE_ADMIN", "ROLE_VETERINAIRE",]),
     new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html",  ["ROLE_ADMIN", "ROLE_VETERINAIRE","ROLE_EMPLOYE"]),
-    new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  ["ROLE_ADMIN"]),
+    new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html",  []),
     new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html",  ["ROLE_ADMIN", "ROLE_EMPLOYE"]),
     new Route("/authorize", "Autorisation", "/pages/authorize.html", []),
     new Route("/users", "Les utilisateurs", "/pages/auth/signupUsers.html", ["ROLE_ADMIN"], "/js/auth/signup.js"),
