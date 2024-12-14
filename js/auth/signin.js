@@ -45,7 +45,7 @@ async function checkCredentials() { // 1. Ajout du mot-clé `async` pour transfo
         const result = await response.json();
         console.log("Résultat de l'API :", result);
 
-        // Aucun changement ici : extraction du token et redirection après connexion réussie.
+        //extraction du token et redirection après connexion réussie.
         const token = result.apiToken;
         setToken(token);
 

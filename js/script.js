@@ -146,36 +146,42 @@ break;
 
 
 
+//Fonction pour récupérer les infos utilisateurs 
+async function getInfosUser() { // `async` pour transformer la fonction en fonction asynchrone.
+    try {
+        console.log("Récupération des infos de l'utilisateur");
 
-//Fonction pour récupérer les informations utilisateur 
-function getInfosUser(){
-    console.log("récupération des infos de l'utilisateur");
-    let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken());
+        // Création des en-têtes avec le token d'authentification.
+        let myHeaders = new Headers();
+        myHeaders.append("X-AUTH-TOKEN", getToken());
 
-    let requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    };
+        // Configuration des options pour la requête HTTP.
+        let requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
 
-    fetch(apiUrl + "account/me", requestOptions)
-    .then(response =>{
-        if(response.ok){
-            return response.json();
+        // Utilisation de `await` pour effectuer la requête.
+        const response = await fetch(apiUrl + "account/me", requestOptions);
+
+        //Vérification explicite de la réponse.
+        if (!response.ok) {
+            console.error("Impossible de récupérer les informations utilisateur");
+            throw new Error(`Erreur HTTP : ${response.status}`);
         }
-        else{
-            console.log("Impossible de récupérer les informations utilisateur");
-        }
-    })
-    .then(result => {
-        if (result) {
-                console.log("Informations utilisateur :", result); //Renvoie les infos utilisateurs dans la console
-            }
-    })
-    .catch(error =>{
-        console.error("erreur lors de la récupération des données utilisateur", error);
-    });
+
+        // Extraction et affichage des données JSON.
+        const result = await response.json();
+        console.log("Informations utilisateur :", result);
+
+        // Retourne éventuellement les informations utilisateur si besoin.
+        return result;
+
+    } catch (error) {
+        // `catch` pour capturer les erreurs réseau ou autres.
+        console.error("Erreur lors de la récupération des données utilisateur :", error);
+    }
 }
 
 
