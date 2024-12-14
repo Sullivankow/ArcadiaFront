@@ -18,7 +18,7 @@ async function checkCredentials() { // 1. Ajout du mot-clé `async` pour transfo
         myHeaders.append("Content-Type", "application/json");
 
         let raw = JSON.stringify({
-            "username": dataForm.get("Username"), 
+            "username": dataForm.get("Username"),
             "password": dataForm.get("PassWord")
         });
 

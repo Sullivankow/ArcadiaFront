@@ -130,54 +130,57 @@ function validateRequired(input) {
     }
 }
 
-//Fonction pour inscrire un utilisateur avec un appel FETCH vers l'api
-function InscrireUtilisateur(){
-   
-    let dataForm = new FormData(formInscription);
 
-    // Crée un nouvel objet Headers pour définir les en-têtes de la requête HTTP
-    let myHeaders = new Headers();
-    // Ajoute l'en-tête "Content-Type" avec la valeur "application/json"
-myHeaders.append("Content-Type", "application/json");
 
-// Convertit les données du formulaire en une chaîne JSON
-let raw = JSON.stringify({
 
-  "email": dataForm.get("Email"),
-  "password": dataForm.get("Password"),
-  "Roles": [dataForm.get("role")]
-  
-  
-});
-// Configure les options de la requête HTTP
-let requestOptions = {
-    // Méthode de la requête : "POST" pour envoyer des données au serveur
-  method: 'POST',
-   // Définit les en-têtes de la requête en utilisant l'objet Headers créé précédemment
-  headers: myHeaders,
-  // Corps de la requête : les données JSON converties en chaîne
-  body: raw,
-  // Redirection à suivre en cas de besoin ("follow" suit automatiquement les redirections)
-   redirect: 'follow'
- 
-};
 
-fetch(apiUrl+"registration", requestOptions)
-  .then(response => {
-    if(response.ok){
-        return response.json();
+//Fonction pour inscrire un utilisateur avec appel Fetch vers l'api 
+
+async function InscrireUtilisateur() { // 1. Ajout du mot-clé `async` pour transformer la fonction en fonction asynchrone.
+    try {
+        let dataForm = new FormData(formInscription);
+
+        // Crée un nouvel objet Headers pour définir les en-têtes de la requête HTTP
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json"); // Aucun changement ici.
+
+        // Convertit les données du formulaire en une chaîne JSON
+        let raw = JSON.stringify({
+            "email": dataForm.get("Email"),  // Aucun changement ici.
+            "password": dataForm.get("Password"),
+            "Roles": [dataForm.get("role")]
+        });
+
+        // Configure les options de la requête HTTP
+        let requestOptions = {
+            method: 'POST', // Aucun changement ici.
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        // 2. Remplacement de `.then()` pour `fetch` par `await` pour une exécution synchrone.
+        const response = await fetch(apiUrl + "registration", requestOptions);
+
+        // 3. Vérification explicite si la réponse est correcte (status 200-299).
+        if (!response.ok) {
+            alert("Erreur lors de l'inscription");
+            throw new Error(`Erreur HTTP : ${response.status}`);
+        }
+
+        // 4. Remplacement de `.then(response => response.json())` par `await response.json()` pour récupérer les données.
+        const result = await response.json();
+
+        // 5. Affiche un message de succès et redirige vers la page de connexion.
+        alert("Bravo, vous êtes maintenant inscrit ! Vous pouvez vous connecter.");
+        document.location.href = "/signin";
+
+    } catch (error) {
+        // 6. Bloc `catch` pour capturer et afficher toutes les erreurs (réseau, serveur, etc.).
+        console.error('Erreur :', error);
     }
-    else{
-        alert("Erreur lors de l'inscription");
-    }
-  })
-
-  .then(result => {
-    alert("Bravo vous êtes maintenant inscrit, vous pouvez vous connecter");
-        document.location.href="/signin";
-  })
-  .catch(error => console.log('error', error));
 }
+
 
 
 
