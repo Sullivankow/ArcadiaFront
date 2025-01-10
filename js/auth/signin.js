@@ -1,4 +1,6 @@
 
+
+
 /*Système de connexion*/
 const mailInput = document.getElementById("Email-Input");
 const passwordInput = document.getElementById("Password-Input");
@@ -29,19 +31,19 @@ async function checkCredentials() { // 1. Ajout du mot-clé `async` pour transfo
             redirect: 'follow'
         };
 
-        // 2. Remplacement de `.then()` pour `fetch` par `await` pour rendre l'exécution synchrone et linéaire.
-        const response = await fetch(apiUrl + "login", requestOptions);
+        
+        const response = await fetch(`${apiUrl}/login`, requestOptions);
 
         console.log("Réponse de l'API :", response);
 
-        // 3. Ajout d'une condition pour vérifier si la réponse est invalide. On lève une erreur manuellement si c'est le cas.
+        // Ajout d'une condition pour vérifier si la réponse est invalide. On lève une erreur manuellement si c'est le cas.
         if (!response.ok) {
             mailInput.classList.add("is-invalid"); // Ajout des classes pour signaler les champs invalides.
             passwordInput.classList.add("is-invalid");
             throw new Error("Login failed. Vérifiez vos identifiants."); // Lève une erreur pour être capturée dans le bloc `catch`.
         }
 
-        // 4. Remplacement de `.then(response => response.json())` par `await response.json()` pour extraire et convertir la réponse en JSON.
+        
         const result = await response.json();
         console.log("Résultat de l'API :", result);
 

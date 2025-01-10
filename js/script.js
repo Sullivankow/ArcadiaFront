@@ -15,8 +15,8 @@ menuHamburger.addEventListener('click', () => {
 const tokenCookieName = "accesstoken";
 const RoleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
-//URL à changer lors du déploiement 
-const apiUrl = "https://127.0.0.1:8000/api/";
+const apiUrl = "https://localhost:8000/api"     //URL à changer lors du déploiement 
+
 
 signoutBtn.addEventListener("click", signout);
 getInfosUser();
@@ -163,7 +163,7 @@ async function getInfosUser() { // `async` pour transformer la fonction en fonct
         };
 
         // Utilisation de `await` pour effectuer la requête.
-        const response = await fetch(apiUrl + "account/me", requestOptions);
+        const response = await fetch(`${apiUrl}/account/me`, requestOptions);
 
         //Vérification explicite de la réponse.
         if (!response.ok) {

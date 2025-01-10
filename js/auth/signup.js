@@ -136,31 +136,31 @@ function validateRequired(input) {
 
 //Fonction pour inscrire un utilisateur avec appel Fetch vers l'api 
 
-async function InscrireUtilisateur() { // 1. Ajout du mot-clé `async` pour transformer la fonction en fonction asynchrone.
+async function InscrireUtilisateur() { 
     try {
         let dataForm = new FormData(formInscription);
 
         // Crée un nouvel objet Headers pour définir les en-têtes de la requête HTTP
         let myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json"); // Aucun changement ici.
+        myHeaders.append("Content-Type", "application/json"); 
 
         // Convertit les données du formulaire en une chaîne JSON
         let raw = JSON.stringify({
-            "email": dataForm.get("Email"),  // Aucun changement ici.
+            "email": dataForm.get("Email"),  
             "password": dataForm.get("Password"),
             "Roles": [dataForm.get("role")]
         });
 
         // Configure les options de la requête HTTP
         let requestOptions = {
-            method: 'POST', // Aucun changement ici.
+            method: 'POST', 
             headers: myHeaders,
             body: raw,
             redirect: 'follow'
         };
 
-        // 2. Remplacement de `.then()` pour `fetch` par `await` pour une exécution synchrone.
-        const response = await fetch(apiUrl + "registration", requestOptions);
+        
+        const response = await fetch(`${apiUrl}/registration`, requestOptions);
 
         // 3. Vérification explicite si la réponse est correcte (status 200-299).
         if (!response.ok) {
@@ -168,7 +168,7 @@ async function InscrireUtilisateur() { // 1. Ajout du mot-clé `async` pour tran
             throw new Error(`Erreur HTTP : ${response.status}`);
         }
 
-        // 4. Remplacement de `.then(response => response.json())` par `await response.json()` pour récupérer les données.
+        
         const result = await response.json();
 
         // 5. Affiche un message de succès et redirige vers la page de connexion.
