@@ -1,52 +1,94 @@
-
-
-
 <body>
+  <section class="section-user-table">
+    <div class="table-responsive">
+      <h2 class="table-title-user">Nos utilisateurs</h2>
 
-    <div class="dash-title-user">
-        <h2> Nos utilisateurs</h2>
-        <ul id="user-list"><!--LA LISTE SERA ICI--></ul>
+      <table class="table-user" id="table-animal" border="1">
+        <caption class="caption-table-animal">
+          Informations sur les utilisateurs
+        </caption>
+        <thead>
+          <tr>
+            <th class="user-th">Email</th>
+            <th class="user-th">Role</th>
+          </tr>
+        </thead>
+
+        <tbody id="user-list">
+          <!---La liste se trouve ici-->
+        </tbody>
+      </table>
     </div>
+  </section>
 
-    <!--Formulaire  Users-->
-    <section id="user-section">
-        <div class="table responsive">
-            <h2 class="title-form-user">Ajouter un nouvel utilisateur</h2>
-            <form id="user-form">
-                <div class="user-formulaire">
-                    <label for="EmailInput">Email :</label>
-                    <input type="email" id="EmailInput" name="Email" placeholder="email de l'utilisateur">
-                    <p id="email-message" class="feedback-email"></p> <!-- Message pour l'email -->
-                </div>
-   <div class="user-formulaire">
-                <label for="PasswordInput" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="PasswordInput" name="Password" placeholder="mot de passe">
-          <p id="password-message" class="invalid-feedback"></p> <!-- Ajout du message ici -->
-            </div>
-            <div class="user-formulaire">
-                <label for="ValidatePasswordInput" class="form-label">Validez votre mot de passe</label>
-                <input type="password" class="form-control" id="ValidatePasswordInput" name="PasswordConfirm" placeholder="Confirmer mot de passe">
-           <p id="confirm-password-message" class="invalid-feedback"></p> <!-- Ajout du message ici -->
-            </div>
-                <div class="user-formulaire">
-                    <label for="role">Rôle :</label>
-                    <select id="role" name="role" required>
-                        <option value="ROLE_EMPLOYE">Employé</option>
-                        <option value="ROLE_VETERINAIRE">Vétérinaire</option>
-                        </select>
-                </div>
-                
-                <div class="horaires-retour-accueil">
-                    <button class="btn-user-form " type="button" id="btn-validation-inscription">Enregistrer</button>
-
-                </div>
-
-                <div class="animal-retour-accueil">
-                    <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu
-                            gestion</button></a>
-                </div>
-
-            </form>
+  <!--Formulaire  Users-->
+  <section id="user-section">
+    <div class="table responsive">
+      <h2 class="title-form-user">Ajouter un nouvel utilisateur</h2>
+      <form id="user-form">
+        <div class="user-formulaire">
+          <label for="EmailInput">Email :</label>
+          <input
+            type="email"
+            id="EmailInput"
+            name="Email"
+            placeholder="email de l'utilisateur"
+          />
+          <p id="email-message" class="feedback-email"></p>
+          <!-- Message pour l'email -->
         </div>
-    </section>
+        <div class="user-formulaire">
+          <label for="PasswordInput" class="form-label">Mot de passe</label>
+          <input
+            type="password"
+            class="form-control"
+            id="PasswordInput"
+            name="Password"
+            placeholder="mot de passe"
+          />
+          <p id="password-message" class="invalid-feedback"></p>
+          <!-- Ajout du message ici -->
+        </div>
+        <div class="user-formulaire">
+          <label for="ValidatePasswordInput" class="form-label"
+            >Validez votre mot de passe</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="ValidatePasswordInput"
+            name="PasswordConfirm"
+            placeholder="Confirmer mot de passe"
+          />
+          <p id="confirm-password-message" class="invalid-feedback"></p>
+          <!-- Ajout du message ici -->
+        </div>
+        <div class="user-formulaire">
+          <label for="role">Rôle :</label>
+          <select id="role" name="role" required>
+            <option value="ROLE_EMPLOYE">Employé</option>
+            <option value="ROLE_VETERINAIRE">Vétérinaire</option>
+          </select>
+        </div>
+
+        <div class="horaires-retour-accueil">
+          <button
+            class="btn-user-form"
+            type="button"
+            id="btn-validation-inscription"
+          >
+            Enregistrer
+          </button>
+        </div>
+
+        <div class="animal-retour-accueil">
+          <a href="/menu-dashboard"
+            ><button class="btn-retour-accueil" type="button">
+              Retour au menu gestion
+            </button></a
+          >
+        </div>
+      </form>
+    </div>
+  </section>
 </body>

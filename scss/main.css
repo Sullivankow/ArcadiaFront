@@ -1256,8 +1256,11 @@ input[type="submit"] {
     font-family: "Outfit", sans-serif;
         cursor: pointer;
 }
+
+
 .table-title-animal,
-.table-title-habitat {
+.table-title-habitat,
+.table-title-user {
     font-family: "Indie Flower", sans-serif;
     color: #52B207;
 
@@ -1272,17 +1275,21 @@ input[type="submit"] {
 }
 
 .section-animal-table,
-.section-habitat-table {
+.section-habitat-table
+.section-user-table {
     width: 100%;
     height: 250px;
 
 }
 
 
-#table-animal,
-#table-habitat {
+/* #table-animal,
+#table-habitat,
+.table-user
+ {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     height: auto;
     justify-content: center;
@@ -1290,16 +1297,13 @@ input[type="submit"] {
     background: #E0E4EB;
     border-collapse: collapse;
     border: 1px solid #ddd;
-}
+} */
 
-th {
-    font-family: "Outfit", sans-serif;
-    padding: 10px 50px;
-    font-size: 1.3vw;
-}
+
 
 .caption-table-animal,
-.caption-table-habitat {
+.caption-table-habitat,
+.caption-table-user {
     font-family: "Outfit", sans-serif;
     padding: 5px;
     color: #575757;
@@ -1326,6 +1330,40 @@ th {
     font-family: "Indie Flower", sans-serif;
     color: #52B207;
 }
+
+/*Tableau des utiliateur*/
+.table-user {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+        overflow-x: auto;
+}
+
+
+.table-user th,
+.table-user td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.table-user th {
+    background-color: #f4f4f4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*PAGE GESTION DES HORAIRES*/
 
@@ -1356,12 +1394,7 @@ th {
     align-items: center;
 }
 
-table th,
-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
+
 
 .btn-horaires{
     border-radius: 20px;
@@ -1448,6 +1481,55 @@ table td {
 
 
 
+
+
+
+
+/* Responsiveness: Réduction des polices et ajustement des colonnes */
+@media screen and (max-width: 768px) {
+
+    .table-user th,
+    .table-user td {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+/* Affichage en pile pour très petits écrans */
+@media screen and (max-width: 480px) {
+
+    .table-user,
+    .table-user thead,
+    .table-user tbody,
+    .table-user th,
+    .table-user td,
+    .table-user tr {
+        display: block;
+        /* Affiche le tableau en pile */
+    }
+
+    .table-user thead tr {
+        display: none;
+        /* Cache les en-têtes pour un affichage simplifié */
+    }
+
+    .table-user td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    .table-user td::before {
+        content: attr(data-label);
+        /* Ajoute une étiquette pour chaque cellule */
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: bold;
+    }
+}
 
 
 
