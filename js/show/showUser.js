@@ -31,48 +31,84 @@ async function fetchUsers() {
 }
 
 
-// // Fonction pour afficher les utilisateurs dans la liste HTML
-// function displayUsers(users) {
-//     const userList = document.getElementById("user-list");
-//     userList.innerHTML = ""; // Vide la liste avant d'ajouter de nouveaux éléments
-
-//     users.forEach(user => {
-//         const listItem = document.createElement("li");
-//         listItem.textContent = `${user.email} (${user.roles.join(", ")})`; // Exemple : email (ROLE_ADMIN, ROLE_USER)
-//         userList.appendChild(listItem);
-//     });
-// }
 
 
 
 
-// Exemple des fonctions Modifier et Supprimer (simples pour le moment)
-async function editUser(username) {
-    const newRole = prompt("Entrez le nouveau rôle pour cet utilisateur :");
-    if (newRole) {
-        try {
-            const response = await fetch(`${apiUrl}/account/edit`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ roles: [newRole] }),
-            });
 
-            if (response.ok) {
-                alert("Rôle mis à jour avec succès !");
-                fetchUsers(); // Recharge les utilisateurs
-            } else {
-                alert("Erreur lors de la mise à jour du rôle.");
+async function editUser() {
+    const newRole = prompt("Entrez le nouveau rôle pour cet utilisateur (laissez vide pour ne pas modifier) :");
+    const newUsername = prompt("Entrez le nouveau mail pour cet utilisateur (laissez vide pour ne pas modifier) :");
+
+    if (!newRole && !newUsername) {
+        alert("Aucune modification à effectuer.");
+        return;
+    }
+
+    try {
+        // Création des en-têtes avec le token d'authentification
+        let myHeaders = new Headers();
+        myHeaders.append("X-AUTH-TOKEN", getToken());
+        myHeaders.append("Content-Type", "application/json");
+
+        // Préparation du corps de la requête
+        const body = {};
+        if (newRole) body.roles = [newRole]; // Ajoute le rôle uniquement s'il est renseigné
+        if (newUsername) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(newUsername)) {
+                alert("Veuillez entrer un email valide.");
+                return;
             }
-        } catch (error) {
-            console.error("Erreur :", error);
-            alert("Une erreur est survenue.");
+            body.email = newUsername; // Ajoute l'email uniquement s'il est renseigné
         }
+
+        // Configuration des options pour la requête HTTP
+        let requestOptions = {
+            method: 'PUT',
+            headers: myHeaders,
+            body: JSON.stringify(body),
+            redirect: 'follow',
+        };
+
+        // Envoi de la requête
+        const response = await fetch(`${apiUrl}/account/edit`, requestOptions);
+
+        if (response.ok) {
+            alert("Les modifications ont été effectuées avec succès !");
+            fetchUsers(); // Recharge les utilisateurs
+        } else {
+            const errorMessage = await response.text(); // Lire la réponse d'erreur
+            alert(`Erreur lors de la mise à jour : ${errorMessage}`);
+        }
+    } catch (error) {
+        console.error("Erreur :", error);
+        alert("Une erreur est survenue lors de la requête.");
     }
 }
 
+
+
+
+
+
+
 async function deleteUser(userId) {
+
+ // Création des en-têtes avec le token d'authentification.
+        let myHeaders = new Headers();
+        myHeaders.append("X-AUTH-TOKEN", getToken());
+
+           // Configuration des options pour la requête HTTP.
+        let requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        }
+
+
+
+
     if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
         try {
             const response = await fetch(`${apiUrl}/users`, {
