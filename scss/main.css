@@ -1270,15 +1270,18 @@ input[type="submit"] {
 .table-responsive {
     overflow-x: auto;
     display: flex;
+    margin-bottom: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    
+      
 }
 
 .section-animal-table,
 .section-habitat-table
 .section-user-table {
     width: 100%;
-    height: 250px;
+    height: auto;
 
 }
 
@@ -1313,7 +1316,7 @@ input[type="submit"] {
     color: #52B207;
 }
 
-/*Tableau des utilisateur*/
+/*Tableau des utilisateur/animal*/
 .table-user,
 .table-animal{
     border-collapse: collapse;
@@ -1328,6 +1331,8 @@ input[type="submit"] {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
+    
+        
 }
 
 .table-user, .table-animal th {

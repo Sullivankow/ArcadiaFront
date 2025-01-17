@@ -148,7 +148,7 @@ break;
 
 
 //Fonction pour récupérer les infos utilisateurs 
-async function getInfosUser() { // `async` pour transformer la fonction en fonction asynchrone.
+async function getInfosUser() { 
     try {
         console.log("Récupération des infos de l'utilisateur");
 
