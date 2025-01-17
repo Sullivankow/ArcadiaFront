@@ -200,4 +200,3 @@ async function getInfosUser() { // `async` pour transformer la fonction en fonct
 
 
 
-

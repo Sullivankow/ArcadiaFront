@@ -34,7 +34,7 @@ async function fetchUsers() {
 
 
 
-
+//Fonction pour modifier un utilisateur 
 
 async function editUser() {
     const newRole = prompt("Entrez le nouveau rôle pour cet utilisateur (laissez vide pour ne pas modifier) :");
@@ -91,42 +91,36 @@ async function editUser() {
 
 
 
-
-
 async function deleteUser(userId) {
+    // Création des en-têtes avec le token d'authentification.
+    let myHeaders = new Headers();
+    myHeaders.append("X-AUTH-TOKEN", getToken()); // Assurez-vous que getToken() retourne le token valide.
+    myHeaders.append("Content-Type", "application/json");
 
- // Création des en-têtes avec le token d'authentification.
-        let myHeaders = new Headers();
-        myHeaders.append("X-AUTH-TOKEN", getToken());
-
-           // Configuration des options pour la requête HTTP.
-        let requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        }
-
-
-
-
+    // Confirmation avant suppression
     if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
         try {
-            const response = await fetch(`${apiUrl}/users`, {
+            // Appel à l'API avec la méthode DELETE et l'ID de l'utilisateur
+            const response = await fetch(`${apiUrl}/users/${userId}`, {
                 method: "DELETE",
+                headers: myHeaders,
             });
 
             if (response.ok) {
                 alert("Utilisateur supprimé avec succès !");
-                fetchUsers(); // Recharge les utilisateurs
+                fetchUsers(); // Recharge la liste des utilisateurs
             } else {
-                alert("Erreur lors de la suppression de l'utilisateur.");
+                const errorData = await response.json();
+                console.error("Erreur de l'API :", errorData);
+                alert(`Erreur lors de la suppression : ${errorData.message || 'Veuillez réessayer.'}`);
             }
         } catch (error) {
-            console.error("Erreur :", error);
-            alert("Une erreur est survenue.");
+            console.error("Erreur réseau ou serveur :", error);
+            alert("Une erreur est survenue lors de la suppression.");
         }
     }
 }
+
 
 
 

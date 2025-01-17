@@ -1283,24 +1283,6 @@ input[type="submit"] {
 }
 
 
-/* #table-animal,
-#table-habitat,
-.table-user
- {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    background: #E0E4EB;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-} */
-
-
-
 .caption-table-animal,
 .caption-table-habitat,
 .caption-table-user {
@@ -1331,8 +1313,9 @@ input[type="submit"] {
     color: #52B207;
 }
 
-/*Tableau des utiliateur*/
-.table-user {
+/*Tableau des utilisateur*/
+.table-user,
+.table-animal{
     border-collapse: collapse;
     width: 100%;
     max-width: 100%;
@@ -1340,14 +1323,14 @@ input[type="submit"] {
 }
 
 
-.table-user th,
-.table-user td {
+.table-user, .table-animal th,
+.table-user, .table-animal td {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
 }
 
-.table-user th {
+.table-user, .table-animal th {
     background-color: #f4f4f4;
 }
 
