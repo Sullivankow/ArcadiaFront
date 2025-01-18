@@ -173,3 +173,11 @@ async function deleteAnimal(animalId) {
 document.addEventListener("DOMContentLoaded", fetchAnimals);
 
 
+
+
+
+
+
+
+
+

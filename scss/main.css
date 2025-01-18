@@ -1316,18 +1316,20 @@ input[type="submit"] {
     color: #52B207;
 }
 
-/*Tableau des utilisateur/animal*/
+/*Tableau des utilisateur/animal/Habitats*/
 .table-user,
-.table-animal{
+.table-animal,
+.table-habitat{
     border-collapse: collapse;
     width: 100%;
     max-width: 100%;
         overflow-x: auto;
+        margin:10px;
 }
 
 
-.table-user, .table-animal th,
-.table-user, .table-animal td {
+.table-user, .table-animal, .table-habitat th,
+.table-user, .table-animal, .table-habitat td {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
@@ -1335,7 +1337,7 @@ input[type="submit"] {
         
 }
 
-.table-user, .table-animal th {
+.table-user, .table-animal, .table-habitat th {
     background-color: #f4f4f4;
 }
 

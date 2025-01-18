@@ -1,4 +1,5 @@
 <body>
+  
   <section class="section-animal-table">
     <div class="table-responsive">
       <h2 class="table-title-animal">Nos Animaux</h2>
@@ -23,41 +24,39 @@
     </div>
   </section>
 
-  <!-- Formulaire animaux-->
+
+   <!-- Formulaire animaux-->
   <section id="animal-section">
 
         <h2 class="title-form-animal">Ajouter un nouvel animal</h2>
         <form id="animal-form">
             <div class="animal-formulaire">
-                <label for="name">Nom de l'animal :</label>
-                <input type="text" id="name-animal" name="name-animal" required>
+                <label for="nameAnimal">Prénom de l'animal :</label>
+                <input type="text" id="nameAnimal" name="nameAnimal" required>
             </div>
 
 
-            <div class="animal-formulaire">
-                <label for="species">Espèces :</label>
-                <input type="text" id="espece" name="espece" required>
-            </div>
+           <div class="animal-formulaire">
+            <label for="raceAnimal">Race :</label>
+            <select class="racesAnimal" id="raceAnimal" name="raceAnimal" required>
+                <option value="race">Sélectionnez une race</option>
+            </select>
+        </div>
 
             <div class="animal-formulaire">
-                <label for="habitat">Habitat :</label>
-                <select id="habitat-espece" name="habitat-espece" required>
-                    <option value="savane">Savane</option>
-                    <option value="tropicale">Tropicale</option>
-                    <option value="aquatique">Aquatique</option>
-                    <option value="desertique">Désertique</option>
-                    <option value="montagne">Montagne</option>
+                <label for="habitatAnimal">Habitat :</label>
+                <select id="habitatAnimal" name="habitatAnimal" required>
+                    <option value="Savane Africaine">Savane</option>
+                    <option value="Forêt tropicale">Tropicale</option>
+                    <option value="Habitat aquatique">Aquatique</option>
+                    <option value="Désertique">Désertique</option>
+                    <option value="Montagneux">Montagne</option>
             </div>
             </select>
 
             <div class="animal-formulaire">
-                <label for="image" name="image">Image de l'animal :</label>
-                <input type="file" id="image-pets" name="image-pets">
-            </div>
-
-            <div class="animal-formulaire">
-                <label for="description">Description de l'animal :</label>
-                <textarea id="description-animal" name="description-animal" required></textarea>
+                <label for="etatAnimal">État de l'animal :</label>
+                <textarea id="etatAnimal" name="etatAnimal" required></textarea>
             </div>
 
             <div class="animal-formulaire">
@@ -72,4 +71,7 @@
         </form>
          
     </section>
+  
+
+     
 </body>
