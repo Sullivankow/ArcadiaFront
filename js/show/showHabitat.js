@@ -78,6 +78,26 @@ function displayHabitats(habitats) {
                     imageElement.style.width = '50px';  // Taille de l'image (à ajuster selon le besoin)
                     imageElement.style.height = 'auto'; // Taille de l'image (à ajuster selon le besoin)
                     imagesHabitatCell.appendChild(imageElement);
+
+// Bouton de modification de l'image
+                    const editButton = document.createElement("button");
+                    editButton.classList.add("btn-icon");
+            editButton.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>`;
+                    editButton.addEventListener("click", () => editImage(habitat.id, image.id, index));
+                    imagesHabitatCell.appendChild(editButton);
+
+                    // Bouton de suppression de l'image
+                    const deleteButton = document.createElement("button");
+                     deleteButton.classList.add("btn-icon");
+            deleteButton.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
+                    deleteButton.addEventListener("click", () => deleteImage(habitat.id, image.id, index));
+                    imagesHabitatCell.appendChild(deleteButton);
+
+
+
+
+
+
                 });
             } else {
                 imagesHabitatCell.textContent = "Aucune image";
