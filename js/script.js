@@ -15,7 +15,7 @@ menuHamburger.addEventListener('click', () => {
 const tokenCookieName = "accesstoken";
 const RoleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
- const apiUrl = "https://localhost:8000/api"     //URL à changer lors du déploiement 
+ const apiUrl = "http://localhost:8081/api"     //URL à changer lors du déploiement 
   
 
 

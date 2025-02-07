@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <img class="image-aPropos" src="Images\Accueil_body.jpg" alt="cameleon">
+            <img class="image-aPropos" src="Images\Accueil_body.avif" alt="cameleon">
 
         </div>
 
@@ -154,42 +154,37 @@
 
 
   <!--Formulaire d'avis client-->
-    <div class="container-form">
-        <h2 class="title-green">Laisser un avis</h2>
 
 
-        <form id="review-form">
-            <div class="name-form">
-                <div class="box">
-    <input type="text" placeholder="Votre Nom">
+
+
+    <section id="avis-form-section">
+  <h2>Laissez un avis sur Arcadia</h2>
+  <form class=formAvis id="avis-Form" method="POST">
+    <div>
+      <label for="auteur">Votre nom :</label>
+      <input type="text" id="auteur" name="auteur" placeholder="Votre nom" />
     </div>
-
-                <label class="text-form" for="description">Description</label>
-                <textarea id="description" placeholder="Votre description ici"></textarea>
-
-
-                <!--Bloc laiser un avis-->
-                <div class="container-form-note">
-                    <label for="note"></label>
-                    <div class="stars-form">
-                        <input type="radio" id="stars5" name="rating" value="5">
-                        <label for="star5">★★★★★</label>
-                        <input type="radio" id="stars4" name="rating" value="4">
-                        <label for="star4">★★★★</label>
-                        <input type="radio" id="stars3" name="rating" value="3">
-                        <label for="star3">★★★</label>
-                        <input type="radio" id="stars2" name="rating" value="2">
-                        <label for="star2">★★</label>
-                        <input type="radio" id="stars1" name="rating" value="1">
-                        <label for="star1">★</label>
-                    </div>
-                </div>
-                <div class="button-form">
-                    <button class="btn" type="submit">Soumettre</button>
-                </div>
-            </div>
-        </form>
+    <div>
+      <label for="contenu">Votre avis :</label>
+      <textarea id="contenu" name="contenu" placeholder="Écrivez votre avis ici..." required></textarea>
     </div>
+    <div>
+      <label for="note">Note :</label>
+      <select id="note" name="note" required>
+        <option value="">-- Choisir une note --</option>
+        <option value="1">1 - Très mauvais</option>
+        <option value="2">2 - Mauvais</option>
+        <option value="3">3 - Moyen</option>
+        <option value="4">4 - Bon</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+    </div>
+    <button type="submit">Envoyer mon avis</button>
+  </form>
+  <div id="avis-response"></div>
+</section>
+
 
     </article>
 

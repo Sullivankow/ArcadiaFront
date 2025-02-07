@@ -1,21 +1,25 @@
 <body>
-    <section id="reviews">
-
-        <h2 class="title-reviews"> Gestion avis clients</h2>
-        <table id="table-review">
+    <section class="section-review-table" id="reviews">
+        <div class="table-responsive">
+        <h2 class="table-title-reviews"> Gestion avis clients</h2>
+        <table class="table-review" id="table-review" border="1">
+            <caption class="caption-table-review">
+                Information sur les avis
+              </caption>
             <thread>
                 <tr>
-                    <th>Client</th>
-                    <th>Note</th>
+                    <th>Id</th>
+                    <th>Auteur</th>
                     <th>Commentaire</th>
                     <th>Date</th>
                     <th>Status</th>
+                    <th>Note</th>
                     <th>Actions</th>
                 </tr>
             </thread>
 
 
-            <tbody>
+            <tbody id="avis-list">
                 <!--LES AVIS SERONT ICI-->
 
             </tbody>
@@ -23,6 +27,7 @@
         <div class="horaires-retour-accueil">
         <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu
             gestion</button></a>
+      </div>
       </div>
     </section>
 </body>

@@ -12,7 +12,7 @@ btnSignin.addEventListener("click", checkCredentials);
 
 
 //Fonction pour vérifier les informations
-async function checkCredentials() { // 1. Ajout du mot-clé `async` pour transformer la fonction en fonction asynchrone.
+async function checkCredentials() { 
     try {
         let dataForm = new FormData(signinForm);
 

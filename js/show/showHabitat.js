@@ -4,7 +4,7 @@ async function fetchHabitats() {
     try {
         // Création des en-têtes avec le token d'authentification
         let myHeaders = new Headers();
-        myHeaders.append("X-AUTH-TOKEN", getToken()); // Assurez-vous que getToken() retourne un token valide
+        myHeaders.append("X-AUTH-TOKEN", getToken()); // getToken() retourne un token valide
 
         // Configuration des options pour la requête HTTP
         let requestOptions = {
