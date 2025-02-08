@@ -442,76 +442,50 @@ footer {
 
 
 /*Section avis*/
-
-/* .container-review {
-    padding: 0px;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 50px;
-}
-
-.title-review {
+.avis-wrapper {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-
-
-
-}
-
-.second-title-review {
-    display: flex;
-    justify-content: center;
-    font-family: "Outfit", sans-serif;
-    padding: 0px;
-    margin-top: 0px;
-}
-
-.card-grid {
-    display: flex;
     padding: 20px;
-    align-items: center;
-    justify-content: space-around;
-
-
 }
-
-.card-review {
-
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-
-
-}
-
-.pic-profil {
-    border-radius: 50%;
-}
-
 .stars {
-    color: #52B207;
-    display: flex;
-    justify-content: center;
+    color: #f5c518; /* Couleur jaune pour les étoiles */
+    font-size: 1.2em;
+  }
+  
+  .avis-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+  }
+  
+  .avis-card h3 {
+    margin-bottom: 5px;
+  }
+  
+  .avis-card p {
+    font-style: italic;
+    color: #555;
+  }
+  
+  .avis-card .date {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+  }
+  
 
-}
-
-h3,
-.text-review {
-    display: flex;
-    justify-content: center;
-    font-family: "Outfit", sans-serif;
-}
-
-.date {
-    color: #2A2B2E;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-} */
+  
 
 
 /*Section du formmulaire d'avis*/
-/* #avis-form-section {
+#avis-form-section {
     margin: 20px auto;
     padding: 20px;
     max-width: 600px;
@@ -579,7 +553,7 @@ form.formAvis button {
 
 form.formAvis button:hover {
     background-color: #E0E4EB;
-} */
+}
 
 /* Message de réponse */
 #avis-response {

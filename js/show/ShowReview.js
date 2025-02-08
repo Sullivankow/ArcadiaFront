@@ -170,4 +170,79 @@ async function deleteAvis(avisId) {
     alert("Une erreur est survenue lors de la suppression");
   }
 }
+
 document.addEventListener("DOMContentLoaded", fetchAvis);
+
+// Récupère et affiche les avis validés sur la page d'accueil
+async function fetchAvisForHomepage() {
+  try {
+    const response = await fetch(`${apiUrl}/avis/show/validated`);
+
+    if (!response.ok) {
+      throw new Error(
+        `Erreur lors de la récupération des avis : ${response.status}`
+      );
+    }
+
+    const avis = await response.json();
+    console.log("Avis pour la page d'accueil :", avis);
+
+    displayAvisHomepage(avis);
+  } catch (error) {
+    console.error(
+      "Erreur lors de la récupération des avis pour l'accueil :",
+      error.message
+    );
+  }
+}
+
+// Affichage des avis sous forme de cartes sur la page d'accueil
+function displayAvisHomepage(avis) {
+  const avisContainer = document.getElementById("avis-homepage");
+
+  if (!avisContainer) {
+    console.error(
+      "Erreur : L'élément avec l'id 'avis-homepage' n'existe pas dans le DOM."
+    );
+    return;
+  }
+
+  avisContainer.innerHTML = ""; // Vide le conteneur avant d'ajouter les avis
+
+  if (Array.isArray(avis) && avis.length > 0) {
+    avis.forEach((avis) => {
+      const avisCard = document.createElement("div");
+      avisCard.classList.add("avis-card");
+
+      avisCard.innerHTML = `
+        <h3>${avis.auteur || "Anonyme"}</h3>
+        <p>${avis.contenu || "Sans contenu"}</p>
+        <span class="date">${avis.date || "Date inconnue"}</span>
+        <div class="stars">${getStars(avis.note || 0)}</div>
+      `;
+
+      avisContainer.appendChild(avisCard);
+    });
+  } else {
+    avisContainer.innerHTML = "<p>Aucun avis disponible pour le moment.</p>";
+  }
+}
+
+// Fonction pour générer les étoiles selon la note
+function getStars(note) {
+  const maxStars = 5;
+  let starsHtml = "";
+
+  for (let i = 1; i <= maxStars; i++) {
+    if (i <= note) {
+      starsHtml += '<i class="fa-solid fa-star"></i>'; // Étoile pleine
+    } else {
+      starsHtml += '<i class="fa-regular fa-star"></i>'; // Étoile vide
+    }
+  }
+
+  return starsHtml;
+}
+
+// Charge les avis validés sur la page d'accueil lorsque le DOM est prêt
+document.addEventListener("DOMContentLoaded", fetchAvisForHomepage);
