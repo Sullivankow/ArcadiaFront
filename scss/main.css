@@ -460,9 +460,10 @@ footer {
     padding: 15px;
     margin: 10px;
     background: #fff;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
-    width: 250px;
+    font-family: "Outfit", sans-serif;
+    width: 210px;
   }
   
   .avis-card h3 {
@@ -485,24 +486,29 @@ footer {
 
 
 /*Section du formmulaire d'avis*/
+
 #avis-form-section {
     margin: 20px auto;
     padding: 20px;
     max-width: 600px;
-    background-color: #ffffff;
+    background-color: #52B207;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:10px 10px 20px rgba(0, 0, 0, 0.5);
+    
+    
+    
 }
 
 #avis-form-section h2 {
     text-align: center;
-    color: #52B207;
+    font-family: "Outfit", sans-serif;
+    color: white;
     margin-bottom: 20px;
     font-size: 24px;
 } */
 
 /* Formulaire */
-/* form.formAvis {
+form.formAvis {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -514,9 +520,10 @@ form.formAvis div {
 }
 
 form.formAvis label {
+    font-family: "Outfit", sans-serif;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
+    color: white;
 }
 
 form.formAvis input,
@@ -542,17 +549,24 @@ form.formAvis textarea {
     min-height: 100px;
 }
 
+.button-review{
+    display: flex;
+}
 form.formAvis button {
-    background-color: #52B207;
-    color: white;
+    background-color: white;
+    color: #575757;
     border: none;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    margin-top: 15px;
+ 
+    
 }
 
 form.formAvis button:hover {
-    background-color: #E0E4EB;
+    background-color: #575757;
+    color: white;
 }
 
 /* Message de réponse */
