@@ -99,15 +99,15 @@ function showAndHideElementsForRoles() {
 
     switch (role) {
       case "ROLE_ADMIN":
-        alert("Bienvenue adminisitrateur");
+        console.log("Bienvenue adminisitrateur");
 
         break;
       case "ROLE_VETERINAIRE":
-        alert("Bienvenue vétérinaire");
+        console.log("Bienvenue vétérinaire");
         break;
 
       case "ROLE_EMPLOYE":
-        alert("Bienvenue employé");
+        console.log("Bienvenue employé");
 
         break;
 
