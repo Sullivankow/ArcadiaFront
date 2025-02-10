@@ -1,0 +1,32 @@
+  <!--Formulaire d'avis client-->
+
+
+  <div id="avis-form-section">
+    <h2>Laissez un avis sur Arcadia</h2>
+    <form class=formAvis id="avis-Form" method="POST">
+      <div>
+        <label for="auteur">Votre nom :</label>
+        <input type="text" id="auteur" name="auteur" placeholder="Votre nom" />
+      </div>
+      <div>
+        <label for="contenu">Votre avis :</label>
+        <textarea id="contenu" name="contenu" placeholder="Écrivez votre avis ici..." required></textarea>
+      </div>
+      <div>
+        <label for="note">Note :</label>
+        <select id="note" name="note" required>
+          <option value="">-- Choisir une note --</option>
+          <option value="1">1 - Très mauvais</option>
+          <option value="2">2 - Mauvais</option>
+          <option value="3">3 - Moyen</option>
+          <option value="4">4 - Bon</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </div>
+      <div class="button-review">
+      <button type="submit">Soumettre mon avis</button>
+  </div>
+    </form>
+    <div id="avis-message"></div>
+  </div>
+  

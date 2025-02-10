@@ -204,7 +204,7 @@ footer {
     color: white;
     border-radius: 40px;
     width: 100px;
-    height: 25px;
+    height: auto;
     border: none;
     cursor: pointer;
 }
@@ -486,11 +486,15 @@ footer {
 
 
 /*Section du formmulaire d'avis*/
+.addAvis{
+    display: flex;
+    justify-content: center;
+}
 
 #avis-form-section {
     margin: 20px auto;
     padding: 20px;
-    max-width: 600px;
+    max-width:600px;
     background-color: #52B207;
     border-radius: 10px;
     box-shadow:10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -502,6 +506,7 @@ footer {
 #avis-form-section h2 {
     text-align: center;
     font-family: "Outfit", sans-serif;
+    
     color: white;
     margin-bottom: 20px;
     font-size: 24px;

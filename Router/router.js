@@ -27,25 +27,21 @@ const LoadContentPage = async () => {
   // Récupération de l'URL actuelle
   const actualRoute = getRouteByUrl(path);
 
-// Vérifier les droits d'accès à la page//
-const allRolesArray = actualRoute.authorize;
+  // Vérifier les droits d'accès à la page//
+  const allRolesArray = actualRoute.authorize;
 
-if(allRolesArray.length > 0){
-  if(allRolesArray.includes("disconnected")){
-    if(isConnected()){
-      window.location.replace("/");
-    }
-  }else{
-    const roleUser = getRole();
-    if(!allRolesArray.includes(roleUser)){
-window.location.replace("/authorize");
+  if (allRolesArray.length > 0) {
+    if (allRolesArray.includes("disconnected")) {
+      if (isConnected()) {
+        window.location.replace("/");
+      }
+    } else {
+      const roleUser = getRole();
+      if (!allRolesArray.includes(roleUser)) {
+        window.location.replace("/authorize");
+      }
     }
   }
-}
-
-
-
-
 
   // Récupération du contenu HTML de la route
   const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
@@ -66,13 +62,9 @@ window.location.replace("/authorize");
   // Changement du titre de la page
   document.title = actualRoute.title + " - " + websiteName;
 
-
-//Afficher et masquer les éléments en fonction du rôle
-showAndHideElementsForRoles();
+  //Afficher et masquer les éléments en fonction du rôle
+  showAndHideElementsForRoles();
 };
-
-
-
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
 const routeEvent = (event) => {

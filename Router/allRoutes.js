@@ -9,6 +9,13 @@ export const allRoutes = [
   new Route("/aPropos", "À propos", "/pages/aPropos.html", []),
   new Route("/habitat", "Les habitats", "/pages/lesHabitats.html", []),
   new Route(
+    "/avis",
+    "Ajouter avis",
+    "/pages/avis.html",
+    [],
+    "js/show/ShowReview.js"
+  ),
+  new Route(
     "/signin",
     "Connexion",
     "/pages/auth/signin.html",
@@ -53,13 +60,11 @@ export const allRoutes = [
     ["ROLE_ADMIN"],
     "/js/auth/signup.js"
   ),
-  new Route(
-    "/reviews",
-    "Les avis",
-    "/pages/dashboard/reviews.html",
-    ["ROLE_ADMIN", "ROLE_EMPLOYE"],
-    "/js/auth/signup.js"
-  ),
+  new Route("/reviews-list", "Les avis", "/pages/dashboard/reviews.html", [
+    "ROLE_ADMIN",
+    "ROLE_EMPLOYE",
+    "/js/auth/signup.js",
+  ]),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename
