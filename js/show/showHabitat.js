@@ -196,7 +196,7 @@ async function editHabitat(habitatId) {
   }
 }
 
-// Fonction pour supprimer un animal
+// Fonction pour supprimer un habitat
 async function deleteHabitat(habitatId) {
   if (!confirm("Êtes-vous sûr de vouloir supprimer cet habitat ?")) return;
 

@@ -295,8 +295,6 @@ async function addAvis() {
         redirect: "follow",
       };
 
-      console.log("API URL :", apiUrl); // Vérifier si apiUrl est bien défini
-
       const response = await fetch(`${apiUrl}/avis/new`, requestOptions);
 
       if (!response.ok) {

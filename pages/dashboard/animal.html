@@ -1,4 +1,4 @@
-<body>
+
   
   <section class="section-animal-table">
     <div class="table-responsive">
@@ -31,32 +31,30 @@
         <h2 class="title-form-animal">Ajouter un nouvel animal</h2>
         <form id="animal-form">
             <div class="animal-formulaire">
-                <label for="nameAnimal">Prénom de l'animal :</label>
-                <input type="text" id="nameAnimal" name="nameAnimal" required>
+              <label for="prenom">Prénom de l'animal :</label>
+              <input type="text" id="nameAnimal" name="prenom" required>
             </div>
 
 
            <div class="animal-formulaire">
-            <label for="raceAnimal">Race :</label>
-            <select class="racesAnimal" id="raceAnimal" name="raceAnimal" required>
-                <option value="race">Sélectionnez une race</option>
-            </select>
+            <label for="race">Race :</label>
+<select class="racesAnimals" id="raceAnimal" name="raceAnimal" required>
+  <option value="race">Selectionner la race</option>
+</select>
         </div>
 
             <div class="animal-formulaire">
                 <label for="habitatAnimal">Habitat :</label>
                 <select id="habitatAnimal" name="habitatAnimal" required>
-                    <option value="Savane Africaine">Savane</option>
-                    <option value="Forêt tropicale">Tropicale</option>
-                    <option value="Habitat aquatique">Aquatique</option>
-                    <option value="Désertique">Désertique</option>
-                    <option value="Montagneux">Montagne</option>
-            </div>
+                    <option value="habitat">Selectionner l'habitat</option>
+                    
+            
             </select>
+          </div>
 
             <div class="animal-formulaire">
-                <label for="etatAnimal">État de l'animal :</label>
-                <textarea id="etatAnimal" name="etatAnimal" required></textarea>
+              <label for="etat">État de l'animal :</label>
+              <textarea id="etatAnimal" name="etat" required></textarea>
             </div>
 
             <div class="animal-formulaire">
@@ -67,6 +65,7 @@
             <div class="animal-retour-accueil">
                <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu gestion</button></a>
             </div>
+            <p id="message"></p>
             
         </form>
          
@@ -74,4 +73,4 @@
   
 
      
-</body>
+
