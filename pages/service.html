@@ -21,57 +21,31 @@
     </div>
 </div>
 
-<section>
+<section class="section-service">
     <h1 class="title-green-service">Nos Services</h1>
-    <div class="nosServices">
-        <div class="card-restaurant">
-            <h2 class="title-service">Restauration</h2>
+    <div class="nosServices"></div>
+    </section>
 
-            <p class="text-service">Bienvenue dans notre espace dédié à la restauration, où saveurs et convivialité se
-                rencontrent. Que vous soyez en quête d'un repas rapide ou d'une expérience gastronomique raffinée, notre
-                service de restauration est conçu pour satisfaire tous les palais.
 
-                Nous vous proposons une cuisine fraîche, équilibrée et savoureuse, préparée à partir d'ingrédients
-                soigneusement sélectionnés. Notre chef et son équipe élaborent chaque jour des plats variés, alliant
-                créativité et respect des produits de saison.e qualité, dans une ambiance chaleureuse et accueillante.
-            </p>
-            <div class="service-icons">
-                <i class="fas fa-edit edit-icon" title="Modifier"></i>
-                <i class="fas fa-trash delete-icon" title="Supprimer"></i>
-            </div>
+
+<!-- Formulaire Service -->
+<section id="service-section">
+    <h2 class="title-form-service">Ajouter un nouveau service</h2>
+    
+    <form class="serviceForm" id="service-form">
+        <div class="service-formulaire">
+        <input type="text" id="titre" placeholder="Titre du service" required>
 
         </div>
+        <div class="service-formulaire">
 
-        <div class="card-family">
-            <h2 class="title-service">Visite guidée</h2>
-            <p class="text-service">Vivez une aventure inoubliable au cœur de la nature avec nos visites guidées du zoo.
-                Partez à la rencontre des animaux fascinants du monde entier, tout en découvrant leurs histoires uniques
-                et leurs habitats naturels. Nos guides passionnés vous feront découvrir les coulisses de la vie animale
-                et partageront des anecdotes captivantes sur nos espèces les plus emblématiques.</p>
-
-            <div class="service-icons">
-                <i class="fas fa-edit edit-icon" title="Modifier"></i>
-                <i class="fas fa-trash delete-icon" title="Supprimer"></i>
-            </div>
-
-        </div>
-
-        <div class="card-train">
-            <h2 class="title-service">Visite en petit train</h2>
-            <p class="text-service">Embarquez pour un voyage unique à travers le zoo à bord de notre petit train ! Une
-                manière confortable et amusante de découvrir les animaux tout en profitant d'une vue panoramique sur les
-                différents enclos. Cette visite guidée est idéale pour les familles, les groupes ou toute personne
-                souhaitant explorer le zoo sans se fatiguer.</p>
-
-            <div class="service-icons">
-                <i class="fas fa-edit edit-icon" title="Modifier"></i>
-                <i class="fas fa-trash delete-icon" title="Supprimer"></i>
-            </div>
-        </div>
-
-    </div>
-    <div class="button-service">
-        <button class="btn-service" type="button">Ajouter un service</button>
-    </div>
+        <textarea id="descriptionService" placeholder="Description" required></textarea>
+        
+        <button class="btn-service-form" type="submit">Ajouter le service</button>
+        
+       </div>
+    </form>
+    
+</section>
 
 </section>

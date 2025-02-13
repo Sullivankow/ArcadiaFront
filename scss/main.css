@@ -852,13 +852,80 @@ input[type="submit"] {
 
 
 /*---PAGE NOS SERVICES---*/
-.nosServices {
-    width: 100%;
-    height: auto;
-    display: flex;
 
-
+.section-service{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
+
+.nosServices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Carte de service */
+.card-service {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-service:hover {
+    transform: scale(1.05);
+}
+
+/* Titre du service */
+.title-service {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Texte de description */
+.text-service {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Prix */
+.text-service:last-of-type {
+    font-weight: bold;
+    color: #2c7a2c;
+}
+
+/* Icônes d'action */
+.service-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.service-icons i {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Couleurs au survol */
+.edit-icon:hover {
+    color: #2c7a2c;
+}
+
+.delete-icon:hover {
+    color: red;
+}
+
+
+
+
 
 .title-green-service {
     font-family: "Indie Flower", sans-serif;
@@ -869,47 +936,7 @@ input[type="submit"] {
     font-size: 35px;
 }
 
-.card-restaurant {
-    width: 35%;
-    height: auto;
-    background: #E0E4EB;
-    text-align: center;
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
 
-
-
-.card-family {
-    width: 35%;
-    height: auto;
-    text-align: center;
-    margin: 20px;
-    border-radius: 20px;
-    background: #E0E4EB;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-
-.card-train {
-    width: 35%;
-    height: auto;
-    text-align: center;
-    margin: 20px;
-    border-radius: 20px;
-    background: #E0E4EB;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
 
 
 
@@ -1233,15 +1260,18 @@ input[type="submit"] {
 
 
 
-/*PAGE GESTION DES ANIMAUX/HABITAT/USERS*/
+/*PAGE GESTION DES ANIMAUX/HABITAT/USERS/SERVICE*/
 
-/*Formulaire ajout animal/habitat/Users*/
+/*Formulaire ajout animal/habitat/Users/Service*/
 #animal-section,
 #habitat-section,
-#user-section {
+#user-section,
+#service-section
+{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    padding:15px;
     height: auto;
     flex-direction: row;
     background: #52B207;
@@ -1250,7 +1280,8 @@ input[type="submit"] {
 
 .title-form-animal,
 .title-form-habitat,
-.title-form-user {
+.title-form-user,
+.title-form-service {
     font-family: "Indie Flower", sans-serif;
     color: white;
     padding: 20px;
@@ -1259,21 +1290,26 @@ input[type="submit"] {
 
 .animal-formulaire,
 .habitat-formulaire,
-.user-formulaire {
+.user-formulaire,
+.service-formulaire {
     display: flex;
     flex-direction: column;
     margin: 10px;
+    
     font-family: "Outfit", sans-serif;
     color: white;
 }
 
 .btn-animal-form,
-.btn-habitat-form
+.btn-habitat-form,
+.btn-service-form
+
 {
 
     border-radius: 20px;
     border: none;
-    height: 70px;
+    margin: 10px;
+    height: 40px;
     font-family: "Outfit", sans-serif;
     cursor: pointer;
 }
@@ -1287,6 +1323,8 @@ input[type="submit"] {
     font-family: "Outfit", sans-serif;
         cursor: pointer;
 }
+
+
 
 
 .table-title-animal,
@@ -1488,6 +1526,35 @@ input[type="submit"] {
     flex-direction: column;
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
+/* Responsive Service*/
+@media (max-width: 600px) {
+    .title-green-service {
+        font-size: 1.8rem;
+    }
+
+    .card-service {
+        padding: 15px;
+    }
+
+    .service-icons i {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+
+
+
 
 
 
