@@ -216,28 +216,40 @@ async function modifierService(serviceId) {
   }
 }
 
-// //Fonction pour supprimer
-// async function supprimerService(id) {
-//   if (!confirm("Voulez-vous vraiment supprimer ce service ?")) return;
+//Fonction pour supprimer un service
+async function supprimerService(serviceId) {
+  if (!confirm("Êtes-vous sûr de vouloir supprimer ce service?")) return;
+  try {
+    //Création des en-têtes avec le token d'authentification
+    let myHeaders = new Headers();
+    myHeaders.append("X-AUTH-TOKEN", getToken());
 
-//   try {
-//     const response = await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+    //Requête API pour supprimer le service
+    const response = await fetch(`${apiUrl}/service/delete/${serviceId}`, {
+      method: "DELETE",
+      headers: myHeaders,
+    });
+    if (response.ok) {
+      alert("Service supprimé avec succès!");
+      recupServices();
+    } else {
+      const errorMessage = await response.text();
+      alert("Erreur lors de la suppression du service");
+      alert(`Erreur lors de la suppression : ${errorMessage}`);
+    }
+  } catch (error) {
+    console.error("Erreur:", error);
+    alert("Une erreur est survenue lors de la suppression");
+  }
+}
 
-//     if (!response.ok) throw new Error("Erreur lors de la suppression");
+//Fonction pour restreindre l'affichage des fonctionnalités pour les visiteurs
+const estAdmin = getRole() === "admin";
+const estEmploye = getRole() === "employe"; // Exemple de vérification du rôle
 
-//     chargerServices();
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-// //Fonction pour restreindre l'affichage des fonctionnalités pour les visiteurs
-// const estAdmin = getRole() === "admin";
-// const estEmploye = getRole() === "employe"; // Exemple de vérification du rôle
-
-// if (!estAdmin || !estEmploye) {
-//   document
-//     .getElementById("service-section")
-//     .querySelectorAll(".service-icons")
-//     .forEach((icon) => (icon.style.display = "none"));
-// }
+if (!estAdmin || !estEmploye) {
+  document
+    .getElementById("service-section")
+    .querySelectorAll(".service-icons")
+    .forEach((icon) => (icon.style.display = "none"));
+}
