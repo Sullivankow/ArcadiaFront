@@ -34,12 +34,17 @@
     
     <form class="serviceForm" id="service-form">
         <div class="service-formulaire">
-        <input type="text" id="titre" placeholder="Titre du service" required>
+        <input type="text" id="nomService" placeholder="Titre du service" required>
 
         </div>
         <div class="service-formulaire">
+            <input type="number" id="prix" placeholder="prix du service"required min="0" step="0.01">
+    
+            </div>
+        <div class="service-formulaire">
 
         <textarea id="descriptionService" placeholder="Description" required></textarea>
+        <p id="message-service"></p>
         
         <button class="btn-service-form" type="submit">Ajouter le service</button>
         
