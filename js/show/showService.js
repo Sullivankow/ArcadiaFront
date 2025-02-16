@@ -3,7 +3,7 @@ async function recupServices() {
   try {
     //Création des en-têtes
     let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken());
+    myHeaders.append("Content-Type", "application/json");
 
     //Configuration des options de la requêtes
     let requestOptions = {
@@ -68,6 +68,21 @@ function afficherServices(services) {
       supprimerService(serviceId);
     });
   });
+
+  // ✅ Appliquer la restriction des rôles après l'affichage des services
+  restreindreAffichage();
+}
+
+// Fonction pour cacher les icônes si l'utilisateur n'est pas admin ou employé
+function restreindreAffichage() {
+  const estAdmin = getRole() === "ROLE_ADMIN";
+  const estEmploye = getRole() === "ROLE_EMPLOYE";
+
+  if (!estAdmin && !estEmploye) {
+    document.querySelectorAll(".service-icons").forEach((icon) => {
+      icon.style.display = "none";
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", recupServices);
@@ -241,15 +256,4 @@ async function supprimerService(serviceId) {
     console.error("Erreur:", error);
     alert("Une erreur est survenue lors de la suppression");
   }
-}
-
-//Fonction pour restreindre l'affichage des fonctionnalités pour les visiteurs
-const estAdmin = getRole() === "admin";
-const estEmploye = getRole() === "employe"; // Exemple de vérification du rôle
-
-if (!estAdmin || !estEmploye) {
-  document
-    .getElementById("service-section")
-    .querySelectorAll(".service-icons")
-    .forEach((icon) => (icon.style.display = "none"));
 }

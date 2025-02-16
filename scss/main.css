@@ -898,7 +898,8 @@ input[type="submit"] {
 /* Prix */
 .text-service:last-of-type {
     font-weight: bold;
-    color: #2c7a2c;
+    color: #52B207;
+    justify-content: center;
 }
 
 /* Icônes d'action */
