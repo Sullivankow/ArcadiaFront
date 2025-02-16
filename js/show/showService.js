@@ -47,11 +47,26 @@ function afficherServices(services) {
             <p class="text-service">${service.description}</p>
             <p class="text-service">${service.price}€</p>
             <div class="service-icons">
-                <i class="fas fa-edit edit-icon" title="Modifier" onclick="modifierService('${service.id}')"></i>
-                <i class="fas fa-trash delete-icon" title="Supprimer" onclick="supprimerService('${service.id}')"></i>
+                <i class="fas fa-edit edit-icon" title="Modifier" data-id="${service.id}"></i>
+                <i class="fas fa-trash delete-icon" title="Supprimer" data-id="${service.id}"></i>
+               
             </div>
         `;
     container.appendChild(card);
+  });
+  // Attache les événements après la création des éléments
+  document.querySelectorAll(".edit-icon").forEach((icon) => {
+    icon.addEventListener("click", (event) => {
+      const serviceId = event.target.getAttribute("data-id");
+      modifierService(serviceId);
+    });
+  });
+
+  document.querySelectorAll(".delete-icon").forEach((icon) => {
+    icon.addEventListener("click", (event) => {
+      const serviceId = event.target.getAttribute("data-id");
+      supprimerService(serviceId);
+    });
   });
 }
 
@@ -113,7 +128,6 @@ function initializeForm(formService) {
         name: titre,
         description: description,
         price: parseFloat(prix), // Convertir en nombre
-        availability: "",
       });
 
       // Définition des options de la requête
@@ -145,30 +159,62 @@ function initializeForm(formService) {
   });
 }
 
-// //Fonction pour modifier un service
-// async function modifierService(id) {
-//   const nouveauTitre = prompt("Nouveau titre du service :");
-//   const nouvelleDescription = prompt("Nouvelle description du service :");
+//Fonction pour modifier un service
+async function modifierService(serviceId) {
+  const newServiceName = prompt(
+    "Entrez le nouveau nom pour ce service (laissez vide pour ne pas modifier) :"
+  );
+  const newServiceDescription = prompt(
+    "Entrez la nouvelle description pour ce service (laissez vide pour ne pas modifier) :"
+  );
+  const newServicePrice = prompt(
+    "Entrez le nouveau prix pour ce service (laissez vide pour ne pas modifier) :"
+  );
 
-//   if (!nouveauTitre || !nouvelleDescription) return;
+  if (!newServiceName && !newServiceDescription && !newServicePrice) {
+    alert("Aucune modification à effectuer.");
+    return;
+  }
 
-//   try {
-//     const response = await fetch(`${apiUrl}/${id}`, {
-//       method: "PUT",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({
-//         titre: nouveauTitre,
-//         description: nouvelleDescription,
-//       }),
-//     });
+  try {
+    // Création des en-têtes avec le token d'authentification
+    let myHeaders = new Headers();
+    myHeaders.append("X-AUTH-TOKEN", getToken());
+    myHeaders.append("Content-Type", "application/json");
 
-//     if (!response.ok) throw new Error("Erreur lors de la modification");
+    // Préparation du corps de la requête
+    const body = {};
+    if (newServiceName) body.name = newServiceName;
+    if (newServiceDescription) body.description = newServiceDescription;
+    if (newServicePrice && !isNaN(newServicePrice)) {
+      body.price = parseFloat(newServicePrice);
+    }
 
-//     chargerServices();
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+    // Configuration des options pour la requête HTTP
+    let requestOptions = {
+      method: "PUT",
+      headers: myHeaders,
+      body: JSON.stringify(body),
+    };
+
+    // Requête API pour modifier le service
+    const response = await fetch(
+      `${apiUrl}/service/edit/${serviceId}`,
+      requestOptions
+    );
+
+    if (response.ok) {
+      alert("Les modifications ont été effectuées avec succès !");
+      recupServices(); // Recharge la liste des services
+    } else {
+      const errorMessage = await response.text();
+      alert(`Erreur lors de la mise à jour : ${errorMessage}`);
+    }
+  } catch (error) {
+    console.error("Erreur :", error);
+    alert("Une erreur est survenue lors de la modification.");
+  }
+}
 
 // //Fonction pour supprimer
 // async function supprimerService(id) {
