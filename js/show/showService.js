@@ -69,7 +69,7 @@ function afficherServices(services) {
     });
   });
 
-  // ✅ Appliquer la restriction des rôles après l'affichage des services
+  // Restriction des rôles après l'affichage des services
   restreindreAffichage();
 }
 
@@ -79,8 +79,10 @@ function restreindreAffichage() {
   const estEmploye = getRole() === "ROLE_EMPLOYE";
 
   if (!estAdmin && !estEmploye) {
+    const formAjout = document.getElementById("service-section");
     document.querySelectorAll(".service-icons").forEach((icon) => {
       icon.style.display = "none";
+      formAjout.style.display = estAdmin || estEmploye ? "block" : "none";
     });
   }
 }
