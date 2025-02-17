@@ -1,12 +1,16 @@
-<body>
-  <div class="div-horaires">
-    <h1>Horaires</h1>
-  </div>
-  <div class="table-responsiveH">
-    <form id="horaires-formulaire">
-      <table id="horaires-table">
+
+<section class="section-horaire-table">
+  <div class="table-responsive">
+    <h2 class="table-title-horaire">Nos Horaires</h2>
+  
+    
+      <table class="table-horaire" border="1">
+        <caption class="caption-table-horaire">
+          Informations sur les Horaires
+        </caption>
         <thead>
           <tr>
+            
             <th>Jour</th>
             <th>Heure d'ouverture</th>
             <th>Heure de fermeture</th>
@@ -16,86 +20,44 @@
         </thead>
         <tbody id="horaires-table">
           <!-- Les horaires seront chargés ici -->
-           <tr>
-            <td data-label="Jour">Lundi</td>
-            <td data-label="Heure d'ouverture">09:00</td>
-            <td data-label="Heure de fermeture">18:00</td>
-            <td data-label="Saison">Haute saison</td>
-            <td data-label="Action">
-               <div class="service-icons">
-                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
-                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
-            </div>
-          </td>
-          </tr>
-          <tr>
-            <td data-label="Jour">Mardi</td>
-            <td data-label="Heure d'ouverture">09:00</td>
-            <td data-label="Heure de fermeture">18:00</td>
-            <td data-label="Saison">Haute saison</td>
-            <td data-label="Action"> <div class="service-icons">
-                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
-                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
-            </div></td>
-          </tr>
-          <tr>
-            <td data-label="Jour">Mercredi</td>
-            <td data-label="Heure d'ouverture">09:00</td>
-            <td data-label="Heure de fermeture">18:00</td>
-            <td data-label="Saison">Haute saison</td>
-            <td data-label="Action"> <div class="service-icons">
-                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
-                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
-            </div></td>
-          </tr>
-          <tr>
-            <td data-label="Jour">Jeudi</td>
-            <td data-label="Heure d'ouverture">09:00</td>
-            <td data-label="Heure de fermeture">18:00</td>
-            <td data-label="Saison">Haute saison</td>
-            <td data-label="Action"> <div class="service-icons">
-                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
-                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
-            </div></td>
-          </tr>
-          <tr>
-            <td data-label="Jour">Vendredi</td>
-            <td data-label="Heure d'ouverture">09:00</td>
-            <td data-label="Heure de fermeture">18:00</td>
-            <td data-label="Saison">Haute saison</td>
-            <td data-label="Action"> <div class="service-icons">
-                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
-                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
-            </div></td>
-          </tr>
-          <tr>
-            <td data-label="Jour">Samedi</td>
-            <td data-label="Heure d'ouverture">10:00</td>
-            <td data-label="Heure de fermeture">20:00</td>
-            <td data-label="Saison">Haute saison</td>
-            <td data-label="Action"> <div class="service-icons">
-                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
-                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
-            </div></td>
-          </tr>
-          <tr>
-            <td data-label="Jour">Dimanche</td>
-            <td data-label="Heure d'ouverture">10:00</td>
-            <td data-label="Heure de fermeture">20:00</td>
-            <td data-label="Saison">Haute saison</td>
-            <td data-label="Action"> <div class="service-icons">
-                <i class="fas fa-edit Hedit-icon" title="Modifier"></i>
-                <i class="fas fa-trash Hdelete-icon" title="Supprimer"></i>
-            </div></td>
-          </tr>
+      
         </tbody>
       </table>
-      
-      <div class="horaires-retour-accueil">
-        <button class="btn-horaires" type="submit">Ajouter</button>
-        <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Menu
-            gestion</button></a>
-            <button class="btn-horaires" type="submit">Enregistrer</button>
       </div>
-    </form>
+</section>
+    
+        <!-- Formulaire pour ajouter un horaire -->
+         <section class="horaires-section">
+          <h2 class="title-form-horaire">Ajouter un nouvel horaire</h2>
+        <form id="horaire-form">
+          <div class="horaires-formulaire">
+          <label for="jour">Jour :</label>
+          <input type="text" id="jour" required>
   </div>
+  <div class="horaires-formulaire">
+          <label for="heureOuverture">Heure d'Ouverture :</label>
+          <input type="time" id="heureOuverture" required>
+  </div>
+  <div class="horaires-formulaire">
+          <label for="heureFermeture">Heure de Fermeture :</label>
+          <input type="time" id="heureFermeture" required>
+  
+          <div class="horaires-formulaire">
+          <label for="saison">Saison :</label>
+          <input type="text" id="saison" required>
+  </div>
+          <button class="btn-horaire-form type="submit">Ajouter</button>
+      </form>
+
+      
+</section>
+<div class="horaires-retour-accueil">
+        
+    <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Menu
+        gestion</button></a>
+        
+  </div>
+
+   
+  
+  

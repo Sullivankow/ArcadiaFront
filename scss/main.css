@@ -983,15 +983,7 @@ input[type="submit"] {
             /* Couleur pour l'icône de suppression */
         }
 
-/*Bouton Horaires*/
- .Hedit-icon {
-     color: white;
-     /* Couleur pour l'icône de modification */
- }
-   .Hdelete-icon {
-       color:white;
-       /* Couleur pour l'icône de suppression */
-   }
+
 
 
 
@@ -1264,11 +1256,12 @@ input[type="submit"] {
 
 /*PAGE GESTION DES ANIMAUX/HABITAT/USERS/SERVICE*/
 
-/*Formulaire ajout animal/habitat/Users/Service*/
+/*Formulaire ajout animal/habitat/Users/Service/Horaire*/
 #animal-section,
 #habitat-section,
 #user-section,
-#service-section
+#service-section,
+.horaires-section
 {
     display: flex;
     width: 100%;
@@ -1283,7 +1276,8 @@ input[type="submit"] {
 .title-form-animal,
 .title-form-habitat,
 .title-form-user,
-.title-form-service {
+.title-form-service,
+.title-form-horaire {
     font-family: "Indie Flower", sans-serif;
     color: white;
     padding: 20px;
@@ -1293,7 +1287,8 @@ input[type="submit"] {
 .animal-formulaire,
 .habitat-formulaire,
 .user-formulaire,
-.service-formulaire {
+.service-formulaire,
+.horaires-formulaire {
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -1304,7 +1299,8 @@ input[type="submit"] {
 
 .btn-animal-form,
 .btn-habitat-form,
-.btn-service-form
+.btn-service-form,
+.btn-horaire-form
 
 {
 
@@ -1332,14 +1328,15 @@ input[type="submit"] {
 .table-title-animal,
 .table-title-habitat,
 .table-title-user,
-.table-title-reviews
+.table-title-reviews,
+.table-title-horaire
  {
     font-family: "Indie Flower", sans-serif;
     color: #52B207;
 
 }
 
-/*La liste des animaux/habitat dans le zoo/Users*/
+/*La liste des animaux/habitat/Users/Service/Horaire*/
 .table-responsive {
     overflow-x: auto;
     display: flex;
@@ -1353,7 +1350,8 @@ input[type="submit"] {
 .section-animal-table,
 .section-habitat-table
 .section-user-table,
-.section-review-table {
+.section-review-table,
+.section-horaire-table {
     width: 100%;
     height: auto;
 
@@ -1364,7 +1362,9 @@ input[type="submit"] {
 .caption-table-habitat,
 .caption-table-user,
 .section-review-table,
-.caption-table-review {
+.caption-table-review,
+.caption-table-horaire
+ {
     font-family: "Outfit", sans-serif;
     padding: 5px;
     color: #575757;
@@ -1383,6 +1383,7 @@ input[type="submit"] {
     margin: 10px;
     border: none;
     cursor: pointer;
+   
 }
 
 .dash-title-user {
@@ -1392,20 +1393,22 @@ input[type="submit"] {
     color: #52B207;
 }
 
-/*Tableau des utilisateur/animal/Habitats/Avis*/
+/*Tableau des utilisateur/animal/Habitats/Avis/Service*/
 .table-user,
 .table-animal,
 .table-habitat,
-.table-review{
+.table-review,
+.table-horaire{
     border-collapse: collapse;
     width: 100%;
     max-width: 100%;
         overflow-x: auto;
         margin:10px;
+        
 }
 
 
-.table-user, .table-animal, .table-habitat, .table-review th td {
+.table-user, .table-animal, .table-habitat, .table-review, .table-horaire th td {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
@@ -1413,7 +1416,7 @@ input[type="submit"] {
         
 }
 
-.table-user, .table-animal, .table-habitat, .table-review th {
+.table-user, .table-animal, .table-habitat, .table-review, .table-horaire th {
     background-color: #f4f4f4;
 }
 
@@ -1431,49 +1434,7 @@ input[type="submit"] {
 
 
 
-/*PAGE GESTION DES HORAIRES*/
 
-.div-horaires {
-    display: flex;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    font-family: "Indie Flower", sans-serif;
-    color: #52B207;
-    
-}
-
-
-#horaires-formulaire {
-    background-color: #52B207;
-}
-
-#horaires-table {
-    color: white;
-}
-
-.horaires-button,
-.horaires-retour-accueil {
-    display: flex;
-    justify-content: center;
-    padding:10px;
-    align-items: center;
-}
-
-
-
-.btn-horaires{
-    border-radius: 20px;
-    border:none;
-    width: 150px;
-    height: 35px;
-    cursor: pointer;
-}
-.table-responsiveH {
-    overflow-x: auto;
-    display:flex;
-    justify-content:center;
-}
 
 
 
