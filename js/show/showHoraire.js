@@ -46,6 +46,98 @@ async function fetchHoraires() {
 }
 document.addEventListener("DOMContentLoaded", fetchHoraires);
 
+//Fonction pour ajouter un horaire
+
+document.addEventListener("DOMContentLoaded", function () {
+  const formHoraire = document.getElementById("horaire-form");
+  if (!formHoraire) {
+    console.log(
+      "Formulaire Horaire introuvable au chargement du DOM. Attente..."
+    );
+    setTimeout(() => {
+      const formHoraireAfterDelay = document.getElementById("horaire-form");
+      if (formHoraireAfterDelay) {
+        console.log("Formulaire trouvé après délai");
+        initializeForm(formHoraireAfterDelay);
+      } else {
+        console.error("Le formulaire horaire n'a toujours pas été trouvé");
+      }
+    }, 1000);
+  } else {
+    console.log("Formulaire horaire trouvé!");
+    initializeForm(formHoraire);
+  }
+});
+
+function initializeForm(formHoraire) {
+  formHoraire.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const jour = document.getElementById("jour").value.trim();
+    const horaireOuverture = document.getElementById("heureOuverture").value;
+    const horaireFermeture = document.getElementById("heureFermeture").value;
+    const saison = document.getElementById("saison").value;
+    const messageElementHoraire = document.getElementById(
+      "messageElementHoraire"
+    );
+
+    if (!jour || !horaireOuverture || !horaireFermeture || !saison) {
+      if (messageElementHoraire) {
+        messageElementHoraire.textContent =
+          "Veuillez remplir tous les champs correctement";
+        messageElementHoraire.style.color = "red";
+      }
+      return;
+    }
+
+    console.log("Données envoyées:", {
+      jour,
+      horaireOuverture,
+      horaireFermeture,
+      saison,
+    });
+
+    try {
+      let myHeaders = new Headers();
+      myHeaders.append("X-AUTH-TOKEN", getToken());
+      myHeaders.append("Content-Type", "application/json");
+
+      let raw = JSON.stringify({
+        jour: jour,
+        heureOuverture: horaireOuverture,
+        heureFermeture: horaireFermeture,
+        saison: saison,
+      });
+
+      let requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+      };
+
+      const response = await fetch(`${apiUrl}/horaires/new`, requestOptions);
+      if (!response.ok) {
+        throw new Error(
+          `Erreur lors de l'envoi du formulaire horaire: ${response.status}`
+        );
+      }
+
+      if (messageElementHoraire) {
+        messageElementHoraire.textContent = "Horaire ajouté avec succès";
+        messageElementHoraire.style.color = "green";
+      }
+
+      formHoraire.reset();
+    } catch (error) {
+      console.error("Erreur:", error);
+      if (messageElementHoraire) {
+        messageElementHoraire.textContent = "Impossible d'ajouter l'horaire";
+        messageElementHoraire.style.color = "red";
+      }
+    }
+  });
+}
+
 // Fonction pour modifier un horaire
 async function modifierHoraire(horaireId) {
   console.log("ID reçu pour modification:", horaireId); // Debugging
@@ -108,12 +200,20 @@ async function modifierHoraire(horaireId) {
 }
 
 // Fonction pour supprimer un horaire
-async function supprimerHoraire(id) {
+async function supprimerHoraire(horaireId) {
   if (!confirm("Es-tu sûr de vouloir supprimer cet horaire ?")) return;
 
   try {
-    const response = await fetch(`${apiUrl}/horaires/delete/${id}`, {
+    //Création des en-têtes de la requête
+    const myHeaders = new Headers();
+    myHeaders.append("X-AUTH-TOKEN", getToken());
+    myHeaders.append("Content-Type", "application/json");
+
+    //Requête API pour supprimer un horaire
+
+    const response = await fetch(`${apiUrl}/horaires/delete/${horaireId}`, {
       method: "DELETE",
+      headers: myHeaders,
     });
 
     if (!response.ok)
