@@ -1348,7 +1348,7 @@ input[type="submit"] {
 }
 
 .section-animal-table,
-.section-habitat-table
+
 .section-user-table,
 .section-review-table,
 .section-horaire-table {
@@ -1359,7 +1359,7 @@ input[type="submit"] {
 
 
 .caption-table-animal,
-.caption-table-habitat,
+
 .caption-table-user,
 .section-review-table,
 .caption-table-review,
@@ -1396,7 +1396,7 @@ input[type="submit"] {
 /*Tableau des utilisateur/animal/Habitats/Avis/Service*/
 .table-user,
 .table-animal,
-.table-habitat,
+
 .table-review,
 .table-horaire{
     border-collapse: collapse;
@@ -1408,7 +1408,7 @@ input[type="submit"] {
 }
 
 
-.table-user, .table-animal, .table-habitat, .table-review, .table-horaire th td {
+.table-user, .table-animal, .table-review, .table-horaire th td {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
@@ -1422,7 +1422,103 @@ input[type="submit"] {
 
 
 
-
+/* Section Habitats */
+.section-habitat-cards {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .cards-title-habitat {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Habitat Cards Container */
+  .habitat-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Card Design */
+  .habitat-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .habitat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .habitat-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .habitat-card-content {
+    padding: 20px;
+  }
+  
+  .habitat-card h3 {
+    font-size: 22px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .habitat-card p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Boutons de modification et suppression */
+  .card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .card-buttons button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .card-buttons button:first-child {
+    background-color:  #52B207;
+    color: white;
+  }
+  
+  .card-buttons button:first-child:hover {
+    background-color: #0056b3;
+  }
+  
+  .card-buttons button:last-child {
+    background-color: #ff5733;
+    color: white;
+  }
+  
+  .card-buttons button:last-child:hover {
+    background-color: #d94f1f;
+  }
+  
 
 
 
@@ -1492,7 +1588,16 @@ input[type="submit"] {
 
 
 
-
+/* Responsive Habitat */
+@media (max-width: 768px) {
+    .habitat-cards-container {
+      gap: 20px;
+    }
+  
+    .habitat-card {
+      max-width: 100%;
+    }
+  }
 
 
 

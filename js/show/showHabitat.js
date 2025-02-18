@@ -1,18 +1,15 @@
 // Fonction pour récupérer les habitats depuis l'API
 async function fetchHabitats() {
   try {
-    // Création des en-têtes avec le token d'authentification
     let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken()); // getToken() retourne un token valide
+    myHeaders.append("X-AUTH-TOKEN", getToken()); // Remplace getToken() par la fonction qui récupère ton token
 
-    // Configuration des options pour la requête HTTP
     let requestOptions = {
       method: "GET",
       headers: myHeaders,
       redirect: "follow",
     };
 
-    // Requête API pour récupérer les animaux
     const response = await fetch(`${apiUrl}/habitat/show`, requestOptions);
     if (!response.ok) {
       throw new Error(
@@ -20,138 +17,87 @@ async function fetchHabitats() {
       );
     }
 
-    // Conversion de la réponse en JSON
     const habitats = await response.json();
     console.log("Habitats récupérés :", habitats);
-
-    // Appel de la fonction pour afficher les Habitats
     displayHabitats(habitats);
   } catch (error) {
     console.error(
       "Erreur lors de la récupération des habitats :",
       error.message
     );
-    console.log(
-      "Une erreur est survenue lors de la récupération des habitats."
-    );
+    alert("Une erreur est survenue lors de la récupération des habitats.");
   }
 }
 
-// Fonction pour afficher les animaux dans le tableau HTML
+// Fonction pour afficher les habitats sous forme de cartes
 function displayHabitats(habitats) {
-  const habitatList = document.getElementById("habitat-list");
-  if (!habitatList) {
+  const habitatContainer = document.getElementById("habitat-cards");
+  if (!habitatContainer) {
     console.error(
-      "Erreur : L'élément avec l'ID 'animal-list' n'existe pas dans le DOM."
+      "Erreur : L'élément avec l'ID 'habitat-cards' n'existe pas dans le DOM."
     );
     return;
   }
 
-  habitatList.innerHTML = ""; // Vide le tableau avant d'ajouter de nouveaux éléments
+  habitatContainer.innerHTML = ""; // Vider le contenu existant
 
   if (Array.isArray(habitats) && habitats.length > 0) {
     habitats.forEach((habitat) => {
-      const row = document.createElement("tr");
+      const card = document.createElement("div");
+      card.classList.add("habitat-card");
 
-      // Colonne ID
-      const idHabitatCell = document.createElement("td");
-      idHabitatCell.textContent = habitat.id || "N/A";
-      row.appendChild(idHabitatCell);
+      const imageElement = document.createElement("img");
+      imageElement.src =
+        (habitat.images &&
+          Array.isArray(habitat.images) &&
+          habitat.images[0]?.image_Path) ||
+        "default.jpg";
+      imageElement.alt = `Image de ${habitat.nom}`;
+      card.appendChild(imageElement);
 
-      // Colonne Nom
-      const nameHabitatCell = document.createElement("td");
-      nameHabitatCell.textContent = habitat.nom || "Sans nom";
-      row.appendChild(nameHabitatCell);
+      const title = document.createElement("h3");
+      title.textContent = habitat.nom || "Sans nom";
+      card.appendChild(title);
 
-      //Colonne Description
-      const descriptionHabitatCell = document.createElement("td");
-      descriptionHabitatCell.textContent = habitat.description || "Sans nom";
-      row.appendChild(descriptionHabitatCell);
+      const description = document.createElement("p");
+      description.textContent =
+        habitat.description || "Aucune description disponible";
+      card.appendChild(description);
 
-      //Colonne Commentaire
-      const commentaireHabitatCell = document.createElement("td");
-      commentaireHabitatCell.textContent =
-        habitat.commentaire_habitat || "Sans nom";
-      row.appendChild(commentaireHabitatCell);
+      const commentaire = document.createElement("p");
+      commentaire.textContent = `Commentaire : ${
+        habitat.commentaire_habitat || "Aucun"
+      }`;
+      card.appendChild(commentaire);
 
-      // Colonne Images
-      const imagesHabitatCell = document.createElement("td");
-      if (habitat.images && habitat.images.length > 0) {
-        habitat.images.forEach((image) => {
-          const imageElement = document.createElement("img");
-          imageElement.src = image.image_Path; // URL de l'image
-          imageElement.alt = "Image de l'habitat";
-          imageElement.style.width = "50px"; // Taille de l'image (à ajuster selon le besoin)
-          imageElement.style.height = "auto"; // Taille de l'image (à ajuster selon le besoin)
-          imagesHabitatCell.appendChild(imageElement);
+      const buttonContainer = document.createElement("div");
+      buttonContainer.classList.add("card-buttons");
 
-          // Bouton de modification de l'image
-          const editButton = document.createElement("button");
-          editButton.classList.add("btn-icon");
-          editButton.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>`;
-          editButton.addEventListener("click", () =>
-            editImage(habitat.id, image.id, index)
-          );
-          imagesHabitatCell.appendChild(editButton);
-
-          // Bouton de suppression de l'image
-          const deleteButton = document.createElement("button");
-          deleteButton.classList.add("btn-icon");
-          deleteButton.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
-          deleteButton.addEventListener("click", () =>
-            deleteImage(habitat.id, image.id, index)
-          );
-          imagesHabitatCell.appendChild(deleteButton);
-        });
-      } else {
-        imagesHabitatCell.textContent = "Aucune image";
-      }
-      row.appendChild(imagesHabitatCell);
-
-      // Colonne Actions
-      const actionsCell = document.createElement("td");
-
-      // Bouton Modifier
+      // Optionnel : Vous pouvez ajouter des boutons de modification et de suppression ici
       const editButton = document.createElement("button");
-      editButton.classList.add("btn-icon");
-      editButton.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>`;
-      editButton.addEventListener("click", () => editHabitat(habitat.id));
-      actionsCell.appendChild(editButton);
+      editButton.textContent = "Modifier";
+      editButton.addEventListener("click", () => editHabitat(habitat.id)); // Remplacez editHabitat par la fonction de modification
+      buttonContainer.appendChild(editButton);
 
-      // Bouton Supprimer
       const deleteButton = document.createElement("button");
-      deleteButton.classList.add("btn-icon");
-      deleteButton.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
-      deleteButton.addEventListener("click", () => deleteAnimal(animal.id));
-      actionsCell.appendChild(deleteButton);
+      deleteButton.textContent = "Supprimer";
+      deleteButton.addEventListener("click", () => deleteHabitat(habitat.id)); // Remplacez deleteHabitat par la fonction de suppression
+      buttonContainer.appendChild(deleteButton);
 
-      row.appendChild(actionsCell);
-
-      // Ajout de la ligne au tableau
-      habitatList.appendChild(row);
+      card.appendChild(buttonContainer);
+      habitatContainer.appendChild(card);
     });
   } else {
-    // Si aucun habitat trouvé
-    const row = document.createElement("tr");
-    const noHabitatCell = document.createElement("td");
-    noHabitatCell.textContent = "Aucun habitat trouvé.";
-    noHabitatCell.colSpan = 5; // Fusionner les colonnes pour le message
-    row.appendChild(noHabitatCell);
-    habitatList.appendChild(row);
+    const message = document.createElement("p");
+    message.textContent = "Aucun habitat trouvé.";
+    habitatContainer.appendChild(message);
   }
 }
-
-// Fonction pour modifier un animal
+// Fonction pour modifier un habitat
 async function editHabitat(habitatId) {
-  const newHabitatName = prompt(
-    "Entrez le nouveau nom pour cet Habitat (laissez vide pour ne pas modifier) :"
-  );
-  const newHabitatDescription = prompt(
-    "Entrez la nouvelle description pour cet habitat (laissez vide pour ne pas modifier) :"
-  );
-  const newHabitatCommentaire = prompt(
-    "Entrez le nouveau commentaire pour cette habitat (laissez vide pour ne pas modifier) :"
-  );
+  const newHabitatName = prompt("Entrez le nouveau nom pour cet Habitat :");
+  const newHabitatDescription = prompt("Entrez la nouvelle description :");
+  const newHabitatCommentaire = prompt("Entrez le nouveau commentaire :");
 
   if (!newHabitatName && !newHabitatDescription && !newHabitatCommentaire) {
     alert("Aucune modification à effectuer.");
@@ -159,33 +105,28 @@ async function editHabitat(habitatId) {
   }
 
   try {
-    // Création des en-têtes avec le token d'authentification
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
     myHeaders.append("Content-Type", "application/json");
 
-    // Préparation du corps de la requête
     const body = {};
     if (newHabitatName) body.nom = newHabitatName;
     if (newHabitatDescription) body.description = newHabitatDescription;
     if (newHabitatCommentaire) body.commentaire_habitat = newHabitatCommentaire;
 
-    // Configuration des options pour la requête HTTP
     let requestOptions = {
       method: "PUT",
       headers: myHeaders,
       body: JSON.stringify(body),
     };
 
-    // Requête API pour modifier l'animal
     const response = await fetch(
       `${apiUrl}/habitat/edit/${habitatId}`,
       requestOptions
     );
-
     if (response.ok) {
       alert("Les modifications ont été effectuées avec succès !");
-      fetchHabitats(); // Recharge la liste des animaux
+      fetchHabitats();
     } else {
       const errorMessage = await response.text();
       alert(`Erreur lors de la mise à jour : ${errorMessage}`);
@@ -201,11 +142,9 @@ async function deleteHabitat(habitatId) {
   if (!confirm("Êtes-vous sûr de vouloir supprimer cet habitat ?")) return;
 
   try {
-    // Création des en-têtes avec le token d'authentification
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
 
-    // Requête API pour supprimer l'animal
     const response = await fetch(`${apiUrl}/habitat/delete/${habitatId}`, {
       method: "DELETE",
       headers: myHeaders,
@@ -213,7 +152,7 @@ async function deleteHabitat(habitatId) {
 
     if (response.ok) {
       alert("Habitat supprimé avec succès !");
-      fetchHabitats(); // Recharge la liste des animaux
+      fetchHabitats();
     } else {
       const errorMessage = await response.text();
       alert(`Erreur lors de la suppression : ${errorMessage}`);
@@ -224,5 +163,5 @@ async function deleteHabitat(habitatId) {
   }
 }
 
-// // Appel initial pour charger les animaux au chargement de la page
+// Charger les habitats au chargement de la page
 document.addEventListener("DOMContentLoaded", fetchHabitats);

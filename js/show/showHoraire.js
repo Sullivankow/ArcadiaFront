@@ -17,10 +17,12 @@ async function fetchHoraires() {
                 <td>${horaire.heureOuverture}</td>
                 <td>${horaire.heureFermeture}</td>
                 <td>${horaire.saison}</td>
-                <td>
+                <td class="horaires-icons">
+               
                     <i class="fa-solid fa-pen-to-square edit-icon" data-id="${horaire.id}" title="Modifier"></i>
                     <i class="fa-solid fa-trash delete-icon" data-id="${horaire.id}" title="Supprimer"></i>
-                </td>
+               
+                    </td>
             `;
       tableau.appendChild(row);
     });
@@ -44,6 +46,7 @@ async function fetchHoraires() {
     console.error(error);
   }
 }
+
 document.addEventListener("DOMContentLoaded", fetchHoraires);
 
 //Fonction pour ajouter un horaire
