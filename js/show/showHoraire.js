@@ -45,6 +45,18 @@ async function fetchHoraires() {
   } catch (error) {
     console.error(error);
   }
+  restreindreAffichage();
+}
+//Fonction pour restreindre l'affichage
+function restreindreAffichage() {
+  const estAdmin = getRole() === "ROLE_ADMIN";
+  const estEmploye = getRole() === "ROLE_EMPLOYE";
+
+  const formAjout = document.getElementById("horairesSection");
+  if (formAjout) {
+    // Afficher le formulaire seulement si l'utilisateur est admin ou employé
+    formAjout.style.display = estAdmin || estEmploye ? "block" : "none";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", fetchHoraires);

@@ -1,8 +1,8 @@
-// Fonction pour récupérer les habitats depuis l'API
+// Fonction pour récupérer les habitats
 async function fetchHabitats() {
   try {
     let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken()); // Remplace getToken() par la fonction qui récupère ton token
+    myHeaders.append("X-AUTH-TOKEN", getToken());
 
     let requestOptions = {
       method: "GET",
@@ -25,11 +25,10 @@ async function fetchHabitats() {
       "Erreur lors de la récupération des habitats :",
       error.message
     );
-    alert("Une erreur est survenue lors de la récupération des habitats.");
+    // alert("Une erreur est survenue lors de la récupération des habitats.");
   }
 }
 
-// Fonction pour afficher les habitats sous forme de cartes
 function displayHabitats(habitats) {
   const habitatContainer = document.getElementById("habitat-cards");
   if (!habitatContainer) {
@@ -46,12 +45,17 @@ function displayHabitats(habitats) {
       const card = document.createElement("div");
       card.classList.add("habitat-card");
 
+      // Gestion de l'image avec vérification
       const imageElement = document.createElement("img");
-      imageElement.src =
-        (habitat.images &&
-          Array.isArray(habitat.images) &&
-          habitat.images[0]?.image_Path) ||
-        "default.jpg";
+      if (habitat.images && habitat.images.length > 0) {
+        imageElement.src = habitat.images?.[0]?.imageUrl
+          ? `http://localhost:8081/uploads/${habitat.images[0].imageUrl}`
+          : "default.jpg";
+
+        // L'API doit renvoyer un chemin absolu
+      } else {
+        imageElement.src = "/uploads/default.jpg"; // Image par défaut si aucune image trouvée
+      }
       imageElement.alt = `Image de ${habitat.nom}`;
       card.appendChild(imageElement);
 
@@ -70,18 +74,18 @@ function displayHabitats(habitats) {
       }`;
       card.appendChild(commentaire);
 
+      // Conteneur des boutons
       const buttonContainer = document.createElement("div");
       buttonContainer.classList.add("card-buttons");
 
-      // Optionnel : Vous pouvez ajouter des boutons de modification et de suppression ici
       const editButton = document.createElement("button");
       editButton.textContent = "Modifier";
-      editButton.addEventListener("click", () => editHabitat(habitat.id)); // Remplacez editHabitat par la fonction de modification
+      editButton.addEventListener("click", () => editHabitat(habitat.id));
       buttonContainer.appendChild(editButton);
 
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Supprimer";
-      deleteButton.addEventListener("click", () => deleteHabitat(habitat.id)); // Remplacez deleteHabitat par la fonction de suppression
+      deleteButton.addEventListener("click", () => deleteHabitat(habitat.id));
       buttonContainer.appendChild(deleteButton);
 
       card.appendChild(buttonContainer);
@@ -93,6 +97,112 @@ function displayHabitats(habitats) {
     habitatContainer.appendChild(message);
   }
 }
+
+// Charger les habitats au chargement de la page
+document.addEventListener("DOMContentLoaded", fetchHabitats);
+
+//Fonction pour ajouter un habitat
+
+document.addEventListener("DOMContentLoaded", function () {
+  const formHabitat = document.getElementById("habitat-form");
+
+  //On vérifie si le formulaire existe bien dans le DOM
+  if (!formHabitat) {
+    console.log(
+      "Formulaire habitat introuvable au chargement du DOM. Attente..."
+    );
+    setTimeout(() => {
+      const formHabitatAfterDelay = document.getElementById("habitat-form");
+      if (formHabitatAfterDelay) {
+        console.log("Formulaire habitat trouvé après délai !");
+        initializeForm(formHabitatAfterDelay);
+      } else {
+        console.error("Le formulaire horaire n'a toujours pas été trouvé.");
+      }
+    }, 1000);
+  } else {
+    console.log("Formulaire habitat trouvé !");
+    initializeForm(formHabitat);
+  }
+});
+
+function initializeForm(formHabitat) {
+  formHabitat.addEventListener("submit", async (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    // Récupération des valeurs du formulaire
+    const nomHabitat = document.getElementById("name-habitat").value.trim();
+    const imageHabitat = document.getElementById("image-pets").value.trim();
+    const commentaireHabitat = document
+      .getElementById("commentaireHabitat")
+      .value.trim();
+    const descriptionHabitat = document
+      .getElementById("description-habitat")
+      .value.trim();
+
+    const messageElement = document.getElementById("message-service");
+
+    // Vérification des champs
+    if (
+      !nomHabitat ||
+      !imageHabitat ||
+      !descriptionHabitat ||
+      !commentaireHabitat
+    ) {
+      messageElement.textContent =
+        "Veuillez remplir tous les champs correctement";
+      messageElement.style.color = "red";
+      return;
+    }
+
+    console.log("Données envoyées:", {
+      nomHabitat,
+      imageHabitat,
+      descriptionHabitat,
+    });
+
+    try {
+      // Initialisation des headers
+      let myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("X-AUTH-TOKEN", getToken());
+
+      // Création du body de la requête
+      let raw = JSON.stringify({
+        nom: nomHabitat,
+        description: descriptionHabitat,
+        commentaire_habitat: commentaireHabitat,
+      });
+
+      // Définition des options de la requête
+      let requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+      };
+
+      // Envoi de la requête à l'API
+      const response = await fetch(`${apiUrl}/service/new`, requestOptions);
+
+      if (!response.ok) {
+        throw new Error(
+          `Erreur lors de l'envoi du formulaire de service: ${response.status}`
+        );
+      }
+
+      messageElement.textContent = "Service ajouté avec succès";
+      messageElement.style.color = "green";
+
+      // Réinitialisation du formulaire après ajout
+      formService.reset();
+    } catch (error) {
+      console.error("Erreur: ", error);
+      messageElement.textContent = "Impossible d'ajouter le service";
+      messageElement.style.color = "red";
+    }
+  });
+}
+
 // Fonction pour modifier un habitat
 async function editHabitat(habitatId) {
   const newHabitatName = prompt("Entrez le nouveau nom pour cet Habitat :");

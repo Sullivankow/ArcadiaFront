@@ -1264,9 +1264,11 @@ input[type="submit"] {
 .horaires-section
 {
     display: flex;
+    max-width: 600px;
     width: 100%;
+    margin: 0 auto;
     flex-wrap: wrap;
-    padding:15px;
+    /* padding:15px; */
     height: auto;
     flex-direction: row;
     background: #52B207;
@@ -1393,7 +1395,7 @@ input[type="submit"] {
     color: #52B207;
 }
 
-/*Tableau des utilisateur/animal/Habitats/Avis/Service*/
+/*Tableau des utilisateur/animal/Avis/Service*/
 .table-user,
 .table-animal,
 
@@ -1432,9 +1434,10 @@ input[type="submit"] {
   }
   
   .cards-title-habitat {
+    font-family: "Indie Flower", sans-serif;
     font-size: 32px;
     font-weight: 700;
-    color: #333;
+    color: #52B207;
     margin-bottom: 30px;
   }
   
@@ -1475,8 +1478,9 @@ input[type="submit"] {
   }
   
   .habitat-card h3 {
+    font-family: "Outfit", sans-serif;
     font-size: 22px;
-    color: #007bff;
+    color: black;
     margin-bottom: 10px;
   }
   
@@ -1507,7 +1511,7 @@ input[type="submit"] {
   }
   
   .card-buttons button:first-child:hover {
-    background-color: #0056b3;
+    background-color:  #305a11;
   }
   
   .card-buttons button:last-child {
