@@ -1268,7 +1268,6 @@ input[type="submit"] {
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
-    /* padding:15px; */
     height: auto;
     flex-direction: row;
     background: #52B207;

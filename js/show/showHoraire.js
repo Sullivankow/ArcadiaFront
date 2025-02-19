@@ -32,7 +32,7 @@ async function fetchHoraires() {
       icon.addEventListener("click", (event) => {
         const horaireId = event.target.getAttribute("data-id");
         console.log("ID de l'horaire sélectionné :", horaireId); // Debugging
-        modifierHoraire(horaireId); // ✅ Appel de la fonction de modification
+        modifierHoraire(horaireId); // Appel de la fonction de modification
       });
     });
 
@@ -47,16 +47,28 @@ async function fetchHoraires() {
   }
   restreindreAffichage();
 }
-//Fonction pour restreindre l'affichage
+// Fonction pour restreindre l'affichage
 function restreindreAffichage() {
   const estAdmin = getRole() === "ROLE_ADMIN";
   const estEmploye = getRole() === "ROLE_EMPLOYE";
+  const estVisiteur = !estAdmin && !estEmploye;
 
   const formAjout = document.getElementById("horairesSection");
+  const tableActionHeader = document.getElementById("action-header");
+
   if (formAjout) {
-    // Afficher le formulaire seulement si l'utilisateur est admin ou employé
     formAjout.style.display = estAdmin || estEmploye ? "block" : "none";
   }
+
+  // Masquer la colonne action pour les visiteurs
+  if (tableActionHeader) {
+    tableActionHeader.style.display = estVisiteur ? "none" : "table-cell";
+  }
+
+  // Masquer toutes les icônes de modification et suppression pour les visiteurs
+  document.querySelectorAll(".horaires-icons").forEach((cell) => {
+    cell.style.display = estVisiteur ? "none" : "table-cell";
+  });
 }
 
 document.addEventListener("DOMContentLoaded", fetchHoraires);
