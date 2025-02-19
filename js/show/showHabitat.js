@@ -25,7 +25,6 @@ async function fetchHabitats() {
       "Erreur lors de la récupération des habitats :",
       error.message
     );
-    // alert("Une erreur est survenue lors de la récupération des habitats.");
   }
 }
 
@@ -140,7 +139,7 @@ function initializeForm(formHabitat) {
       .getElementById("description-habitat")
       .value.trim();
 
-    const messageElement = document.getElementById("message-service");
+    const messageElement = document.getElementById("message-habitat");
 
     // Vérification des champs
     if (
@@ -159,6 +158,7 @@ function initializeForm(formHabitat) {
       nomHabitat,
       imageHabitat,
       descriptionHabitat,
+      commentaireHabitat,
     });
 
     try {
@@ -172,6 +172,7 @@ function initializeForm(formHabitat) {
         nom: nomHabitat,
         description: descriptionHabitat,
         commentaire_habitat: commentaireHabitat,
+        image_path: imageHabitat,
       });
 
       // Définition des options de la requête
@@ -182,19 +183,19 @@ function initializeForm(formHabitat) {
       };
 
       // Envoi de la requête à l'API
-      const response = await fetch(`${apiUrl}/service/new`, requestOptions);
+      const response = await fetch(`${apiUrl}/habitat/new`, requestOptions);
 
       if (!response.ok) {
         throw new Error(
-          `Erreur lors de l'envoi du formulaire de service: ${response.status}`
+          `Erreur lors de l'envoi du formulaire habitat: ${response.status}`
         );
       }
 
-      messageElement.textContent = "Service ajouté avec succès";
+      messageElement.textContent = "Habitat ajouté avec succès";
       messageElement.style.color = "green";
 
       // Réinitialisation du formulaire après ajout
-      formService.reset();
+      formHabitat.reset();
     } catch (error) {
       console.error("Erreur: ", error);
       messageElement.textContent = "Impossible d'ajouter le service";
