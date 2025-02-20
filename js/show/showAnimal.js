@@ -60,11 +60,20 @@ function displayAnimals(animals) {
       const nameCell = document.createElement("td");
       nameCell.textContent = animal.prenom || "Sans nom";
       row.appendChild(nameCell);
-
       //Colonne Etat
       const stateCell = document.createElement("td");
       stateCell.textContent = animal.etat || "Sans nom";
       row.appendChild(stateCell);
+
+      //Colonne Habitat
+      const habitatCell = document.createElement("td");
+      habitatCell.textContent = animal.habitat || "Sans nom";
+      row.appendChild(habitatCell);
+
+      //Colonne Race
+      const raceCell = document.createElement("td");
+      raceCell.textContent = animal.race || "Sans nom";
+      row.appendChild(raceCell);
 
       // Colonne Actions
       const actionsCell = document.createElement("td");
