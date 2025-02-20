@@ -40,13 +40,10 @@ export const allRoutes = [
     "/pages/dashboard/compte-rendus.html",
     ["ROLE_VETERINAIRE"]
   ),
-  new Route(
-    "/dash-animal",
-    "Menu Animaux",
-    "/pages/dashboard/animal.html",
-    ["ROLE_VETERINAIRE", "ROLE_EMPLOYE"],
-    "/js/show/showAnimal.js"
-  ),
+  new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", [
+    "ROLE_VETERINAIRE",
+    "ROLE_EMPLOYE",
+  ]),
   new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html", [
     "ROLE_ADMIN",
     "ROLE_VETERINAIRE",

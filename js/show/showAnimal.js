@@ -117,7 +117,20 @@ async function editAnimal(animalId) {
     "Entrez le nouvel état pour cet animal (laissez vide pour ne pas modifier) :"
   );
 
-  if (!newAnimalName && !newStateAnimal) {
+  const newHabitatAnimal = prompt(
+    "Entrez le nouvel habitat pour cet animal (laissez vide pour ne pas modifier) :"
+  );
+
+  const newRaceAnimal = prompt(
+    "Entrez la nouvelle race pour cet animal (laissez vide pour ne pas modifier) :"
+  );
+
+  if (
+    !newAnimalName &&
+    !newStateAnimal &&
+    !newHabitatAnimal &&
+    !newRaceAnimal
+  ) {
     alert("Aucune modification à effectuer.");
     return;
   }
@@ -132,6 +145,8 @@ async function editAnimal(animalId) {
     const body = {};
     if (newAnimalName) body.prenom = newAnimalName;
     if (newStateAnimal) body.etat = newStateAnimal;
+    if (newStateAnimal) body.habitat = newHabitatAnimal;
+    if (newStateAnimal) body.race = newRaceAnimal;
 
     // Configuration des options pour la requête HTTP
     let requestOptions = {
@@ -225,13 +240,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Récupérer les valeurs du formulaire
       const nomAnimal = document.getElementById("nameAnimal").value.trim();
-      const raceAnimals = document.getElementById("raceAnimal").value;
-      const habitatAnimal = document.getElementById("habitatAnimal").value;
+      const raceAnimal = document.getElementById("raceAnimal").value;
       const etatAnimal = document.getElementById("etatAnimal").value.trim();
+      const habitatAnimal = document.getElementById("habitatAnimal").value;
+
       const messageElement = document.getElementById("message");
 
       // Vérification de la validité des champs
-      if (!nomAnimal || !raceAnimals || !habitatAnimal || !etatAnimal) {
+      if (!nomAnimal || !raceAnimal || !habitatAnimal || !etatAnimal) {
         messageElement.textContent = "Veuillez saisir tous les champs";
         messageElement.style.color = "red";
         return;
@@ -240,18 +256,19 @@ document.addEventListener("DOMContentLoaded", function () {
         nomAnimal,
         etatAnimal,
         habitatAnimal,
-        raceAnimals,
+        raceAnimal,
       });
 
       try {
         let myHeaders = new Headers();
         myHeaders.append("X-AUTH-TOKEN", getToken());
+        myHeaders.append("Content-Type", "application/json");
 
         let raw = JSON.stringify({
           prenom: nomAnimal,
           etat: etatAnimal,
-          habitat_id: habitatAnimal,
-          race_id: raceAnimals,
+          habitat: habitatAnimal,
+          race: raceAnimal,
         });
 
         let requestOptions = {
@@ -325,9 +342,9 @@ async function chargerRaces() {
 
     selectRace.innerHTML = `<option value="">Sélectionnez une race</option>`;
     data.forEach((race) => {
-      if (race.id && race.label) {
+      if (race.label) {
         let option = document.createElement("option");
-        option.value = race.id;
+        option.value = race.label;
         option.textContent = race.label;
         selectRace.appendChild(option);
       } else {
@@ -386,9 +403,9 @@ async function chargerHabitat() {
 
     selectHabitat.innerHTML = `<option value="">Sélectionnez un habitat</option>`;
     data.forEach((habitat) => {
-      if (habitat.id && habitat.nom) {
+      if (habitat.nom) {
         let option = document.createElement("option");
-        option.value = habitat.id;
+        option.value = habitat.nom;
         option.textContent = habitat.nom;
         selectHabitat.appendChild(option);
       } else {
