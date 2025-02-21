@@ -293,48 +293,22 @@ footer {
 }
 
 
-/* Paramètre Animals */
-/* .animals {
-    background-color: #E0E4EB;
-    display: flex;
-    flex-direction: column;
 
-
-
-    .title-animals,
-    .title {
-        display: flex;
-        justify-content: center;
-
-
-    }
-
-    .animal-card {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-
-    }
-
-    .card {
-        width: 250px;
-        height: 200px;
-        border-radius: 40px;
-        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-
-    }
-
-} */
 
 
 
 
 /**/
 .animals-section {
-    margin:35px;
+    
+    background: #52B207;
+    width: 100%;
     text-align: center;
-    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 15px;
+    
     font-family: "Outfit", sans-serif;
+    color: white;
 }
 .animal-carousel {
     display: flex;
@@ -354,8 +328,8 @@ footer {
     white-space: nowrap;
 }
 .animal-card {
-    background: #52B207;
-    color:white;
+    background: white;
+    color:#52B207;
     font-family: "Indie Flower", sans-serif;
     border-radius: 10px;
     padding: 10px;
@@ -388,6 +362,10 @@ footer {
 .left { left: 0; }
 .right { right: 0; }
 
+.title-white-pets{
+    color:white;
+    font-family: "Indie Flower", sans-serif;
+}
 
 
 
@@ -456,7 +434,7 @@ footer {
 
 
 /*Section nos Services*/
-.container-service {
+/* .container-service {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -516,7 +494,7 @@ footer {
     text-decoration: none;
     color: white;
     font-family: "Outfit", sans-serif;
-}
+} */
 
 
 /*Section avis*/
@@ -932,10 +910,12 @@ input[type="submit"] {
 /*---PAGE NOS SERVICES---*/
 
 .section-service{
-    max-width: 1200px;
+    
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding-bottom: 30px;
     text-align: center;
+    background-color: #52B207;
 }
 
 .nosServices {
@@ -962,7 +942,8 @@ input[type="submit"] {
 /* Titre du service */
 .title-service {
     font-size: 1.5rem;
-    color: #333;
+    font-family: "Indie Flower", sans-serif;
+    color: #52B207;
     margin-bottom: 10px;
 }
 
@@ -1007,9 +988,9 @@ input[type="submit"] {
 
 
 
-.title-green-service {
+.title-white-service {
     font-family: "Indie Flower", sans-serif;
-    color: #52B207;
+    color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1052,12 +1033,12 @@ input[type="submit"] {
         }
     
         .edit-icon {
-            color: #4CAF50;
+            color: #52B207;
             /* Couleur pour l'icône de modification */
         }
     
         .delete-icon {
-            color: #F44336;
+            color: red;
             /* Couleur pour l'icône de suppression */
         }
 
@@ -1407,8 +1388,7 @@ input[type="submit"] {
 .table-title-animal,
 .table-title-habitat,
 .table-title-user,
-.table-title-reviews,
-.table-title-horaire
+.table-title-review
  {
     font-family: "Indie Flower", sans-serif;
     color: #52B207;
@@ -1429,11 +1409,44 @@ input[type="submit"] {
 .section-animal-table,
 
 .section-user-table,
-.section-review-table,
-.section-horaire-table {
+.section-review-table
+ {
     width: 100%;
     height: auto;
 
+}
+
+/*SECTION DES HORAIRES*/
+.section-horaire-table {
+    width: 100%;
+margin-top: 25px;
+margin-bottom: 25px;
+padding-bottom: 25px;
+    height: auto;
+    color: white;
+    background-color: #52B207;
+
+}
+.table-horaire th, .table-horaire td {
+    border: 1px solid white; /* Bordure blanche pour les cellules */
+    padding: 8px; /* Espacement dans les cellules */
+}
+.table-horaire{
+    color: white;
+    
+}
+.table-title-horaire{
+    color: white;
+    font-family: "Indie Flower";
+}
+.caption-table-horaire{
+    font-family: "Outfit", sans-serif;
+    padding: 5px;
+    color: #575757;
+}
+
+.th-horaire{
+    color: #575757;
 }
 
 
@@ -1441,8 +1454,8 @@ input[type="submit"] {
 
 .caption-table-user,
 .section-review-table,
-.caption-table-review,
-.caption-table-horaire
+.caption-table-review
+
  {
     font-family: "Outfit", sans-serif;
     padding: 5px;
