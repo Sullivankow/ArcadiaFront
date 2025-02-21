@@ -426,3 +426,75 @@ setTimeout(() => {
   chargerRaces();
   chargerHabitat();
 }, 2000);
+
+/////////////////////////
+
+async function fetchAnimaux() {
+  try {
+    let myHeaders = new Headers();
+    myHeaders.append("X-AUTH-TOKEN", getToken());
+
+    let requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+    const response = await fetch(`${apiUrl}/animal/list`, requestOptions);
+    if (!response.ok) throw new Error(`Erreur : ${response.status}`);
+
+    const animals = await response.json();
+    displayAnimalCards(animals);
+  } catch (error) {
+    console.error("Erreur API :", error.message);
+  }
+}
+
+function displayAnimalCards(animals) {
+  const container = document.getElementById("animal-cards-container");
+  container.innerHTML = "";
+
+  animals.forEach((animal) => {
+    const card = document.createElement("div");
+    card.classList.add("animal-card");
+    card.innerHTML = `
+     
+          <h3>${animal.prenom}</h3>
+          <div class="animal-details" style="display: none;">
+              <p><strong>État :</strong> ${animal.etat}</p>
+              <p><strong>Habitat :</strong> ${animal.habitat}</p>
+              <p><strong>Race :</strong> ${animal.race}</p>
+          </div>
+      `;
+    card.addEventListener("click", () => {
+      const details = card.querySelector(".animal-details");
+      details.style.display =
+        details.style.display === "block" ? "none" : "block";
+    });
+    container.appendChild(card);
+  });
+}
+
+function scrollLeft() {
+  document
+    .getElementById("animal-cards-container")
+    .scrollBy({ left: -300, behavior: "smooth" });
+}
+
+function scrollRight() {
+  document
+    .getElementById("animal-cards-container")
+    .scrollBy({ left: 300, behavior: "smooth" });
+}
+
+// Ajouter les événements
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelector(".carousel-btn.left")
+    .addEventListener("click", scrollLeft);
+  document
+    .querySelector(".carousel-btn.right")
+    .addEventListener("click", scrollRight);
+});
+
+// Appel de la fonction pour récupérer les animaux
+fetchAnimaux();

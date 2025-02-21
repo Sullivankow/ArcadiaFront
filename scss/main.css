@@ -293,8 +293,8 @@ footer {
 }
 
 
-/*Paramètre Animals*/
-.animals {
+/* Paramètre Animals */
+/* .animals {
     background-color: #E0E4EB;
     display: flex;
     flex-direction: column;
@@ -324,7 +324,85 @@ footer {
 
     }
 
+} */
+
+
+
+
+/**/
+.animals-section {
+    margin:35px;
+    text-align: center;
+    padding: 20px;
+    font-family: "Outfit", sans-serif;
 }
+.animal-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+}
+.animal-cards-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    white-space: nowrap;
+}
+.animal-card {
+    background: #52B207;
+    color:white;
+    font-family: "Indie Flower", sans-serif;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 250px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.animal-card:hover {
+    transform: scale(1.05);
+}
+
+.animal-details {
+    display: none;
+    padding: 10px;
+}
+.carousel-btn {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.left { left: 0; }
+.right { right: 0; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*Bouton je découvre "nos espèces"*/
 
@@ -1588,6 +1666,28 @@ input[type="submit"] {
     flex-direction: column;
     align-items: center;
 }
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
