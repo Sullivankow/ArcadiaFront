@@ -434,68 +434,7 @@ footer {
 }
 
 
-/*Section nos Services*/
-/* .container-service {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #52B207;
-}
 
-
-
-.service {
-    display: flex;
-    justify-content: space-around;
-}
-
-.image-circle {
-    border-radius: 50%;
-    width: 250px;
-    height: auto;
-
-
-}
-
-.title-white {
-    font-family: "Indie Flower", system-ui;
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-
-}
-
-.title-service {
-    display: flex;
-    justify-content: center;
-    padding: 0px;
-    margin-top: 0px;
-    font-family: "Outfit", sans-serif;
-}
-
-
-
-.train {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.lien {
-    display: flex;
-    justify-content: center;
-
-}
-
-.link {
-    text-decoration: none;
-    color: white;
-    font-family: "Outfit", sans-serif;
-} */
 
 
 /*Section avis*/
@@ -1326,12 +1265,14 @@ input[type="submit"] {
     display: flex;
     max-width: 600px;
     width: 100%;
-    margin: 0 auto;
+    margin: 25px auto;
     flex-wrap: wrap;
     height: auto;
     flex-direction: row;
     background: #52B207;
     justify-content: center;
+    border-radius: 15px;
+    
 }
 
 .title-form-animal,
@@ -1353,7 +1294,6 @@ input[type="submit"] {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    
     font-family: "Outfit", sans-serif;
     color: white;
 }
@@ -1489,7 +1429,6 @@ padding-bottom: 25px;
 /*Tableau des utilisateur/animal/Avis/Service*/
 .table-user,
 .table-animal,
-
 .table-review,
 .table-horaire{
     border-collapse: collapse;
@@ -1533,25 +1472,32 @@ padding-bottom: 25px;
   }
   
   /* Habitat Cards Container */
+
   .habitat-cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start; /* Assure que les cartes commencent au même niveau */
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-  }
+}
   
   /* Card Design */
+
   .habitat-card {
+    width: 250px; /* Ajuste selon la taille souhaitée */
+    height: 300px; /* Ajuste pour uniformiser */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
   
   .habitat-card:hover {
     transform: translateY(-5px);
@@ -1585,6 +1531,7 @@ padding-bottom: 25px;
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    
   }
   
   .card-buttons button {
@@ -1593,6 +1540,7 @@ padding-bottom: 25px;
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    margin:15px;
     transition: all 0.3s ease;
   }
   
