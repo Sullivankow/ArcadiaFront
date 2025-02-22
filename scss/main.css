@@ -1329,10 +1329,12 @@ input[type="submit"] {
 .table-title-animal,
 .table-title-habitat,
 .table-title-user,
-.table-title-review
+.table-title-reviews
  {
     font-family: "Indie Flower", sans-serif;
     color: #52B207;
+    display:flex;
+    justify-content: center;
 
 }
 
