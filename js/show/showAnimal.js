@@ -432,7 +432,7 @@ setTimeout(() => {
 async function fetchAnimaux() {
   try {
     let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken());
+    myHeaders.append("Content-Type", "application/json");
 
     let requestOptions = {
       method: "GET",

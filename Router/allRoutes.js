@@ -12,7 +12,7 @@ export const allRoutes = [
     [],
     "/js/auth/signup.js"
   ),
-  new Route("/aPropos", "À propos", "/pages/aPropos.html", []),
+
   new Route("/habitat", "Les habitats", "/pages/lesHabitats.html", []),
   new Route(
     "/avis",

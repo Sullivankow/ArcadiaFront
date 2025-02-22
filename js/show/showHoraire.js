@@ -19,8 +19,8 @@ async function fetchHoraires() {
                 <td>${horaire.saison}</td>
                 <td class="horaires-icons">
                
-                    <i class="fa-solid fa-pen-to-square edit-icon" data-id="${horaire.id}" title="Modifier"></i>
-                    <i class="fa-solid fa-trash delete-icon" data-id="${horaire.id}" title="Supprimer"></i>
+                    <i class="fa-solid fa-pen-to-square edit-icon-horaire" data-id="${horaire.id}" title="Modifier"></i>
+                    <i class="fa-solid fa-trash delete-icon-horaire" data-id="${horaire.id}" title="Supprimer"></i>
                
                     </td>
             `;
@@ -28,7 +28,7 @@ async function fetchHoraires() {
     });
 
     // Attache les événements après la création des éléments
-    document.querySelectorAll(".edit-icon").forEach((icon) => {
+    document.querySelectorAll(".edit-icon-horaire").forEach((icon) => {
       icon.addEventListener("click", (event) => {
         const horaireId = event.target.getAttribute("data-id");
         console.log("ID de l'horaire sélectionné :", horaireId); // Debugging
@@ -36,7 +36,7 @@ async function fetchHoraires() {
       });
     });
 
-    document.querySelectorAll(".delete-icon").forEach((icon) => {
+    document.querySelectorAll(".delete-icon-horaire").forEach((icon) => {
       icon.addEventListener("click", (event) => {
         const horaireId = event.target.getAttribute("data-id");
         supprimerHoraire(horaireId); // Appel de la fonction de suppression
