@@ -1256,6 +1256,11 @@ input[type="submit"] {
 /*PAGE GESTION DES ANIMAUX/HABITAT/USERS/SERVICE*/
 
 /*Formulaire ajout animal/habitat/Users/Service/Horaire*/
+.div-animal{
+    display: flex;
+    flex-direction: row;
+}
+
 #animal-section,
 #habitat-section,
 #user-section,
@@ -1453,6 +1458,8 @@ padding-bottom: 25px;
 .table-user, .table-animal, .table-habitat, .table-review, .table-horaire th {
     background-color: #f4f4f4;
 }
+
+
 
 
 

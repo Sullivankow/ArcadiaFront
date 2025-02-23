@@ -1,65 +1,67 @@
 <head>
-<style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            cursor: pointer;
-        }
-        input {
-            margin: 5px;
-        }
-        h2{
-            font-family: "Indie Flower", sans-serif;
-            color: #52B207;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-</head>
+    <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                font-family: "Outfit", sans-serif;
+                
+            }
+            th, td {
+                padding: 10px;
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+            th {
+                cursor: pointer;
+            }
+            input {
+                margin: 5px;
+            }
+            h2{
+                font-family: "Indie Flower", sans-serif;
+                color: #52B207;
+                display: flex;
+                justify-content: center;
+            }
+        </style>
+    </head>
 
 
-<body>
+<section>
+    
     <h2>Compte Rendu Vétérinaire</h2>
 
-    <!---FORMULAIRE DE FILTRAGE-->
-    <form method="" action="">
-        <label for="cherche-nom">Filtrer par nom d'animal :</label>
-        <input type="text" id="cherche-nom" name="chercher-nom" onkeyup="filterTable()">
+<!---FORMULAIRE DE FILTRAGE-->
+<form method="" action="">
+    <label for="cherche-nom">Filtrer par nom d'animal :</label>
+    <input  type="text" id="cherche-nom" name="chercher-nom" onkeyup="sortTable(1)">
 
-        <label for="cherche-date">Filtrer par date :</label>
-        <input type="date" id="cherche-date" onchange="filterTable">
+    <label for="cherche-date">Filtrer par date :</label>
+    <input  type="date" id="cherche-date" name="chercher-date" onchange="sortTable(4)">
+
+    <!---TABLEAU COMPTES RENDUS-->
+    <table class="CompteRenduTableau" id="tableauCompteRendu">
+        <thead>
+            <tr id="trVet">
+                <th>Id du Rapport</th>
+                <th id="sortAnimal" class="sortable">Prénom de l'animal &#x25B2;&#x25BC;</th>
+                <th>Détail/Nourriture Donnée</th>
+                <th >Vétérinaire/Employé</th>
+                <th id="sortDate" class="sortable">Date de passage &#x25B2;&#x25BC;</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody class="vetTableau" id="tableauVet">
+            <!----Le tableau sera ici--->
+        </tbody>
+    </table>
+    <div class="habitat-retour-accueil">
+        <a href="/menu-dashboard">
+            <button class="btn-retour-accueil" type="button">Retour au menu gestion</button>
+        </a>
+    </div>
+</form>
 
 
-
-
-
-        <!---TABLEAU COMPTES RENDUS-->
-        <table id="tableauCompteRendu">
-            <thread>
-                <tr id="trVet">
-                    <th onclick="sortTable(0)">Prénom de l'animal &#x25B2;&#x25BC;</th>
-                    <th>Détail/Nourriture Donnée</th>
-                    <th>Vétérinaire/Employé</th>
-                    <th onclick="sortTable(3)">Date de passage &#x25B2;&#x25BC;</th>
-                </tr>
-            </thread>
-
-            <tbody id="tableauVet">
-
-                <!----Le tableau sera ici-->
-
-            </tbody>
-        </table>
-<div class="habitat-retour-accueil">
-               <a href="/menu-dashboard"><button class="btn-retour-accueil" type="button">Retour au menu gestion</button></a>
-            </div>
-
-    </form>
-</body>
+</section>

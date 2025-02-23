@@ -47,7 +47,7 @@ function afficherServices(services) {
             <p class="text-service">${service.description}</p>
             <p class="text-service">${service.price}€</p>
             <div class="service-icons">
-                <i class="fas fa-edit edit-icon" title="Modifier" data-id="${service.id}"></i>
+                <i class="fas fa-edit edit-icon" title="Modifier" data-id="${service.id}"></i> 
                 <i class="fas fa-trash delete-icon" title="Supprimer" data-id="${service.id}"></i>
                
             </div>
@@ -74,16 +74,23 @@ function afficherServices(services) {
 }
 
 // Fonction pour cacher les icônes si l'utilisateur n'est pas admin ou employé
+
 function restreindreAffichage() {
   const estAdmin = getRole() === "ROLE_ADMIN";
   const estEmploye = getRole() === "ROLE_EMPLOYE";
 
-  if (!estAdmin && !estEmploye) {
-    const formAjout = document.getElementById("service-section");
-    document.querySelectorAll(".service-icons").forEach((icon) => {
-      icon.style.display = "none";
-      formAjout.style.display = estAdmin || estEmploye ? "block" : "none";
-    });
+  // Sélectionne toutes les cartes de service
+  document.querySelectorAll(".card-service").forEach((card) => {
+    const iconsContainer = card.querySelector(".service-icons");
+    if (iconsContainer) {
+      iconsContainer.style.display = estAdmin || estEmploye ? "block" : "none";
+    }
+  });
+
+  // Cache le formulaire d'ajout si l'utilisateur n'est ni admin ni employé
+  const formAjout = document.getElementById("service-section");
+  if (formAjout) {
+    formAjout.style.display = estAdmin || estEmploye ? "block" : "none";
   }
 }
 
