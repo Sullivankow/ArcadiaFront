@@ -428,7 +428,7 @@ setTimeout(() => {
 }, 2000);
 
 /////////////////////////
-//Fonction pour afficher les animaux sur la pge HOME
+//Fonction pour afficher les animaux sur la page HOME
 
 async function fetchAnimaux() {
   try {

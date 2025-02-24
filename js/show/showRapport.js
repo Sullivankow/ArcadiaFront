@@ -266,8 +266,105 @@ function sortTable(columnIndex) {
   rows.forEach((row) => tbody.appendChild(row));
 }
 
+// Fonction pour ajouter un rapport vétérinaire
+document.addEventListener("DOMContentLoaded", function () {
+  // Délai pour attendre que le DOM soit complètement chargé
+  setTimeout(function () {
+    const formRapport = document.getElementById("rapport-form");
 
+    // Vérification de la présence du formulaire dans le DOM au moment du chargement
+    if (!formRapport) {
+      console.log(
+        "Formulaire introuvable au chargement du DOM, attente de l'injection..."
+      );
+      return;
+    }
 
+    // Fonction d'initialisation du formulaire
+    function initializeForm(form) {
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+        console.log("Formulaire soumis");
 
-//Fonction pour ajouter un rapport vétérinaire
+        // Récupération des valeurs du formulaire
+        const prenomAnimal = document
+          .getElementById("prenomAnimal")
+          .value.trim();
+        const rapportAnimal = document
+          .getElementById("rapportAnimal")
+          .value.trim();
+        const userEmail = document.getElementById("user-email").value.trim();
+        const dateRapport = document.getElementById("date").value;
+        const messageElement = document.getElementById("messageRapport");
 
+        // Vérification des champs requis
+        if (!prenomAnimal || !rapportAnimal || !userEmail || !dateRapport) {
+          messageElement.textContent = "Veuillez remplir tous les champs";
+          messageElement.style.color = "red";
+          return;
+        }
+
+        console.log("Données envoyées:", {
+          prenomAnimal,
+          rapportAnimal,
+          userEmail,
+          dateRapport,
+        });
+
+        try {
+          // Vérification que getToken() et apiUrl existent
+          if (typeof getToken !== "function") {
+            throw new Error("getToken() n'est pas défini");
+          }
+          if (typeof apiUrl === "undefined") {
+            throw new Error("apiUrl n'est pas défini");
+          }
+
+          // Création de l'en-tête de la requête avec le token d'authentification
+          let myHeaders = new Headers();
+          myHeaders.append("X-AUTH-TOKEN", getToken()); // Assurez-vous que getToken() existe
+          myHeaders.append("Content-Type", "application/json");
+
+          // Configuration du corps de la requête
+          let raw = JSON.stringify({
+            date: dateRapport,
+            detail: rapportAnimal,
+            email: userEmail,
+            animal_prenom: prenomAnimal,
+          });
+
+          // Configuration des options de la requête
+          let requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+          };
+
+          // Appel fetch via l'API
+          const response = await fetch(`${apiUrl}/rapport/new`, requestOptions);
+
+          // Vérification de la requête
+          if (!response.ok) {
+            throw new Error(
+              `Erreur lors de l'envoi du formulaire: ${response.status}`
+            );
+          }
+
+          // Message de succès
+          messageElement.textContent = "Rapport ajouté avec succès";
+          messageElement.style.color = "green";
+
+          // Réinitialisation du formulaire après succès
+          form.reset();
+        } catch (error) {
+          console.error("Erreur:", error);
+          messageElement.textContent = "Impossible d'ajouter le rapport";
+          messageElement.style.color = "red";
+        }
+      });
+    }
+
+    // Initialisation du formulaire
+    initializeForm(formRapport);
+  }, 100); // Délai de 100 ms (0.1 seconde)
+});
