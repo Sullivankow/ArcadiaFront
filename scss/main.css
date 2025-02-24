@@ -1255,7 +1255,7 @@ input[type="submit"] {
 
 /*PAGE GESTION DES ANIMAUX/HABITAT/USERS/SERVICE*/
 
-/*Formulaire ajout animal/habitat/Users/Service/Horaire*/
+/*Formulaire ajout animal/habitat/Users/Service/Horaire/Rapport*/
 .div-animal{
     display: flex;
     flex-direction: row;
@@ -1265,7 +1265,8 @@ input[type="submit"] {
 #habitat-section,
 #user-section,
 #service-section,
-.horaires-section
+.horaires-section,
+.rapport-section
 {
     display: flex;
     max-width: 600px;
@@ -1284,7 +1285,8 @@ input[type="submit"] {
 .title-form-habitat,
 .title-form-user,
 .title-form-service,
-.title-form-horaire {
+.title-form-horaire,
+.title-form-rapport {
     font-family: "Indie Flower", sans-serif;
     color: white;
     padding: 20px;
@@ -1295,7 +1297,8 @@ input[type="submit"] {
 .habitat-formulaire,
 .user-formulaire,
 .service-formulaire,
-.horaires-formulaire {
+.horaires-formulaire,
+.rapport-formulaire {
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -1306,7 +1309,8 @@ input[type="submit"] {
 .btn-animal-form,
 .btn-habitat-form,
 .btn-service-form,
-.btn-horaire-form
+.btn-horaire-form,
+.btn-rapport-form
 
 {
 
@@ -1355,7 +1359,6 @@ input[type="submit"] {
 }
 
 .section-animal-table,
-
 .section-user-table,
 .section-review-table
  {

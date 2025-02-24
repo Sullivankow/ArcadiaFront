@@ -130,39 +130,48 @@ function displayRapport(rapports) {
   sortTable(4); // Trier par date par défaut
 }
 
-//Fonction pour modifier les rapport vétérinaire
+//Fonction pour modifier les rapports vétérnaire
 async function editRapport(rapportId) {
+  const newPrenomAnimal = prompt("Entrez le nouveau prénom de l'animal");
   const newAnimalDetail = prompt("Entrez le nouveau rapport pour cet animal");
+  const newUserEmail = prompt("Entrez votre email d'utilisateur");
+  const newDate = prompt("Entrez la date de votre rapport (format YYYY-MM-DD)");
 
-  if (!newAnimalDetail) {
+  // Vérifier si au moins un champ a été modifié
+  if (!newPrenomAnimal && !newAnimalDetail && !newUserEmail && !newDate) {
     alert("Aucune modification à effectuer");
     return;
   }
+
   try {
-    //Création de l'en-tête de la requête
+    // Création de l'en-tête de la requête
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
     myHeaders.append("Content-Type", "application/json");
 
-    //Préparation du corps de la requête
+    // Préparation du corps de la requête
     const body = {};
+    if (newPrenomAnimal) body.animal_prenom = newPrenomAnimal;
     if (newAnimalDetail) body.detail = newAnimalDetail;
+    if (newUserEmail) body.user_email = newUserEmail;
+    if (newDate) body.date = newDate;
 
-    //Configuration des options de la requête
+    console.log("Corps de la requête :", JSON.stringify(body));
+
+    // Configuration des options de la requête
     let requestOptions = {
       method: "PUT",
       headers: myHeaders,
-      body: JSON.stringyfy(nody),
+      body: JSON.stringify(body),
     };
 
-    //Requête API pour modification
+    // Requête API pour modification
     const response = await fetch(
       `${apiUrl}/rapport/edit/${rapportId}`,
       requestOptions
     );
-
-    if (!response.ok) {
-      alert("Les modifications ont été effectuées avec succès!");
+    if (response.ok) {
+      alert("Les modifications ont été effectuées avec succès !");
       fetchRapport();
     } else {
       const errorMessage = await response.text();
@@ -170,10 +179,9 @@ async function editRapport(rapportId) {
     }
   } catch (error) {
     console.error("Erreur :", error);
-    alert("Une erreur est survenue lors de la modification");
+    alert("Une erreur est survenue lors de la modification.");
   }
 }
-
 //Fonction pour supprimer un rapport vétérinaire
 async function deleteRapport(rapportId) {
   if (!confirm("Êtes-vous sûr de vouloir supprimer ce rapport?")) return;
@@ -257,3 +265,9 @@ function sortTable(columnIndex) {
   tbody.innerHTML = ""; // Vider le tbody
   rows.forEach((row) => tbody.appendChild(row));
 }
+
+
+
+
+//Fonction pour ajouter un rapport vétérinaire
+

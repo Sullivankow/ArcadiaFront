@@ -428,6 +428,7 @@ setTimeout(() => {
 }, 2000);
 
 /////////////////////////
+//Fonction pour afficher les animaux sur la pge HOME
 
 async function fetchAnimaux() {
   try {
