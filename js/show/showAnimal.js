@@ -428,8 +428,7 @@ setTimeout(() => {
 }, 2000);
 
 /////////////////////////
-//Fonction pour afficher les animaux sur la page HOME
-
+// Fonction pour afficher les animaux sur la page HOME
 async function fetchAnimaux() {
   try {
     let myHeaders = new Headers();
@@ -452,29 +451,49 @@ async function fetchAnimaux() {
 
 function displayAnimalCards(animals) {
   const container = document.getElementById("animal-cards-container");
-  container.innerHTML = "";
+  container.innerHTML = ""; // Réinitialise le conteneur
 
   animals.forEach((animal) => {
     const card = document.createElement("div");
     card.classList.add("animal-card");
+    card.dataset.id = animal.id; // Ajout de l'ID de l'animal en tant qu'attribut de données
     card.innerHTML = `
-     
-          <h3>${animal.prenom}</h3>
-          <div class="animal-details" style="display: none;">
-              <p><strong>État :</strong> ${animal.etat}</p>
-              <p><strong>Habitat :</strong> ${animal.habitat}</p>
-              <p><strong>Race :</strong> ${animal.race}</p>
-          </div>
-      `;
-    card.addEventListener("click", () => {
+      <h3>${animal.prenom}</h3>
+      <div class="animal-details" style="display: none;">
+          <p><strong>État :</strong> ${animal.etat}</p>
+          <p><strong>Habitat :</strong> ${animal.habitat}</p>
+          <p><strong>Race :</strong> ${animal.race}</p>
+      </div>
+    `;
+
+    // Ajout de l'événement de clic ici pour chaque carte
+    card.addEventListener("click", async () => {
       const details = card.querySelector(".animal-details");
       details.style.display =
-        details.style.display === "block" ? "none" : "block";
+        details.style.display === "block" ? "none" : "block"; // Affiche ou masque les détails
+
+      // Enregistrement du clic
+      const animalId = card.dataset.id; // Récupération de l'ID de l'animal
+      try {
+        let response = await fetch(`${apiUrl}/stats/click/${animalId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        let data = await response.json();
+        console.log("Statistique mise à jour:", data);
+      } catch (error) {
+        console.error("Erreur lors du clic sur l'animal:", error);
+      }
     });
-    container.appendChild(card);
+
+    container.appendChild(card); // Ajout de la carte au conteneur
   });
 }
 
+// Fonction pour faire défiler les cartes
 function scrollLeft() {
   document
     .getElementById("animal-cards-container")
@@ -487,7 +506,7 @@ function scrollRight() {
     .scrollBy({ left: 300, behavior: "smooth" });
 }
 
-// Ajouter les événements
+// Ajouter les événements pour le carrousel
 document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector(".carousel-btn.left")
@@ -499,3 +518,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Appel de la fonction pour récupérer les animaux
 fetchAnimaux();
+
+// Fonction pour afficher les statistiques
+document.addEventListener("DOMContentLoaded", async function () {
+  try {
+    const response = await fetch(`${apiUrl}/stats/all`);
+    let data = await response.json();
+
+    let tableBody = document.querySelector("#statsTable tbody");
+    tableBody.innerHTML = ""; // Réinitialise le corps du tableau
+
+    data.forEach((stat) => {
+      let row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${stat.animalId}</td>
+        <td>${stat.animalName}</td>
+        <td>${stat.clickCount}</td>
+      `;
+      tableBody.appendChild(row); // Ajout de la ligne au tableau
+    });
+  } catch (error) {
+    console.error("Erreur lors de la récupération des stats:", error);
+  }
+});
