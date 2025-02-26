@@ -46,15 +46,9 @@ function displayHabitats(habitats) {
 
       // Gestion de l'image avec vérification
       const imageElement = document.createElement("img");
-      if (habitat.images && habitat.images.length > 0) {
-        imageElement.src = habitat.images?.[0]?.imageUrl
-          ? `http://localhost:8081/uploads/${habitat.images[0].imageUrl}`
-          : "default.jpg";
-
-        // L'API doit renvoyer un chemin absolu
-      } else {
-        imageElement.src = "/uploads/default.jpg"; // Image par défaut si aucune image trouvée
-      }
+      imageElement.src = habitat.images?.[0]?.imageUrl
+        ? `http://localhost:8081${habitat.images[0].imageUrl}`
+        : "http://localhost:8081/uploads/default.jpg";
       imageElement.alt = `Image de ${habitat.nom}`;
       card.appendChild(imageElement);
 
@@ -62,29 +56,41 @@ function displayHabitats(habitats) {
       title.textContent = habitat.nom || "Sans nom";
       card.appendChild(title);
 
-      const description = document.createElement("p");
-      description.textContent =
-        habitat.description || "Aucune description disponible";
-      card.appendChild(description);
+      // Détails cachés par défaut
+      const details = document.createElement("div");
+      details.classList.add("card-details");
+      details.innerHTML = `
+              <p>${habitat.description || "Aucune description disponible"}</p>
+              <p>Commentaire : ${habitat.commentaire_habitat || "Aucun"}</p>
+          `;
+      card.appendChild(details);
 
-      const commentaire = document.createElement("p");
-      commentaire.textContent = `Commentaire : ${
-        habitat.commentaire_habitat || "Aucun"
-      }`;
-      card.appendChild(commentaire);
+      // Ajouter un événement pour afficher/masquer les détails
+      card.addEventListener("click", () => {
+        details.style.display =
+          details.style.display === "block" ? "none" : "block";
+      });
 
       // Conteneur des boutons
       const buttonContainer = document.createElement("div");
       buttonContainer.classList.add("card-buttons");
 
       const editButton = document.createElement("button");
+      editButton.classList.add("buttonEditHabitat");
       editButton.textContent = "Modifier";
-      editButton.addEventListener("click", () => editHabitat(habitat.id));
+      editButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // Empêcher le clic de passer au card
+        editHabitat(habitat.id);
+      });
       buttonContainer.appendChild(editButton);
 
       const deleteButton = document.createElement("button");
+      deleteButton.classList.add("buttonDeleteHabitat");
       deleteButton.textContent = "Supprimer";
-      deleteButton.addEventListener("click", () => deleteHabitat(habitat.id));
+      deleteButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // Empêcher le clic de passer au card
+        deleteHabitat(habitat.id);
+      });
       buttonContainer.appendChild(deleteButton);
 
       card.appendChild(buttonContainer);
