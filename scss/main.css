@@ -986,184 +986,6 @@ input[type="submit"] {
 
 
 
-/*----PAGE HABITAT----*/
-.title-green-habitat {
-    font-family: "Indie Flower", sans-serif;
-    font-size: 30px;
-    color: #52B207;
-    text-align: center;
-
-}
-
-.text-habitat {
-    font-family: "Outfit", sans-serif;
-    text-align: justify;
-}
-
-.habitat {
-    display: flex;
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-
-
-}
-
-.savane,
-.aquatique,
-.montagne {
-    width: 100%;
-    height: 450px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.title-savane,
-.title-aquatique,
-.title-montagne {
-    padding: 20px;
-}
-
-.imageArticleHabitat {
-    width: 450px;
-    height: auto;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 25px;
-    transition: filter 0.3s ease;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-
-}
-
-
-.tropicale,
-.desertique {
-    display: flex;
-    flex-direction: row-reverse;
-
-}
-
-.title-tropicale,
-.title-desertique {
-    padding: 20px;
-}
-
-/*Texte sur les images*/
-/*Savane*/
-.imageArticleSavane .text-image {
-    position: relative;
-    top: -35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: "Outfit", sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/*Survol effet*/
-.imageArticleSavane:hover .imageArticleHabitat {
-    filter: brightness(70%);
-}
-
-.imageArticleSavane:hover .text-image {
-    opacity: 1;
-}
-
-
-/*Tropicale*/
-
-.imageArticleTropicale .text-image {
-    position: relative;
-    top: -45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: "Outfit", sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.imageArticleTropicale:hover .imageArticleHabitat {
-    filter: brightness(70%);
-}
-
-.imageArticleTropicale:hover .text-image {
-    opacity: 1;
-}
-
-/*Aquatique*/
-.imageArticleAquatique .text-image {
-    position: relative;
-    top: -40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: "Outfit", sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.imageArticleAquatique:hover .imageArticleHabitat {
-    filter: brightness(70%);
-}
-
-.imageArticleAquatique:hover .text-image {
-    opacity: 1;
-}
-
-/*Désertique*/
-.imageArticleDesertique .text-image {
-    position: relative;
-    top: -45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: "Outfit", sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.imageArticleDesertique:hover .imageArticleHabitat {
-    filter: brightness(70%);
-}
-
-.imageArticleDesertique:hover .text-image {
-    opacity: 1;
-}
-
-/*Montagne*/
-.imageArticleMontagne .text-image {
-    position: relative;
-    top: -30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: "Outfit", sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.imageArticleMontagne:hover .imageArticleHabitat {
-    filter: brightness(70%);
-}
-
-.imageArticleMontagne:hover .text-image {
-    opacity: 1;
-}
-
-
-
 
 
 
@@ -1399,6 +1221,9 @@ padding-bottom: 25px;
 .th-horaire{
     color: #575757;
 }
+.edit-icon-horaire, .delete-icon-horaire{
+    cursor: pointer;
+}
 
 
 .caption-table-animal,
@@ -1526,6 +1351,9 @@ padding-bottom: 25px;
     background-color: white;
     width: 85%; 
     margin: 0 auto; /* Centre la carte horizontalement */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    
+    
 }
 
 

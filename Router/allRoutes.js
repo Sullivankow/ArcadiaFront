@@ -43,6 +43,7 @@ export const allRoutes = [
   new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", [
     "ROLE_VETERINAIRE",
     "ROLE_EMPLOYE",
+    "ROLE_ADMIN",
   ]),
   new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html", [
     "ROLE_ADMIN",
