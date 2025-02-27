@@ -53,6 +53,7 @@ export const allRoutes = [
     "ROLE_ADMIN",
     "ROLE_VETERINAIRE",
     "ROLE_EMPLOYE",
+    "/js/auth/signup.js",
   ]),
   new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html", []),
   new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html", [
