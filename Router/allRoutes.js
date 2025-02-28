@@ -13,13 +13,17 @@ export const allRoutes = [
     "/js/auth/signup.js"
   ),
 
-  new Route("/habitat", "Les habitats", "/pages/lesHabitats.html", []),
   new Route(
-    "/avis",
-    "Ajouter avis",
-    "/pages/avis.html",
-    [],
-    "/js/show/ShowReview.js"
+    "/reviewForm",
+    "Ajouter un avis",
+    "/pages/form/reviewForm.html",
+    []
+  ),
+  new Route(
+    "/habitatForm",
+    "Ajouter un habitat",
+    "/pages/form/habitatForm.html",
+    []
   ),
   new Route(
     "/signin",
@@ -45,10 +49,12 @@ export const allRoutes = [
     "ROLE_EMPLOYE",
     "ROLE_ADMIN",
   ]),
-  new Route("/dash-habitat", "Menu Habitat", "/pages/dashboard/habitat.html", [
-    "ROLE_ADMIN",
-    "ROLE_VETERINAIRE",
-  ]),
+  new Route(
+    "/dash-habitat",
+    "Menu Habitat",
+    "/pages/dashboard/habitat.html",
+    []
+  ),
   new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html", [
     "ROLE_ADMIN",
     "ROLE_VETERINAIRE",
@@ -68,11 +74,11 @@ export const allRoutes = [
     ["ROLE_ADMIN"],
     "/js/auth/signup.js"
   ),
-  new Route("/reviews-list", "Les avis", "/pages/dashboard/reviews.html", [
-    "ROLE_ADMIN",
-    "ROLE_EMPLOYE",
-    "/js/auth/signup.js",
-  ]),
+  // new Route("/reviews-list", "Les avis", "/pages/dashboard/reviews.html", [
+  //   "ROLE_ADMIN",
+  //   "ROLE_EMPLOYE",
+  //   "/js/auth/signup.js",
+  // ]),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

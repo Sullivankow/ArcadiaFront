@@ -1188,6 +1188,16 @@ input[type="submit"] {
     height: auto;
 
 }
+.btnHabitatForm {
+    background-color: #52B207;
+    color: white;
+    border-radius: 40px;
+    width: 100px;
+    height: auto;
+    border: none;
+    cursor: pointer;
+}
+
 
 /*SECTION DES HORAIRES*/
 .section-horaire-table {
