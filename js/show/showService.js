@@ -87,10 +87,10 @@ function restreindreAffichage() {
     }
   });
 
-  // Cache le formulaire d'ajout si l'utilisateur n'est ni admin ni employé
-  const formAjout = document.getElementById("service-section");
-  if (formAjout) {
-    formAjout.style.display = estAdmin || estEmploye ? "block" : "none";
+  // Cache le bouton en direction du formulaire d'ajout si l'utilisateur n'est ni admin ni employé
+  const addButtonService = document.getElementById("add-service-form");
+  if (addButtonService) {
+    addButtonService.style.display = estAdmin || estEmploye ? "block" : "none";
   }
 }
 

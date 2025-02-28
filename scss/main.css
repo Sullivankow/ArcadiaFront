@@ -1188,7 +1188,7 @@ input[type="submit"] {
     height: auto;
 
 }
-.btnHabitatForm {
+.btnHabitatForm, .btnServiceForm {
     background-color: #52B207;
     color: white;
     border-radius: 40px;
@@ -1196,6 +1196,7 @@ input[type="submit"] {
     height: auto;
     border: none;
     cursor: pointer;
+    margin:25px;
 }
 
 

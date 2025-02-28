@@ -3,6 +3,7 @@ import Route from "./Route.js";
 //On définit nos routes ici
 
 export const allRoutes = [
+  //Les routes des pages visibles aux visiteurs
   new Route("/", "Accueil", "/pages/home.html", []),
   new Route("/contact", "Contact", "/pages/contact.html", []),
   new Route(
@@ -20,17 +21,31 @@ export const allRoutes = [
     []
   ),
   new Route(
+    "/signin",
+    "Connexion",
+    "/pages/auth/signin.html",
+    ["disconnected"],
+    "/js/auth/signin.js"
+  ),
+  new Route(
+    "/dash-habitat",
+    "Menu Habitat",
+    "/pages/dashboard/habitat.html",
+    []
+  ),
+
+  //Routes des pages non visibles
+  new Route(
     "/habitatForm",
     "Ajouter un habitat",
     "/pages/form/habitatForm.html",
     []
   ),
   new Route(
-    "/signin",
-    "Connexion",
-    "/pages/auth/signin.html",
-    ["disconnected"],
-    "/js/auth/signin.js"
+    "/serviceForm",
+    "Ajouter un habitat",
+    "/pages/form/serviceForm.html",
+    []
   ),
   new Route(
     "/menu-dashboard",
@@ -49,12 +64,7 @@ export const allRoutes = [
     "ROLE_EMPLOYE",
     "ROLE_ADMIN",
   ]),
-  new Route(
-    "/dash-habitat",
-    "Menu Habitat",
-    "/pages/dashboard/habitat.html",
-    []
-  ),
+
   new Route("/dash-users", "Menu utilisateurs", "/pages/dashboard/users.html", [
     "ROLE_ADMIN",
     "ROLE_VETERINAIRE",
@@ -74,11 +84,6 @@ export const allRoutes = [
     ["ROLE_ADMIN"],
     "/js/auth/signup.js"
   ),
-  // new Route("/reviews-list", "Les avis", "/pages/dashboard/reviews.html", [
-  //   "ROLE_ADMIN",
-  //   "ROLE_EMPLOYE",
-  //   "/js/auth/signup.js",
-  // ]),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename
