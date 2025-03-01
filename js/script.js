@@ -85,7 +85,6 @@ function showAndHideElementsForRoles() {
   const loginButton = document.getElementById("signin-btn");
   const logoutButton = document.getElementById("signout-btn");
   const gestionButton = document.getElementById("gestion-btn");
-  /*const dataShowEmp = document.querySelectorAll("[data-show]");*/
 
   if (
     userConnected ||
@@ -124,7 +123,7 @@ function showAndHideElementsForRoles() {
 //Fonction pour récupérer les infos utilisateurs
 async function getInfosUser() {
   try {
-    console.log("Récupération des infos de l'utilisateur");
+    // console.log("Récupération des infos de l'utilisateur");
 
     // Création des en-têtes avec le token d'authentification.
     let myHeaders = new Headers();
@@ -160,3 +159,26 @@ async function getInfosUser() {
     );
   }
 }
+
+/////////////////////////
+///GESTION DES ERREURS DANS LE NAVIGATEUR///
+////////////////////////
+
+// Désactiver tous les logs et erreurs dans la console
+console.log = function () {};
+console.warn = function () {};
+console.error = function () {};
+console.debug = function () {};
+console.info = function () {};
+
+window.onerror = function () {
+  return true; // Empêche l'affichage des erreurs
+};
+
+window.addEventListener(
+  "error",
+  function (event) {
+    event.preventDefault(); // Bloque les erreurs
+  },
+  true
+);
