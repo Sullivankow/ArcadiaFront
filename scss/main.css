@@ -31,10 +31,7 @@ nav {
 
 }
 
-.logo {
-    width: 80px;
-    height: 80px;
-}
+
 
 /*Réglage du menu de navigation*/
 .menu-hamburger {
@@ -1633,7 +1630,7 @@ padding-bottom: 25px;
     }
 
     .text-container {
-        max-width: 100%;
+        max-width: 90%;
         text-align: center;
     }
 
@@ -1642,7 +1639,7 @@ padding-bottom: 25px;
     }
 
     .image-container {
-        max-width: 100%;
+        max-width: 90%;
     }
 }
 
@@ -1868,13 +1865,18 @@ padding-bottom: 25px;
     }
 }
 
+
+
+
 /*----MEDIA QUERIES PAGE DE SERVICE----*/
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     .nosServices {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        align-items: center;
+        width: 90%;
+        align-items: center; /* Centre les éléments enfants */
+        justify-content: center; /* Centre verticalement si besoin */
+        margin: 0 auto; /* Centre le conteneur */
         padding-bottom: 20px;
     }
 
@@ -1883,9 +1885,10 @@ padding-bottom: 25px;
     .card-train {
         width: 80%;
         height: auto;
-
+        margin: 10px auto; /* Centre chaque carte */
     }
 }
+
 
 /*----MEDIA QUERIES FORMULAIRE DE CONTACT----*/
 @media(max-width: 768px) {
@@ -1942,10 +1945,14 @@ padding-bottom: 25px;
     .navbar .menu-hamburger {
         display: block;
         z-index: 110;
+        top:15px;
+        right:20px;
+        position: absolute;
+
+}
 
 
 
-    }
 
     .nav-links {
         position: absolute;
@@ -2014,20 +2021,41 @@ padding-bottom: 25px;
 
     /*à propos HOME*/
 /* Responsivité pour les petits écrans */
+
+
 @media screen and (max-width: 900px) {
     .container-aboutUs {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+        padding: 0 10px;
     }
 
-    .image-container-about, .text-content-about {
-        max-width: 100%;
+    .image-container-about {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    /* Agrandir l'image */
+    .image-aPropos {
+        max-width: 90%; /* Augmenté pour mieux s'afficher */
+        height: auto;
+        display: block;
     }
 
     .text-content-about {
+        max-width: 85%;
         padding-left: 0;
+        padding-right: 0;
+        margin: 20px auto;
     }
 }
+
+
+
 
 
 
