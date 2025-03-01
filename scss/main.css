@@ -102,42 +102,87 @@ body {
 
 
 
-/*Réglage du footer*/
-footer {
+/* Footer global */
+.footer {
     background-color: #2A2B2E;
     color: white;
     font-family: "Outfit", sans-serif;
-     position: absolute;
-    padding: 0px;
-    bottom: 0px;
-    margin: 0px;
+    padding: 20px 0;
     width: 100%;
-}
-.footerfooter{
-    display:flex;
-    justify-content: space-around;
     text-align: center;
 }
 
-
-.footer-bottom{
+/* Conteneur principal */
+.footer-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Section */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
     
 }
 
-.footerbottom{
+.footer-section h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Liens */
+.footer-section ul {
+    list-style: none;
+    padding: 0px;
+    
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+    padding:10px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #52B207;
+}
+
+/* Icônes sociales */
+.social-icons {
     display: flex;
     justify-content: center;
-    font-size: 15px;
-    padding:10px;
-    
-    }
-.pfooter{
-    line-height: 0.5;
-    font-size: 1.1vw;
-  
-    margin: 10px;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+/* Footer bas */
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    background: #1F1F21;
+    margin-top: 15px;
 }
 
 
@@ -246,60 +291,85 @@ footer {
 
 
 
-/*Paramètre de la section à propos de nous*/
+
+
+/* Section À propos */
 .container-aboutUs {
     display: flex;
-    flex-direction: column;
-    align-items: space-between;
-    padding-bottom: 40px;
-    padding-top: 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Centre le contenu */
     width: 100%;
+    max-width: 1200px; /* Limite la largeur totale */
+    margin: auto;
+    padding: 50px 20px;
+    gap: 30px;
+    flex-wrap: wrap; /* Réorganise sur petits écrans */
+}
+
+/* Image à gauche */
+.image-container-about {
+    flex: 1;
+    max-width: 40%; /* Réduit légèrement la largeur pour éviter le dépassement */
+    display: flex;
+    justify-content: center; 
+}
+
+.image-aPropos {
+    width: 100%;
+    max-width: 450px;
     height: auto;
-
-
-    .text-content-white {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        margin-right: 10px;
-        right: 0;
-        width: 50%;
-
-    }
-
-    .image-aPropos {
-        max-width: 30%;
-        height: auto;
-        justify-content: center;
-        margin-left: 40px;
-        border-radius: 40px;
-        padding: 0px;
-        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-
-    }
-
-    .btn-article {
-        display: flex;
-        justify-content: center;
-        margin-top: 50px;
-    }
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-/*paramètrage des textes articles*/
+.image-aPropos:hover {
+    transform: scale(1.05);
+}
 
-.title,
-.paragraphe {
-    font-family: "Oufit", sans-serif;
+/* Texte à droite */
+.text-content-about {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box; /* Évite le dépassement */
+    word-wrap: break-word; /* Force le texte à rester dans la boîte */
+    overflow-wrap: break-word; 
+}
 
+/* Empêche le texte de dépasser */
+.title-green-about, .title-about, .paragraphe-about {
+    max-width: 100%; 
+}
+
+/* Styles du texte */
+.title-green-about {
+    color: #4CAF50;
+    font-family: "Indie Flower", sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.title-about {
+    font-family: "Outfit";
+    font-size: 2em; /* Légère réduction pour éviter les dépassements */
+    font-weight: bold; 
+    margin-bottom: 15px;
+}
+
+.paragraphe-about {
+    font-family: "Outfit";
+    font-size: 1em; /* Ajustement pour éviter de trop remplir l'écran */
+    line-height: 1.5;
 }
 
 
 
 
 
-
-
-/**/
+/*SECTION ANIMAL CAROUSEL*/
 .animals-section {
     
     background: #52B207;
@@ -393,44 +463,87 @@ footer {
 
 
 
-/*Section Leur habitat*/
+
+/* Section Leurs habitats */
 .habitat-home {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 50px; 
+    padding-bottom: 50px; 
+    gap: 30px;
+}
+
+/* Texte à gauche */
+.text-container {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+.text-container h2 {
+    color: #4CAF50;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.text-container h1 {
+    font-family: "Outfit", sans-serif;
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.text-container .paragraphe {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Bouton */
+.btn-habitat {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn {
+    background-color: #52B207;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #388E3C;
+}
+
+/* Image à droite */
+.image-container {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-habitat {
+    width: 100%;
+    max-width: 500px;
     height: auto;
-    padding: 0px;
-    margin-top: 50px;
-    margin-bottom: 0px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
 
-
-    .title-habitat-home {
-        width: 45%;
-        height: auto;
-        padding: 60px;
-    }
-
-    .image-habitat {
-        display: flex;
-        flex-wrap: wrap;
-        width: -20%;
-        height: auto;
-        border-radius: 40px;
-        padding: 0px;
-        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-        margin-left: 0;
-    }
-
-    .btn-habitat {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 30px;
-    }
-
-    .title-habitat-accueil {
-        font-family: "Outfit", sans-serif;
-    }
-
+.image-habitat:hover {
+    transform: scale(1.05);
 }
 
 
@@ -1203,7 +1316,7 @@ input[type="submit"] {
 /*SECTION DES HORAIRES*/
 .section-horaire-table {
     width: 100%;
-margin-top: 25px;
+margin-top: 55px;
 margin-bottom: 25px;
 padding-bottom: 25px;
     height: auto;
@@ -1512,18 +1625,26 @@ padding-bottom: 25px;
 
 
 
+/* Responsive SECTION HABITAT HOME*/
+@media screen and (max-width: 900px) {
+    .habitat-home {
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .text-container {
+        max-width: 100%;
+        text-align: center;
+    }
 
+    .btn-habitat {
+        justify-content: center;
+    }
 
-
-
-
-
-
-
-
-
-
+    .image-container {
+        max-width: 100%;
+    }
+}
 
 
 
@@ -1558,16 +1679,6 @@ padding-bottom: 25px;
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* Responsive Service*/
 @media (max-width: 600px) {
     .title-green-service {
@@ -1582,19 +1693,6 @@ padding-bottom: 25px;
         font-size: 1.3rem;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1643,25 +1741,6 @@ padding-bottom: 25px;
         font-weight: bold;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1839,29 +1918,7 @@ padding-bottom: 25px;
 }
 
 
-/*-----Media queries page À propos de nous-----*/
 
-@media (max-width: 768px) {
-
-    .aProposDeNous {
-        width: 100%;
-        height: auto;
-        display: flex;
-
-    }
-
-    .titre-aPropos {
-        width: 100%;
-        height: auto;
-        text-align: start;
-        padding: 50px;
-    }
-
-    .koala {
-        display: none;
-    }
-
-}
 
 
 
@@ -1955,46 +2012,24 @@ padding-bottom: 25px;
 
 
 
-    /*à propos*/
-
+    /*à propos HOME*/
+/* Responsivité pour les petits écrans */
+@media screen and (max-width: 900px) {
     .container-aboutUs {
-        display: flex;
-        width: 100%;
-        height: 150px;
-        margin-top: -40px;
+        flex-direction: column;
+        text-align: center;
     }
 
-
-
-    .title-green,
-    .title {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        padding: 10px;
-
+    .image-container-about, .text-content-about {
+        max-width: 100%;
     }
 
-    .text-content-white {
-        display: flex;
-        justify-content: center;
-        left: 25%;
+    .text-content-about {
+        padding-left: 0;
     }
+}
 
-    .btn-article {
-        position: absolute;
-        top: 95px;
-        margin-left: 50px;
 
-    }
-
-    .paragraphe {
-        display: none;
-    }
-
-    .image-aPropos {
-        display: none;
-    }
 
     /*Nos espèces*/
     .card {
@@ -2008,40 +2043,6 @@ padding-bottom: 25px;
 
 
 
-    /*Leur habitat*/
-
-    .habitat-home {
-        display: flex;
-        width: 100%;
-        height: auto;
-        justify-content: center;
-
-    }
-
-    .title-habitat-home {
-        width: 100%;
-        height: auto;
-        margin: -100px;
-        text-align: center;
-
-
-    }
-
-    .image-habitat,
-    .imageH {
-        display: none;
-    }
-
-
-    .btn-habitat {
-        padding: 0px;
-        margin-top: -30px;
-
-    }
-
-    .title-habitat-accueil {
-        width: 100%;
-    }
 
 
     /*Nos services*/
