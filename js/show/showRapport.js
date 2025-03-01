@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🌍 DOM chargé, attente avant exécution de fetchRapport()...");
-
   setTimeout(() => {
-    console.log("⏳ Lancement de fetchRapport après délai...");
     fetchRapport();
   }, 500); // Attente de 500ms avant d'exécuter la fonction
 
@@ -11,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const sortDateBtn = document.querySelector("#sortDate");
 
   if (sortAnimalBtn) {
-    console.log("Élément sortAnimal trouvé, ajout de l'écouteur d'événement.");
     sortAnimalBtn.addEventListener("click", () => {
       alert("Tri par prénom de l'animal cliqué !");
       sortTable(1);
@@ -21,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (sortDateBtn) {
-    console.log("Élément sortDate trouvé, ajout de l'écouteur d'événement.");
     sortDateBtn.addEventListener("click", () => {
       alert("Tri par date cliqué !");
       sortTable(4);
@@ -135,7 +130,7 @@ async function editRapport(rapportId) {
   const newPrenomAnimal = prompt("Entrez le nouveau prénom de l'animal");
   const newAnimalDetail = prompt("Entrez le nouveau rapport pour cet animal");
   const newUserEmail = prompt("Entrez votre email d'utilisateur");
-  const newDate = prompt("Entrez la date de votre rapport (format YYYY-MM-DD)");
+  const newDate = prompt("Entrez la date de votre rapport (format DD-MM-YYYY)");
 
   // Vérifier si au moins un champ a été modifié
   if (!newPrenomAnimal && !newAnimalDetail && !newUserEmail && !newDate) {
@@ -274,9 +269,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Vérification de la présence du formulaire dans le DOM au moment du chargement
     if (!formRapport) {
-      console.log(
-        "Formulaire introuvable au chargement du DOM, attente de l'injection..."
-      );
       return;
     }
 
@@ -284,7 +276,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function initializeForm(form) {
       form.addEventListener("submit", async function (event) {
         event.preventDefault(); // Empêche le rechargement de la page
-        console.log("Formulaire soumis");
 
         // Récupération des valeurs du formulaire
         const prenomAnimal = document
@@ -303,13 +294,6 @@ document.addEventListener("DOMContentLoaded", function () {
           messageElement.style.color = "red";
           return;
         }
-
-        console.log("Données envoyées:", {
-          prenomAnimal,
-          rapportAnimal,
-          userEmail,
-          dateRapport,
-        });
 
         try {
           // Vérification que getToken() et apiUrl existent

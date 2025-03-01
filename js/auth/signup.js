@@ -26,10 +26,8 @@ function validateForm() {
 
   if (mailOk && passwordOk && passwordConfirmOk) {
     btnValidation.disabled = false;
-    console.log("bouton activé");
   } else {
     btnValidation.disabled = true;
-    console.log("bouton désactivé");
   }
 }
 
@@ -44,7 +42,7 @@ function validateConfirmationPassword(inputPwd, inputConfirmPwd) {
     //Message lorsque le mot de passe est identique
     message.textContent = "Le mot de passe est identique";
     message.style.color = "green"; //Message en vert pour valider
-    console.log("identique");
+
     return true;
   } else {
     inputConfirmPwd.classList.add("is-invalid");
@@ -53,7 +51,7 @@ function validateConfirmationPassword(inputPwd, inputConfirmPwd) {
     //Message lorsque le mot de passe n'est pas identique
     message.textContent = "Le mot de passe n'est pas identique";
     message.style.color = "red";
-    console.log("pas identique");
+
     return false;
   }
 }

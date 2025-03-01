@@ -78,9 +78,6 @@ document.addEventListener("DOMContentLoaded", fetchHoraires);
 document.addEventListener("DOMContentLoaded", function () {
   const formHoraire = document.getElementById("horaire-form");
   if (!formHoraire) {
-    console.log(
-      "Formulaire Horaire introuvable au chargement du DOM. Attente..."
-    );
     setTimeout(() => {
       const formHoraireAfterDelay = document.getElementById("horaire-form");
       if (formHoraireAfterDelay) {
@@ -91,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 1000);
   } else {
-    console.log("Formulaire horaire trouvé!");
     initializeForm(formHoraire);
   }
 });
@@ -116,13 +112,6 @@ function initializeForm(formHoraire) {
       }
       return;
     }
-
-    console.log("Données envoyées:", {
-      jour,
-      horaireOuverture,
-      horaireFermeture,
-      saison,
-    });
 
     try {
       let myHeaders = new Headers();
@@ -167,8 +156,6 @@ function initializeForm(formHoraire) {
 
 // Fonction pour modifier un horaire
 async function modifierHoraire(horaireId) {
-  console.log("ID reçu pour modification:", horaireId); // Debugging
-
   if (!horaireId) {
     alert("Erreur : ID invalide !");
     return;

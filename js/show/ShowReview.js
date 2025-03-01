@@ -14,7 +14,7 @@ async function fetchAvis() {
 
     //Requête pour récupérer les avis via l'api
     const response = await fetch(`${apiUrl}/avis/show`, requestOptions);
-    console.log("Réponse reçue:", response);
+
     if (!response.ok) {
       throw new Error(
         `Erreur lors de la récupération des avis : ${response.status}`
@@ -29,7 +29,6 @@ async function fetchAvis() {
     displayAvis(avis);
   } catch (error) {
     console.error("Erreur lors de la récupération des avis :", error.message);
-    console.log("Une erreur est survenue lors de la récupération des avis.");
   }
 }
 
@@ -132,7 +131,6 @@ async function validateAvis(avisId) {
       throw new Error(`Erreur: ${response.statusText}`);
     }
     const data = await response.json();
-    console.log("Avis validé avec succès:", data);
 
     // Rafraîchir l'affichage si nécessaire
     alert("Avis validé avec succès !");
@@ -185,7 +183,6 @@ async function fetchAvisForHomepage() {
     }
 
     const avis = await response.json();
-    console.log("Avis pour la page d'accueil :", avis);
 
     displayAvisHomepage(avis);
   } catch (error) {
@@ -250,7 +247,6 @@ document.addEventListener("DOMContentLoaded", fetchAvisForHomepage);
 // Fonction pour ajouter un avis
 async function addAvis() {
   const formAvis = document.getElementById("avis-Form");
-  console.log("Formulaire trouvé :", formAvis); // Debugging
 
   if (!formAvis) {
     console.error("Formulaire non trouvé !");
@@ -259,7 +255,6 @@ async function addAvis() {
 
   formAvis.addEventListener("submit", async function (event) {
     event.preventDefault();
-    console.log("Formulaire soumis !");
 
     // Récupérer les valeurs du formulaire
     const auteur = document.getElementById("auteur").value.trim();
@@ -273,8 +268,6 @@ async function addAvis() {
       messageElement.style.color = "red";
       return;
     }
-
-    console.log("Données envoyées :", { auteur, contenu, note });
 
     try {
       let dataForm = new FormData(formAvis);

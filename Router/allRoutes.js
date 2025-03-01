@@ -57,7 +57,7 @@ export const allRoutes = [
     "/compte-rendus",
     "Compte rendu vétérinaire",
     "/pages/dashboard/compte-rendus.html",
-    ["ROLE_VETERINAIRE"]
+    ["ROLE_ADMIN", "ROLE_VETERINAIRE"]
   ),
   new Route("/dash-animal", "Menu Animaux", "/pages/dashboard/animal.html", [
     "ROLE_VETERINAIRE",

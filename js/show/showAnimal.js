@@ -31,7 +31,6 @@ async function fetchAnimals() {
       "Erreur lors de la récupération des animaux :",
       error.message
     );
-    console.log("Une erreur est survenue lors de la récupération des animaux.");
   }
 }
 
@@ -211,15 +210,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Vérification si le formulaire est déjà dans le DOM au moment du chargement
   if (!formAnimal) {
-    console.log(
-      "Formulaire introuvable au chargement du DOM. Attente de l'injection..."
-    );
     // On peut essayer d'attendre un peu avant de vérifier à nouveau
     setTimeout(() => {
       // Essaye de retrouver le formulaire après un délai
       const formAnimalAfterDelay = document.getElementById("animal-form");
       if (formAnimalAfterDelay) {
-        console.log("Formulaire trouvé après délai !");
         initializeForm(formAnimalAfterDelay); // Appelle la fonction d'initialisation du formulaire
       } else {
         console.error(
@@ -228,7 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 1000); // Attends 1 seconde pour voir si l'injection du formulaire est terminée
   } else {
-    console.log("Formulaire trouvé au moment du chargement du DOM.");
     initializeForm(formAnimal); // Appelle la fonction d'initialisation du formulaire
   }
 
@@ -236,7 +230,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function initializeForm(form) {
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
-      console.log("Formulaire soumis");
 
       // Récupérer les valeurs du formulaire
       const nomAnimal = document.getElementById("nameAnimal").value.trim();
@@ -252,12 +245,6 @@ document.addEventListener("DOMContentLoaded", function () {
         messageElement.style.color = "red";
         return;
       }
-      console.log("Données envoyées:", {
-        nomAnimal,
-        etatAnimal,
-        habitatAnimal,
-        raceAnimal,
-      });
 
       try {
         let myHeaders = new Headers();
@@ -300,15 +287,11 @@ async function chargerRaces() {
   try {
     // Vérification de l'existence de l'élément dans le DOM
     const selectRace = document.querySelector(".racesAnimals");
-    console.log("Recherche de l'élément .racesAnimals :", selectRace);
+
     if (!selectRace) {
       console.error("Élément race introuvable dans le DOM");
       return;
     }
-
-    // Vérification de apiUrl et getToken
-    console.log("URL de l'API :", apiUrl);
-    console.log("Token utilisé :", getToken());
 
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
@@ -351,8 +334,6 @@ async function chargerRaces() {
         console.error("Données invalides détectées :", race);
       }
     });
-
-    console.log("Races chargées avec succès !");
   } catch (error) {
     console.error("Erreur :", error);
   }
@@ -367,9 +348,6 @@ async function chargerHabitat() {
       console.error("Élément habitat introuvable dans le DOM");
       return;
     }
-
-    console.log("URL de l'API :", apiUrl);
-    console.log("Token utilisé :", getToken());
 
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
@@ -412,8 +390,6 @@ async function chargerHabitat() {
         console.error("Données invalides détectées :", habitat);
       }
     });
-
-    console.log("Habitats chargés avec succès !");
   } catch (error) {
     console.error("Erreur :", error);
   }
@@ -422,7 +398,7 @@ async function chargerHabitat() {
 // Exécuter les fonctions après le chargement complet de la page
 setTimeout(() => {
   //Cette fonction retarde le chargement de la page
-  console.log("Exécution retardée de 2 secondes");
+
   chargerRaces();
   chargerHabitat();
 }, 2000);

@@ -113,20 +113,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //On vérifie si le formulaire existe bien dans le DOM
   if (!formHabitat) {
-    console.log(
-      "Formulaire habitat introuvable au chargement du DOM. Attente..."
-    );
     setTimeout(() => {
       const formHabitatAfterDelay = document.getElementById("habitat-form");
       if (formHabitatAfterDelay) {
-        console.log("Formulaire habitat trouvé après délai !");
         initializeForm(formHabitatAfterDelay);
       } else {
         console.error("Le formulaire horaire n'a toujours pas été trouvé.");
       }
     }, 1000);
   } else {
-    console.log("Formulaire habitat trouvé !");
     initializeForm(formHabitat);
   }
 });

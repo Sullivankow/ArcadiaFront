@@ -103,18 +103,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //On vérifie si le formulaire existe bien dans le DOM
   if (!formService) {
-    console.log("Formulaire introuvable au chargement du DOM. Attente...");
     setTimeout(() => {
       const formServiceAfterDelay = document.getElementById("service-form");
       if (formServiceAfterDelay) {
-        console.log("Formulaire trouvé après délai !");
         initializeForm(formServiceAfterDelay);
       } else {
         console.error("Le formulaire service n'a toujours pas été trouvé.");
       }
     }, 1000);
   } else {
-    console.log("Formulaire service trouvé !");
     initializeForm(formService);
   }
 });
@@ -138,8 +135,6 @@ function initializeForm(formService) {
       messageElement.style.color = "red";
       return;
     }
-
-    console.log("Données envoyées:", { titre, description, prix });
 
     try {
       // Initialisation des headers
