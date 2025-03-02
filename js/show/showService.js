@@ -12,7 +12,7 @@ async function recupServices() {
     };
 
     //Requête pour récupérer les services
-    const response = await fetch(`${apiUrl}/api/service/show`, requestOptions);
+    const response = await fetch(`${apiUrl}/service/show`, requestOptions);
     console.log("Réponse reçue:", response);
     if (!response.ok) {
       throw new Error(
