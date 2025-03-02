@@ -12,7 +12,7 @@ async function fetchUsers() {
       redirect: "follow",
     };
 
-    const response = await fetch(`${apiUrl}/users`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/users`, requestOptions);
     if (!response.ok) {
       console.error("Impossible de récupérer la liste des utilisateurs");
       throw new Error(`Erreur HTTP : ${response.status}`);
@@ -70,7 +70,7 @@ async function editUser() {
     };
 
     // Envoi de la requête
-    const response = await fetch(`${apiUrl}/account/edit`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/account/edit`, requestOptions);
 
     if (response.ok) {
       alert("Les modifications ont été effectuées avec succès !");
@@ -95,7 +95,7 @@ async function deleteUser(userId) {
   if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
     try {
       // Appel à l'API avec la méthode DELETE et l'ID de l'utilisateur
-      const response = await fetch(`${apiUrl}/users/${userId}`, {
+      const response = await fetch(`${apiUrl}/api/users/${userId}`, {
         method: "DELETE",
         headers: myHeaders,
       });

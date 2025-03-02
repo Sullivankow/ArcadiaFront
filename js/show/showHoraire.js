@@ -1,7 +1,7 @@
 // Fonction pour récupérer et afficher les horaires
 async function fetchHoraires() {
   try {
-    const response = await fetch(`${apiUrl}/horaires/show`);
+    const response = await fetch(`${apiUrl}/api/horaires/show`);
     if (!response.ok)
       throw new Error("Erreur lors de la récupération des horaires");
 
@@ -131,7 +131,10 @@ function initializeForm(formHoraire) {
         body: raw,
       };
 
-      const response = await fetch(`${apiUrl}/horaires/new`, requestOptions);
+      const response = await fetch(
+        `${apiUrl}/api/horaires/new`,
+        requestOptions
+      );
       if (!response.ok) {
         throw new Error(
           `Erreur lors de l'envoi du formulaire horaire: ${response.status}`
@@ -225,7 +228,7 @@ async function supprimerHoraire(horaireId) {
 
     //Requête API pour supprimer un horaire
 
-    const response = await fetch(`${apiUrl}/horaires/delete/${horaireId}`, {
+    const response = await fetch(`${apiUrl}/api/horaires/delete/${horaireId}`, {
       method: "DELETE",
       headers: myHeaders,
     });

@@ -12,7 +12,7 @@ async function recupServices() {
     };
 
     //Requête pour récupérer les services
-    const response = await fetch(`${apiUrl}/service/show`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/service/show`, requestOptions);
     console.log("Réponse reçue:", response);
     if (!response.ok) {
       throw new Error(
@@ -157,7 +157,7 @@ function initializeForm(formService) {
       };
 
       // Envoi de la requête à l'API
-      const response = await fetch(`${apiUrl}/service/new`, requestOptions);
+      const response = await fetch(`${apiUrl}/api/service/new`, requestOptions);
 
       if (!response.ok) {
         throw new Error(
@@ -244,7 +244,7 @@ async function supprimerService(serviceId) {
     myHeaders.append("X-AUTH-TOKEN", getToken());
 
     //Requête API pour supprimer le service
-    const response = await fetch(`${apiUrl}/service/delete/${serviceId}`, {
+    const response = await fetch(`${apiUrl}/api/service/delete/${serviceId}`, {
       method: "DELETE",
       headers: myHeaders,
     });

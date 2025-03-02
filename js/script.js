@@ -9,7 +9,7 @@ menuHamburger.addEventListener("click", () => {
 const tokenCookieName = "accesstoken";
 const RoleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
-const apiUrl = "http://localhost:8081/api"; //URL à changer lors du déploiement
+const apiUrl = "https://arcadia-api.onrender.com"; //URL à changer lors du déploiement
 
 signoutBtn.addEventListener("click", signout);
 getInfosUser();
@@ -124,7 +124,7 @@ async function getInfosUser() {
     };
 
     // Utilisation de `await` pour effectuer la requête.
-    const response = await fetch(`${apiUrl}/account/me`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/account/me`, requestOptions);
 
     //Vérification explicite de la réponse.
     if (!response.ok) {

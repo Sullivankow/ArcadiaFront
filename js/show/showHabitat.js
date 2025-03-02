@@ -10,7 +10,7 @@ async function fetchHabitats() {
       redirect: "follow",
     };
 
-    const response = await fetch(`${apiUrl}/habitat/show`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/habitat/show`, requestOptions);
     if (!response.ok) {
       throw new Error(
         `Erreur lors de la récupération des habitats : ${response.status}`
@@ -47,8 +47,8 @@ function displayHabitats(habitats) {
       // Gestion de l'image avec vérification
       const imageElement = document.createElement("img");
       imageElement.src = habitat.images?.[0]?.imageUrl
-        ? `http://localhost:8081${habitat.images[0].imageUrl}`
-        : "http://localhost:8081/uploads/default.jpg";
+        ? `https://arcadia-api.onrender.com${habitat.images[0].imageUrl}`
+        : "https://arcadia-api.onrender.com/uploads/default.jpg";
       imageElement.alt = `Image de ${habitat.nom}`;
       card.appendChild(imageElement);
 
@@ -212,7 +212,7 @@ function initializeForm(formHabitat) {
       };
 
       // Envoi de la requête à l'API
-      const response = await fetch(`${apiUrl}/habitat/new`, requestOptions);
+      const response = await fetch(`${apiUrl}/api/habitat/new`, requestOptions);
 
       if (!response.ok) {
         throw new Error(
@@ -261,7 +261,7 @@ async function editHabitat(habitatId) {
     };
 
     const response = await fetch(
-      `${apiUrl}/habitat/edit/${habitatId}`,
+      `${apiUrl}/api/habitat/edit/${habitatId}`,
       requestOptions
     );
     if (response.ok) {
@@ -285,7 +285,7 @@ async function deleteHabitat(habitatId) {
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
 
-    const response = await fetch(`${apiUrl}/habitat/delete/${habitatId}`, {
+    const response = await fetch(`${apiUrl}/api/habitat/delete/${habitatId}`, {
       method: "DELETE",
       headers: myHeaders,
     });

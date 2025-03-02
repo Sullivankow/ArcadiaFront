@@ -39,7 +39,7 @@ async function fetchRapport() {
       redirect: "follow",
     };
 
-    const response = await fetch(`${apiUrl}/rapport/show`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/rapport/show`, requestOptions);
     if (!response.ok) {
       throw new Error(
         `Erreur lors de la récupération des rapports vétérinaires: ${response.status}`
@@ -163,7 +163,7 @@ async function editRapport(rapportId) {
 
     // Requête API pour modification
     const response = await fetch(
-      `${apiUrl}/rapport/edit/${rapportId}`,
+      `${apiUrl}/api/rapport/edit/${rapportId}`,
       requestOptions
     );
     if (response.ok) {
@@ -189,7 +189,7 @@ async function deleteRapport(rapportId) {
 
     //Requête API pour supprimer un rapport vétérinaire
 
-    const response = await fetch(`${apiUrl}/rapport/delete/${rapportId}`, {
+    const response = await fetch(`${apiUrl}/api/rapport/delete/${rapportId}`, {
       method: "DELETE",
       headers: myHeaders,
     });
@@ -326,7 +326,10 @@ document.addEventListener("DOMContentLoaded", function () {
           };
 
           // Appel fetch via l'API
-          const response = await fetch(`${apiUrl}/rapport/new`, requestOptions);
+          const response = await fetch(
+            `${apiUrl}/api/rapport/new`,
+            requestOptions
+          );
 
           // Vérification de la requête
           if (!response.ok) {

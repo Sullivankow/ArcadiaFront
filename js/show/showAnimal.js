@@ -14,7 +14,7 @@ async function fetchAnimals() {
     };
 
     // Requête API pour récupérer les animaux
-    const response = await fetch(`${apiUrl}/animal/list`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/animal/list`, requestOptions);
     if (!response.ok) {
       throw new Error(
         `Erreur lors de la récupération des animaux : ${response.status}`
@@ -157,7 +157,7 @@ async function editAnimal(animalId) {
 
     // Requête API pour modifier l'animal
     const response = await fetch(
-      `${apiUrl}/animal/edit/${animalId}`,
+      `${apiUrl}/api/animal/edit/${animalId}`,
       requestOptions
     );
 
@@ -265,7 +265,10 @@ document.addEventListener("DOMContentLoaded", function () {
           body: raw,
         };
 
-        const response = await fetch(`${apiUrl}/animal/new`, requestOptions);
+        const response = await fetch(
+          `${apiUrl}/api/animal/new`,
+          requestOptions
+        );
         if (!response.ok) {
           throw new Error(
             `Erreur lors de l'envoi du formulaire: ${response.status}`
@@ -303,7 +306,7 @@ async function chargerRaces() {
       headers: myHeaders,
     };
 
-    const response = await fetch(`${apiUrl}/race/list`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/race/list`, requestOptions);
 
     if (!response.ok) {
       if (response.status === 401) {
@@ -359,7 +362,7 @@ async function chargerHabitat() {
       headers: myHeaders,
     };
 
-    const response = await fetch(`${apiUrl}/habitat/show`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/habitat/show`, requestOptions);
 
     if (!response.ok) {
       if (response.status === 401) {
@@ -416,7 +419,7 @@ async function fetchAnimaux() {
       headers: myHeaders,
       redirect: "follow",
     };
-    const response = await fetch(`${apiUrl}/animal/list`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/animal/list`, requestOptions);
     if (!response.ok) throw new Error(`Erreur : ${response.status}`);
 
     const animals = await response.json();
@@ -452,7 +455,7 @@ function displayAnimalCards(animals) {
       // Enregistrement du clic
       const animalId = card.dataset.id; // Récupération de l'ID de l'animal
       try {
-        let response = await fetch(`${apiUrl}/stats/click/${animalId}`, {
+        let response = await fetch(`${apiUrl}/api/stats/click/${animalId}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -499,7 +502,7 @@ fetchAnimaux();
 // Fonction pour afficher les statistiques
 document.addEventListener("DOMContentLoaded", async function () {
   try {
-    const response = await fetch(`${apiUrl}/stats/all`);
+    const response = await fetch(`${apiUrl}/api/stats/all`);
     let data = await response.json();
 
     let tableBody = document.querySelector("#statsTable tbody");

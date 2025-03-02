@@ -3,7 +3,7 @@ async function fetchAvis() {
   try {
     //Création des en-têtes avec le token d'authentification
     let myHeaders = new Headers();
-    // myHeaders.append("X-AUTH-TOKEN", getToken()); //getToken retourne normalement un token valide
+    myHeaders.append("X-AUTH-TOKEN", getToken()); //getToken retourne normalement un token valide
     myHeaders.append("Content-Type", "application/json"); //getToken retourne normalement un token valide
 
     //Configuration des options de la requête HTTP
@@ -14,7 +14,7 @@ async function fetchAvis() {
     };
 
     //Requête pour récupérer les avis via l'api
-    const response = await fetch(`${apiUrl}/avis/show`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/avis/show`, requestOptions);
 
     if (!response.ok) {
       throw new Error(
@@ -123,7 +123,7 @@ async function validateAvis(avisId) {
     myHeaders.append("Content-Type", "application/json");
 
     //Requête pour validedr un avis
-    const response = await fetch(`${apiUrl}/avis/validate/${avisId}`, {
+    const response = await fetch(`${apiUrl}/api/avis/validate/${avisId}`, {
       method: "PATCH",
       headers: myHeaders,
       body: JSON.stringify({ validated: true }),
@@ -153,7 +153,7 @@ async function deleteAvis(avisId) {
     myHeaders.append("X-AUTH-TOKEN", getToken());
 
     //Requête pour supprimer l'avis
-    const response = await fetch(`${apiUrl}/avis/delete/${avisId}`, {
+    const response = await fetch(`${apiUrl}/api/avis/delete/${avisId}`, {
       method: "DELETE",
       headers: myHeaders,
     });
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", fetchAvis);
 // Récupère et affiche les avis validés sur la page d'accueil
 async function fetchAvisForHomepage() {
   try {
-    const response = await fetch(`${apiUrl}/avis/show/validated`);
+    const response = await fetch(`${apiUrl}/api/avis/show/validated`);
 
     if (!response.ok) {
       throw new Error(
@@ -290,7 +290,7 @@ async function addAvis() {
         redirect: "follow",
       };
 
-      const response = await fetch(`${apiUrl}/avis/new`, requestOptions);
+      const response = await fetch(`${apiUrl}/api/avis/new`, requestOptions);
 
       if (!response.ok) {
         throw new Error(`Erreur lors de l'envoi de l'avis: ${response.status}`);
