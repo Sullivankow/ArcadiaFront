@@ -3,7 +3,8 @@ async function fetchAvis() {
   try {
     //Création des en-têtes avec le token d'authentification
     let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken()); //getToken retourne normalement un token valide
+    // myHeaders.append("X-AUTH-TOKEN", getToken()); //getToken retourne normalement un token valide
+    myHeaders.append("Content-Type", "application/json"); //getToken retourne normalement un token valide
 
     //Configuration des options de la requête HTTP
     let requestOptions = {
@@ -119,6 +120,7 @@ async function validateAvis(avisId) {
     //Création des en-têtes avec le token d'authentification
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
+    myHeaders.append("Content-Type", "application/json");
 
     //Requête pour validedr un avis
     const response = await fetch(`${apiUrl}/avis/validate/${avisId}`, {

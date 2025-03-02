@@ -101,6 +101,34 @@ function displayHabitats(habitats) {
     message.textContent = "Aucun habitat trouvé.";
     habitatContainer.appendChild(message);
   }
+
+  // Restriction des rôles après l'affichage des services
+  restreindreAffichage();
+}
+
+// Fonction pour cacher les icônes si l'utilisateur n'est pas admin ou employé
+
+function restreindreAffichage() {
+  const estAdmin = getRole() === "ROLE_ADMIN";
+  const estEmploye = getRole() === "ROLE_EMPLOYE";
+
+  // Sélectionne toutes les cartes de service
+  document.querySelectorAll(".habitat-card").forEach((card) => {
+    const buttonEditContainer = card.querySelector(".buttonEditHabitat");
+    const buttonDeleteContainer = card.querySelector(".buttonDeleteHabitat");
+    if (buttonEditContainer && buttonDeleteContainer) {
+      buttonEditContainer.style.display =
+        estAdmin || estEmploye ? "block" : "none";
+      buttonDeleteContainer.style.display =
+        estAdmin || estEmploye ? "block" : "none";
+    }
+  });
+
+  // Cache le bouton en direction du formulaire d'ajout si l'utilisateur n'est ni admin ni employé
+  const addButtonHabitat = document.getElementById("btnHabitatForm");
+  if (addButtonHabitat) {
+    addButtonHabitat.style.display = estAdmin || estEmploye ? "block" : "none";
+  }
 }
 
 // Charger les habitats au chargement de la page

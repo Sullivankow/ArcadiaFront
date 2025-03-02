@@ -4,7 +4,7 @@ async function fetchUsers() {
     // Création des en-têtes avec le token d'authentification.
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
-
+    myHeaders.append("Content-Type", "application/json");
     // Configuration des options pour la requête HTTP.
     let requestOptions = {
       method: "GET",

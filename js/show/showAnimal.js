@@ -3,7 +3,8 @@ async function fetchAnimals() {
   try {
     // Création des en-têtes avec le token d'authentification
     let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken()); // Assurez-vous que getToken() retourne un token valide
+
+    myHeaders.append("Content-Type", "application/json"); // Assurez-vous que getToken() retourne un token valide
 
     // Configuration des options pour la requête HTTP
     let requestOptions = {
@@ -294,7 +295,7 @@ async function chargerRaces() {
     }
 
     let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken());
+
     myHeaders.append("Content-Type", "application/json");
 
     let requestOptions = {
@@ -350,7 +351,7 @@ async function chargerHabitat() {
     }
 
     let myHeaders = new Headers();
-    myHeaders.append("X-AUTH-TOKEN", getToken());
+
     myHeaders.append("Content-Type", "application/json");
 
     let requestOptions = {

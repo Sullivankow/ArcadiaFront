@@ -9,7 +9,7 @@ menuHamburger.addEventListener("click", () => {
 const tokenCookieName = "accesstoken";
 const RoleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
-const apiUrl = "https://arcadia-api.onrender.com/api"; //URL à changer lors du déploiement
+const apiUrl = "http://localhost:8081/api"; //URL à changer lors du déploiement
 
 signoutBtn.addEventListener("click", signout);
 getInfosUser();
@@ -64,20 +64,6 @@ function isConnected() {
   return !(getToken() == null || getToken == undefined);
 }
 
-// if(isConnected()){
-//     alert("je suis connecté");
-// } else {
-//     alert("je ne suis as connecté");
-// }
-
-/* LES RÔLES
-disconnected
-connected (admin, vétérinaire, employé)
--admin
--vétérinaire
--employé
-*/
-
 //FONCTION POUR MASQUER LES ELEMENTS EN FONCTION DU ROLE//
 function showAndHideElementsForRoles() {
   const userConnected = isConnected();
@@ -123,11 +109,12 @@ function showAndHideElementsForRoles() {
 //Fonction pour récupérer les infos utilisateurs
 async function getInfosUser() {
   try {
-    // console.log("Récupération des infos de l'utilisateur");
+    console.log("Récupération des infos de l'utilisateur");
 
     // Création des en-têtes avec le token d'authentification.
     let myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
+    myHeaders.append("Content-Type", "application/json");
 
     // Configuration des options pour la requête HTTP.
     let requestOptions = {
