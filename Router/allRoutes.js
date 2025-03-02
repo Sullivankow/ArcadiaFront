@@ -72,10 +72,7 @@ export const allRoutes = [
     "/js/auth/signup.js",
   ]),
   new Route("/horaires", "Menu horaires", "/pages/dashboard/horaires.html", []),
-  new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html", [
-    "ROLE_ADMIN",
-    "ROLE_EMPLOYE",
-  ]),
+  new Route("/reviews", "Menu avis", "/pages/dashboard/reviews.html", []),
   new Route("/authorize", "Autorisation", "/pages/authorize.html", []),
   new Route(
     "/users",
