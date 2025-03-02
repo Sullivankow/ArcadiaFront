@@ -31,7 +31,8 @@ export const allRoutes = [
     "/dash-habitat",
     "Menu Habitat",
     "/pages/dashboard/habitat.html",
-    []
+    [],
+    "/js/show/showHabitat.js"
   ),
 
   //Routes des pages non visibles
