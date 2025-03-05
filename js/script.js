@@ -10,6 +10,7 @@ const tokenCookieName = "accesstoken";
 const RoleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
 const apiUrl = "https://upbeat-happiness-production.up.railway.app"; //URL back en ligne
+
 // const apiUrl = "http://localhost:8081"; //URL locale
 signoutBtn.addEventListener("click", signout);
 getInfosUser();
