@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Si le fichier ou le dossier demandé existe, on l'affiche normalement
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Sinon, on redirige tout vers index.html (SPA)
+RewriteRule . /index.html [L]
