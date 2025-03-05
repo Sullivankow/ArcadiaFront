@@ -47,8 +47,8 @@ function displayHabitats(habitats) {
       // Gestion de l'image avec vérification
       const imageElement = document.createElement("img");
       imageElement.src = habitat.images?.[0]?.imageUrl
-        ? `https://arcadia-api.onrender.com${habitat.images[0].imageUrl}`
-        : "https://arcadia-api.onrender.com/uploads/default.jpg";
+        ? `https://upbeat-happiness-production.up.railway.app/${habitat.images[0].imageUrl}`
+        : "https://upbeat-happiness-production.up.railway.app/uploads/default.jpg";
       imageElement.alt = `Image de ${habitat.nom}`;
       card.appendChild(imageElement);
 
