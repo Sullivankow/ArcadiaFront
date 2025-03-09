@@ -148,7 +148,7 @@ async function InscrireUtilisateur() {
       redirect: "follow",
     };
 
-    const response = await fetch(`${apiUrl}/registration`, requestOptions);
+    const response = await fetch(`${apiUrl}/api/registration`, requestOptions);
 
     // 3. Vérification explicite si la réponse est correcte (status 200-299).
     if (!response.ok) {
