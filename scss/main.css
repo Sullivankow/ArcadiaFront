@@ -853,107 +853,125 @@ input[type="submit"] {
 
 /*----PAGE DE CONTACT----*/
 
-
-.contact-formulaire {
+.contact-section {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .big-title-login {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #52b207;
+  }
+  
+  .contact-container {
     display: flex;
-    width: 70%;
-    height: auto;
-    flex-direction: row;
-    margin-left: 15%;
-    padding-top: 25px;
     flex-wrap: wrap;
-}
-
-/*----Partie gauche----*/
-.formulaire-left {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 50%;
-    height: auto;
-    background: #E0E4EB;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-}
-
-.title-green-contact {
-    font-family: "Indie Flower", sans-serif;
-    color: #52B207;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.name-group {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Formulaire à gauche */
+  .contact-form {
+    flex: 1 1 400px;
+    padding: 40px 30px;
+    background-color: #e0e4eb;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding: 10px;
-    flex-wrap: wrap;
-
-}
-
-.icon-formulaire {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
-}
-
-.bouton-formulaire {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 20px;
-
-}
-
-.text-form {
-    font-family: "Outfit", sans-serif;
+  }
+  
+  .title-green-contact {
+    color: #52b207;
+    font-family: "Indie Flower", cursive;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
     padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    resize: none;
+  }
+  
+  .input-group textarea {
+    height: 120px;
+  }
+  
+  .button-group {
     display: flex;
-    flex-wrap: wrap;
-
-
-
-
-}
-
-
-
-
-/*----partie droite----*/
-.formulaire-right {
-    position: relative;
-    width: 50%;
-    right: 0;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    background: #E0E4EB;
+    justify-content: center;
+  }
+  
+  .btn-contact {
+    background-color: #52b207;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-contact:hover {
+    background-color: #388E3C;
+  }
+  
+  /* Informations à droite */
+  .contact-info {
+    flex: 1 1 400px;
+    background-color: #e0e4eb;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-
-}
-
-.map {
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .map {
     width: 100%;
     height: auto;
-    border-top-right-radius: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-icons {
     display: flex;
-    flex-wrap: wrap;
-
-}
-
-.icon-form {
+    justify-content: center; /* ou space-between / flex-start selon le rendu */
+    gap: 40px; /* espace entre le numéro et l'email */
+    flex-wrap: wrap; /* en cas de petit écran */
+  }
+  
+  .info-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 10px; /* espace entre l'icône et le texte */
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  
+ 
+  
 
-}
+
 
 
 
@@ -1891,34 +1909,30 @@ padding-bottom: 25px;
 
 
 /*----MEDIA QUERIES FORMULAIRE DE CONTACT----*/
-@media(max-width: 768px) {
-    .contact-formulaire {
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-        margin-left: 11%;
-
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
     }
-
-    .formulaire-left {
-        width: 100%;
-        border-radius: 25px;
+  
+    .contact-form,
+    .contact-info {
+      flex: 1 1 100%;
+      
     }
-
-    .formulaire-right {
-        width: 100%;
-        border-radius: 25px;
-    }
-
+  .input-group{
+    display:flex;
+    justify-content:center;
+  }
     .title-green-contact {
-        text-align: center;
+      font-size: 1.5rem;
     }
-
-    .map {
-        border-radius: 25px;
+  
+    .btn {
+      width: 100%;
     }
-}
+  }
+  
 
 
 

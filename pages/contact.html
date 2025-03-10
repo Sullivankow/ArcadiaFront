@@ -23,83 +23,53 @@
 </div>
 
 
-    <!--Formulaire de contact-->
-    <section>
-<h2 class="big-title-login">Formulaire de contact</h2>
+ 
 
-
-        <!--Partie droite du formulaire-->
-<div class="content-formulaire">
-
-<form class="contact-formulaire" id="form-contact">
-<div class="formulaire-left">
-    <div>
-<h2 class="title-green-contact">Besoin d'infos? Ecrivez-nous ici!!!</h2>
-</div>
-
-<div class="name-group">
-
-<div class="box">
-    <input type="text" placeholder="Votre Nom">
+<!-- Formulaire de contact -->
+<section class="contact-section">
+    <h2 class="big-title-login">Formulaire de contact</h2>
+  
+    <div class="contact-container">
+      <!-- Partie gauche : Formulaire -->
+      <form class="contact-form" id="form-contact">
+        <h2 class="title-green-contact">Besoin d'infos ? Écrivez-nous ici !!!</h2>
+  
+        <div class="input-group">
+          <input type="text" placeholder="Votre Nom" required />
+        </div>
+  
+        <div class="input-group">
+          <input type="email" placeholder="Votre Email" required />
+        </div>
+  
+        <div class="input-group">
+          <textarea placeholder="Votre message" required></textarea>
+        </div>
+  
+        <div class="button-group">
+          <button class="btn-contact" type="submit">Soumettre</button>
+        </div>
+      </form>
+  
+      <!-- Partie droite : Informations & carte -->
+      <div class="contact-info">
+        <img class="map" src="Images/map.jpg" alt="Carte du zoo Arcadia" />
+  
+        <div class="contact-icons">
+          <div class="info-item">
+            <img class="icon" src="Images/icon_tel.png" alt="Téléphone" />
+            <p>01 11 11 11 11</p>
+          </div>
+          <div class="info-item">
+            <img class="icon" src="Images/icon_email.png" alt="Email" />
+            <p>arcadia@mail.com</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-<div class="box">
-    <input type="email" placeholder="Email" required>
-</div>
-
-<label class="text-form" for="Description">Description</label>
-<textarea id="description" placeholder="Votre message" required></textarea>
-</div>
-<br>
-
-<div class="bouton-formulaire">
-<button class="btn" type="submit">Soumettre</button>
-</div>
-</div>
+  </section>
 
 
-
-<!--Partie gauche du formulaire avec la map-->
-<div class="formulaire-right">
-<div class="formulaire-image">
-<img class="map" src="Images\map.jpg" alt="map" >
-</div>
-<div class="icon-formulaire">
-<h3><img classs="icon-form" loading="lazy" src="Images\icon_tel.png" alt="icon" ></img>01 11 11 11 11</h3>
-
-<h3><img class="icon-form" src="Images\icon_email.png" alt="email">arcadia@mail.com</h3>
-
-</div>
-
-</div>
-
-
-</form>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-    </section>
-
+  
+  
+  
