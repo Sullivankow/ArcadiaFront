@@ -246,70 +246,82 @@ function getStars(note) {
 // Charge les avis validés sur la page d'accueil lorsque le DOM est prêt
 document.addEventListener("DOMContentLoaded", fetchAvisForHomepage);
 
-// Fonction pour ajouter un avis
-async function addAvis() {
-  const formAvis = document.getElementById("avis-Form");
+//Ajout d'avis, chargment du DOM avant lancement du script
 
-  if (!formAvis) {
-    console.error("Formulaire non trouvé !");
-    return;
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  // On attend 500ms après que le DOM soit prêt avant d'exécuter la fonction addAvis
+  setTimeout(() => {
+    // Fonction pour ajouter un avis
+    async function addAvis() {
+      const formAvis = document.getElementById("avis-Form");
 
-  formAvis.addEventListener("submit", async function (event) {
-    event.preventDefault();
+      if (!formAvis) {
+        console.error("Formulaire non trouvé !");
+        return;
+      }
 
-    // Récupérer les valeurs du formulaire
-    const auteur = document.getElementById("auteur").value.trim();
-    const contenu = document.getElementById("contenu").value.trim();
-    const note = parseInt(document.getElementById("note").value);
-    const messageElement = document.getElementById("avis-message");
+      formAvis.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-    // Vérifier si tous les champs sont remplis
-    if (!auteur || !contenu || isNaN(note)) {
-      messageElement.textContent = "Veuillez remplir tous les champs";
-      messageElement.style.color = "red";
-      return;
-    }
+        // Récupérer les valeurs du formulaire
+        const auteur = document.getElementById("auteur").value.trim();
+        const contenu = document.getElementById("contenu").value.trim();
+        const note = parseInt(document.getElementById("note").value);
+        const messageElement = document.getElementById("avis-message");
 
-    try {
-      let dataForm = new FormData(formAvis);
+        // Vérifier si tous les champs sont remplis
+        if (!auteur || !contenu || isNaN(note)) {
+          messageElement.textContent = "Veuillez remplir tous les champs";
+          messageElement.style.color = "red";
+          return;
+        }
 
-      let myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
+        try {
+          let dataForm = new FormData(formAvis);
 
-      let raw = JSON.stringify({
-        auteur: dataForm.get("auteur"),
-        contenu: dataForm.get("contenu"),
-        note: parseInt(dataForm.get("note")),
+          let myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+
+          let raw = JSON.stringify({
+            auteur: dataForm.get("auteur"),
+            contenu: dataForm.get("contenu"),
+            note: parseInt(dataForm.get("note")),
+          });
+
+          let requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow",
+          };
+
+          const response = await fetch(
+            `${apiUrl}/api/avis/new`,
+            requestOptions
+          );
+
+          if (!response.ok) {
+            throw new Error(
+              `Erreur lors de l'envoi de l'avis: ${response.status}`
+            );
+          }
+
+          messageElement.textContent = "Avis ajouté avec succès";
+          messageElement.style.color = "green";
+
+          formAvis.reset();
+
+          if (typeof fetchAvis === "function") {
+            fetchAvis();
+          }
+        } catch (error) {
+          console.error("Erreur :", error);
+          messageElement.textContent = "Impossible d'envoyer l'avis";
+          messageElement.style.color = "red";
+        }
       });
-
-      let requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
-      };
-
-      const response = await fetch(`${apiUrl}/api/avis/new`, requestOptions);
-
-      if (!response.ok) {
-        throw new Error(`Erreur lors de l'envoi de l'avis: ${response.status}`);
-      }
-
-      messageElement.textContent = "Avis ajouté avec succès";
-      messageElement.style.color = "green";
-
-      formAvis.reset();
-
-      if (typeof fetchAvis === "function") {
-        fetchAvis();
-      }
-    } catch (error) {
-      console.error("Erreur :", error);
-      messageElement.textContent = "Impossible d'envoyer l'avis";
-      messageElement.style.color = "red";
     }
-  });
-}
 
-addAvis();
+    addAvis();
+  }, 500); // Délai d'attente de 500ms, tu peux ajuster selon tes besoins
+});
