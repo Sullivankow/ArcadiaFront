@@ -87,6 +87,20 @@ a {
     color: #52B207;
 }
 
+.btn-menu{
+    background-color:white;
+    width: 40px;         /* largeur */
+    height: 40px;        /* hauteur identique à la largeur */
+    border-radius: 50%;
+    border: none;
+    color: #2A2B2E;
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+.btn-menu:hover {
+    background-color: #45a049;
+    color: white;
+  }
 
 /*Réglage du body*/
 body {
@@ -1194,6 +1208,10 @@ input[type="submit"] {
     height: 40px;
     cursor: pointer;
 }
+.btn-deconnexion:hover {
+    background-color: #45a049;
+    color: white;
+  }
 
 .link-deconnexion {
     color: #2A2B2E;
