@@ -200,7 +200,7 @@ async function modifierHoraire(horaireId) {
     };
 
     const response = await fetch(
-      `${apiUrl}/horaires/edit/${horaireId}`,
+      `${apiUrl}/api/horaires/edit/${horaireId}`,
       requestOptions
     );
 
