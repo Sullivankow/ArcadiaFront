@@ -3,7 +3,7 @@ async function fetchAvis() {
   try {
     //Création des en-têtes avec le token d'authentification
     let myHeaders = new Headers();
-    // myHeaders.append("X-AUTH-TOKEN", getToken()); //getToken retourne normalement un token valide
+    myHeaders.append("X-AUTH-TOKEN", getToken()); //getToken retourne normalement un token valide
     myHeaders.append("Content-Type", "application/json"); //getToken retourne normalement un token valide
 
     //Configuration des options de la requête HTTP
