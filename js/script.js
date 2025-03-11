@@ -148,6 +148,75 @@ async function getInfosUser() {
   }
 }
 
+///////////////////////////////
+//////////////////////////////
+//Fonction pour envoyer un mail via la page de contact
+document.addEventListener("DOMContentLoaded", function () {
+  const formContact = document.getElementById("form-contact");
+
+  //On évite le rechargement de la page après la soumission
+  formContact.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    //On récupère les valeurs des champs et on les stocke dans des variables
+    const nom = document.getElementById("nomContact").value.trim();
+    const email = document.getElementById("emailContact").value.trim();
+    const message = document.getElementById("messageContact").value.trim();
+    const messageElement = document.getElementById("messageElementContact");
+
+    //On vérifie si les champs sont bien remplis
+    if (!nom || !email || !message) {
+      messageElement.textContent = "Veuillez saisir tous les champs";
+      messageElement.style.color = "red";
+      return;
+    }
+
+    //On désactive le bouton tant que les champs ne sont pas remplis
+    const submitButton = formContact.querySelector("button[type='submit']");
+    submitButton.disabled = true;
+
+    //Création de l'en-tête de la requête
+    try {
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      //Configuration du corps de la requête
+      const raw = JSON.stringify({
+        nom: nom,
+        email: email,
+        message: message,
+      });
+
+      //Configuration des options de la requête
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+      };
+
+      //Appel fetch via l'api
+      const response = await fetch(`${apiUrl}/api/contact`, requestOptions);
+
+      //On vérifie si la réponse est ok
+      if (!response.ok) {
+        throw new Error(
+          `Erreur lors de l'envoi du formulaire: ${response.status}`
+        );
+      }
+
+      messageElement.textContent = "Email envoyé avec succès";
+      messageElement.style.color = "green";
+      formContact.reset(); // Réinitialiser le formulaire après succès
+    } catch (error) {
+      console.error("Erreur :", error);
+      messageElement.textContent = "Impossible d'envoyer l'email";
+      messageElement.style.color = "red";
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+});
+
 /////////////////////////
 ///GESTION DES ERREURS DANS LE NAVIGATEUR///
 ////////////////////////
